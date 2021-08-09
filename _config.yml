@@ -23,9 +23,11 @@ email:
 description: >- # this means to ignore newlines until "baseurl:"
   home
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://eb45.github.io"
+url: ""
 header_text:
 header_feature_image: img/homestrip.jpg
+
+remote_theme: sylhare/Type-on-Strap      
 
 avatar: img/logo.jpg
 excerpt: true
