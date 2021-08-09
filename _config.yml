@@ -35,7 +35,7 @@ collections:
   portfolio:
   
 # theme: type-on-strap                                  # if using the theme as a jekyll theme gem
-remote_theme: sylhare/Type-on-Strap        
+#remote_theme: sylhare/Type-on-Strap        
 
     output: true
     permalink: /:collection/:name
