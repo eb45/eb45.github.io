@@ -1,33 +1,8 @@
-title: emma bennett
-email:
-description: >-
-  home
-baseurl: ""
+title: Emma Bennett
+description: Personal site
 url: "https://eb45.github.io"
+baseurl: ""
 
-header_text:
-header_feature_image: img/homestrip.jpg
-
-theme: type-on-strap
-
-avatar: img/logo.jpg
-favicon: img/logo.jpg
-excerpt: true
-post_navigation: true
-color_theme: auto
-
-# PORTFOLIO
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:name
-
-# Build settings
-sass:
-  style: compressed
-  quiet_deps: true
-  silence_deprecations: [import]
-plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
 exclude:
   - ".jekyll-cache"
   - ".jekyll-metadata"
@@ -39,4 +14,3 @@ exclude:
   - "vendor"
   - "README.md"
   - "node_modules"
-  - "assets/node_modules"

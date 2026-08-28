@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.0
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/archive/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/archive/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/archive/img/logo.jpg" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/archive/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://eb45.github.io';
+      const isCookieConsent = '';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://eb45.github.io/archive/img/formatting.jpg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>formatting your jekyll theme (part 2) | emma bennett</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="formatting your jekyll theme (part 2)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website." />
+<meta name="twitter:description" property="og:description" content="Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website." />
+<link rel="canonical" href="https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html" />
+<meta property="og:url" content="https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html" />
+<meta property="og:site_name" content="emma bennett" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-03T16:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-03T16:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="formatting your jekyll theme (part 2)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-03T16:00:00+00:00","datePublished":"2020-06-03T16:00:00+00:00","description":"Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website.","headline":"formatting your jekyll theme (part 2)","mainEntityOfPage":{"@type":"WebPage","@id":"https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html"},"url":"https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="emma bennett" href="https://eb45.github.io/archive/feed.xml"/archive/>
+    <link type="application/atom+xml" rel="alternate" href="https://eb45.github.io/archive/feed.xml" title="emma bennett" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="formatting your jekyll theme (part 2)">
+    <meta name="twitter:description" content="Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different f...">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://eb45.github.io/archive/img/formatting.jpg">
+    <meta name="twitter:image:alt" content="formatting your jekyll theme (part 2)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/archive/">
+			<img alt="logo img" class="avatar" src="/archive/img/logo.jpg" />
+		</a>
+        
+        <a class="site-title" aria-label="emma bennett" href="/archive/">
+        emma bennett
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="series" title="series" href="/archive/series/">
+                     series 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="projects" title="projects" href="/archive/projects/">
+                     projects 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="about" title="about" href="/archive/about/">
+                     about 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="find" title="find" href="/archive/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="tags" title="tags" href="/archive/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="formatting your jekyll theme (part 2) " aria-label="formatting your jekyll theme (part 2)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="formatting+your+jekyll+theme+%28part+2%29" class="title">formatting your jekyll theme (part 2)</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      June 03, 2020
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p>Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website. <!--more--> 
+In this post, I’ll be walking you through the main components of a Jekyll website (Remember that this may vary slightly based on which theme you have chosen for yourself).</p>
+
+<h4>1) _Config.yml </h4>
+<p>This file should include all of the customization of your home page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">title:
+email: 
+description: </span><span class="o">&gt;-</span> <span class="c1"># this means to ignore newlines until "baseurl:"
+</span>
+  <span class="n">home</span>
+<span class="ss">baseurl: </span><span class="s2">""</span> <span class="c1"># the subpath of your site, e.g. /blog
+</span>
+<span class="ss">url: </span><span class="s2">""</span> <span class="c1"># the base hostname &amp; protocol for your site, e.g. http://example.com
+</span>
+<span class="ss">header_text:
+header_feature_image: </span></code></pre></figure>
+
+<p>Most of these are self-explanatory. The header_text and header_feature_image are quite cool. This is specifically for the type-on-strap theme I use where a huge banner lays across your screen and you can change the image or the text displayed on it.</p>
+
+<h4>2) Layouts and Includes</h4>
+<p>Layouts are the base of your website. Some different layouts may include your home page, a page that displays all of your posts, or the page that includes a search bar. Layouts take bits and pieces of _includes html files in order to piece themselves together. The example below is for a normal page that displays all posts on it. The actual code for “blog.html” is not shown, but the code is meant to show how a layout html page interacts with an _includes html page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">---</span>
+<span class="ss">layout: </span><span class="n">default</span>
+<span class="o">---</span>
+
+<span class="kp">include</span> <span class="n">blog</span><span class="p">.</span><span class="nf">html</span></code></pre></figure>
+
+<p>Most layouts rely on bits of _includes html files in order to display. Includes files are like the header, footer, each post, search bar, etc. All of your other files rely on these include files to get their html and css from. The example below displays the _includes code for a portfolio page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;!--</span> <span class="no">Portfolio</span> <span class="no">Grid</span> <span class="no">Section</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-grid"</span><span class="o">&gt;</span>
+    
+    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-cell"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">a</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-link"</span> <span class="n">data</span><span class="o">-</span><span class="n">keyboard</span><span class="o">=</span><span class="s2">"true"</span> <span class="n">href</span><span class="o">=</span><span class="s2">"/archive/portfolio/compsci"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"caption"</span> <span class="n">title</span><span class="o">=</span><span class="s2">"comp sci tutorial videos"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"caption-content"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s2">"fas fa-search-plus fa-3x"</span><span class="o">&gt;&lt;</span><span class="sr">/i&gt;
+                &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="sr">/div&gt;
+            &lt;img alt="" class="" src="/archive/im</span><span class="n">g</span><span class="o">/</span><span class="n">compsci</span><span class="p">.</span><span class="nf">png</span><span class="s2">"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="</span><span class="n">portfolio</span><span class="o">-</span><span class="n">cell</span><span class="s2">"&gt;
+        &lt;a class="</span><span class="n">portfolio</span><span class="o">-</span><span class="n">link</span><span class="s2">" data-keyboard="</span><span class="kp">true</span><span class="s2">" href="</span><span class="o">/</span><span class="n">portfolio</span><span class="o">/</span><span class="n">plantbot</span><span class="s2">"&gt;
+            &lt;div class="</span><span class="n">caption</span><span class="s2">" title="</span><span class="n">plant</span> <span class="n">bot</span><span class="s2">"&gt;
+                &lt;div class="</span><span class="n">caption</span><span class="o">-</span><span class="n">content</span><span class="s2">"&gt;
+                    &lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">search</span><span class="o">-</span><span class="n">plus</span> <span class="n">fa</span><span class="o">-</span><span class="mi">3</span><span class="n">x</span><span class="s2">"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;img alt="" class="" src="</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">plantbot</span><span class="p">.</span><span class="nf">jpg</span><span class="s2">"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;</span></code></pre></figure>
+
+<h4>3) Posts</h4>
+<p>Posts are in their own folder. When you add another markdown file to the folder with the correct post formatting, Jekyll automatically adds this file to your collection of posts.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">layout: </span><span class="n">post</span>
+<span class="ss">title:  </span><span class="s2">""</span>
+<span class="ss">date:  
+tags: </span><span class="c1"># tags you put here are the tags which this post would be listed under in the tags section
+</span>
+<span class="ss">excerpt_separator: </span><span class="o">&lt;!--</span><span class="n">more</span><span class="o">--&gt;</span></code></pre></figure>
+
+<p>A really smart aspect of posts that Jekyll includes is the excerpt separator. This allows you to place a marker of where you want the excerpt of your post (shown on the home page) to end.</p>
+
+<h4>4) Pages</h4>
+<p>Pages are the tabs that show up at the top of your webpage. Examples are projects, search, tags, etc. They are quite simple to set up, only needing the layout, name, and possibly a feature image.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">layout: </span><span class="n">page</span>
+<span class="ss">title: </span><span class="n">about</span>
+<span class="ss">permalink: </span><span class="sr">/about/</span>
+<span class="n">feature</span><span class="o">-</span><span class="ss">img: </span><span class="s2">""</span></code></pre></figure>
+
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=formatting+your+jekyll+theme+%28part+2%29%20https%3A%2F%2Feb45.github.io%2Fposts1%2F2020%2F06%2F03%2Fformatting-optionspart2.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+            
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html&title=formatting+your+jekyll+theme+%28part+2%29%20%7C%20emma+bennett"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+           
+        <li>
+            <a href="mailto:?subject=formatting your jekyll theme (part 2)%20%7C%20emma bennett&body=https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="#jekyll+website+design">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> jekyll website design</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="alexa-controlled led light strip review" href="/archive/posts1/2020/06/30/ledlights.html">
+            <p>Previous post</p>
+            alexa-controlled led light strip review
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="setting up jekyll-based theme (part 1)" href="/archive/posts1/2020/05/11/jekyll-basedthemepart1.html">
+            <p>Next post</p>
+            setting up jekyll-based theme (part 1)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/archive/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/eb45"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://instagram.com/emma.bbennett"
+               title="Follow on Instagram"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>

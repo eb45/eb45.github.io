@@ -1,0 +1,99 @@
+[
+  
+  {
+    "title"    : "CSS integration",
+    "category" : "",
+    "tags"     : " jekyll website design",
+    "url"      : "/archive/posts1/2021/03/27/CSS-integration.html",
+    "date"     : "March 27, 2021",
+    "excerpt"  : "This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.\n\n\n\nLet’s start with the basics: Whe...",
+  "content"  : "This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.\n\n\n\nLet’s start with the basics: Where exactly in your HTML file should your CSS reside?\n\nAn HTML file uses the tag below to store the information on how HTML\n elements should render on your website. Within this style tag is where the values (color, size, font, etc.) you want\n  to change should be declared.\n\n &amp;lt;style&amp;gt; here is where you would add any CSS code &amp;lt;/style&amp;gt; \n\n\n So now that we’ve covered where the CSS resides, how is it formatted and implemented? \n\nFor more straight-forward things like transforming text and margin height you use the name of the item (p, h1, h2\n, etc.) that you want to modify and in curly brackets put all of the different ‘transformations’. An example is shown\n below:\n\n  h1{\n   text-align: center;\n   text-transform: uppercase;\n   color: #4CAF50;\n    margin-top: 0px;\n    margin-bottom: 0px;\n }\n \n\nOk, now that we’ve covered the basics let’s delve into some more complicated CSS!  How do animations work in CSS\n? \n\nLet’s look at the code for moving text from the right side of the window to the left side. Credits to this website\n.\n\ndiv.slide-left {\n  width:100%;\n  overflow:hidden;\n}\ndiv.slide-left p {\n  animation: slide-left 12s;\n}\n\n@keyframes slide-left {\n  from {\n    margin-left: 100%;\n    width: 100%;\n  }\n\n  to {\n    margin-left: 0%;\n    width: 100%;\n  }\n}\n\ncoding tid-bit - @keyframes specify the animation code by declaring the style change at the start to the end\n (depicted by the ‘from’ and ‘to’)\n"
+} ,
+  
+  {
+    "title"    : "creating jekyll post directories (part 3)",
+    "category" : "",
+    "tags"     : " jekyll website design",
+    "url"      : "/archive/posts1/2021/02/03/directoriespart3.html",
+    "date"     : "February 3, 2021",
+    "excerpt"  : "What do you do when you want two post directories so only select posts show up on certain places on your site: Post directories.\n\n\nSee an example of this in my Series/Comp Sci Tutorials and in my Posts.\n\nThe easiest way to do this?\nLet’s imagine a...",
+  "content"  : "What do you do when you want two post directories so only select posts show up on certain places on your site: Post directories.\n\n\nSee an example of this in my Series/Comp Sci Tutorials and in my Posts.\n\nThe easiest way to do this?\nLet’s imagine a scenario. You want one page to display posts about Topic A and the other page to display posts about\n Topic B.\n\n  Put .markdown posts of Topic A in a folder called posts1 and the others in another folder called posts2.\n  Within the _includes files (where the html of how your individual pages are generated resides), add a line to the\n top that specifies where you want your page to get its posts from.\n\n\nThe line to add is the following:\n\n&quot;for post in site.portfolio&quot;\n#surround the above statement with % signs\n\nWhat this does is it says to format each of the posts in a specific posts\n  directory (in this case posts1).\n\ncoding tid-bit - the above format actually follows that of a for-each loop where it looks at every object in the\n   ‘site.portfolio’ folder and formats each into its own blog post.\n\nThe upside to having multiple different directories is that they all still work in the search bar and also work as\n their own filtered tags automatically, but it is easier to accumulate more alike posts together on the same page.\n\nHopefully you are now comfortable creating different Jekyll directories! Thanks for reading.\n"
+} ,
+  
+  {
+    "title"    : "Little Robot Friends Kit",
+    "category" : "",
+    "tags"     : " tutorials",
+    "url"      : "/archive/tutorials2/2020/08/05/littlerobotfriends.html",
+    "date"     : "August 5, 2020",
+    "excerpt"  : "This article focuses on the process of assembling and coding the Little Robot Friends kit. I will use pictures\n to walk-through all of the steps from soldering the components together to actually creating a multitude of unique\n  programs to run.\n ...",
+  "content"  : "This article focuses on the process of assembling and coding the Little Robot Friends kit. I will use pictures\n to walk-through all of the steps from soldering the components together to actually creating a multitude of unique\n  programs to run.\n  \n\nWhat you need:\n\n  Little Robot Friends Kit (at this link!)\n  soldering iron\n  solder\n  pliers\n  tape\n  multimeter (optional, but very useful!)\n\n\nAssembling your robot:\nTake all of the components out of the Little Robot Friends kit and set them out on the table. It’s really useful to\n see the parts all at once!\n\n\nTwirl the metal spring into the holes on the top of your robot’s main body. Solder both ends and cut off the excess\n metal. The ends are definitely spiky so using pliers might be a good move. Finally, be patient in screwing it in the\n  holes as it is difficult to be forced.\n\n\nPull the two LEDs in the kit carefully through the two eye holes. With only your hands, you will probably only have\n success pulling it about 2/3 of the way through. In order to get the LEDs snug against the board, take a pair of\n  pliers and slowly make back and forth motions (pulling and pushing) to pull it completely through. Solder each of\n   the leads onto the board. Then when snipping off the excess metal leads make sure to save two for the speaker!\n\n\nAdd a small blob of solder at the ends of each of the LED leads that you kept. Then attach the prongs to the back of\n the speaker in an X-formation (place them on top of the copper-colored spaces). Once stuck to the speaker, bend the\n  two leads with pliers to face upwards. Then, add a dab of glue to the back of the speaker and thread the two prongs\n   through the robot’s main board through the designated holes.\n\n\nTime to pick out your robot’s personalities! This video gives a\n good explanation of what resistors correlate to what personality traits. Above are the ones I chose:\n\n  Happiness (high resistance) - grumpy\n  Chattiness (semi-high resistance) - pretty chatty\n  Humour (low resistance) - ticklish\n  Enthusiasm (medium) - average enthusiasm\n  Neediness (low resistance) - craves attention\n  Bravery (high resistance) - gets scared easily\n\n\n"
+} ,
+  
+  {
+    "title"    : "First Plant Bot Post",
+    "category" : "",
+    "tags"     : " plant bot",
+    "url"      : "/archive/plantbotposts3/2020/08/05/usingcircuitplayground.html",
+    "date"     : "August 5, 2020",
+    "excerpt"  : "\n",
+  "content"  : "\n"
+} ,
+  
+  {
+    "title"    : "alexa-controlled led light strip review",
+    "category" : "",
+    "tags"     : " aesthetics",
+    "url"      : "/archive/posts1/2020/06/30/ledlights.html",
+    "date"     : "June 30, 2020",
+    "excerpt"  : "Recently, I received super cool led lights that came with a Wireless Smart Controller which allows me to control the lights by an app or Amazon Echo. In this post I will be highlighting some features that I do and don’t like.\n\n\n\npackaging: Packagi...",
+  "content"  : "Recently, I received super cool led lights that came with a Wireless Smart Controller which allows me to control the lights by an app or Amazon Echo. In this post I will be highlighting some features that I do and don’t like.\n\n\n\npackaging: Packaging was secure and everything was pretty compact. When I opened it the led lights were nicely\n rolled up and\n nothing was frayed or broken.\n\nadhesiveness: This was the only part that I was not completely satisfied with. Although the light strip itself\n was advertised to come with a very adhesive backing, it did not end up sticking well to the wall. The tape backing on the strip was extremely sticky, but the strip itself was not as much. When placing it on my wall, I went a couple meters with the tape backing, however it started peeling off as I continued. Ultimately, I used dots of hot glue on the back in order to give extra support (this ended up working quite well).\n\npower connection: By printing pieces on our 3D printer, a small white box was created in order to store the\n wires that came down from the ceiling. In order to make the wires as inconspicuous as possible the box was put\n  parallel to the edge of the curtain so the curtain would hide the wiring.\n\nconnection to amazon echo: This works marvelously and is what makes this specific brand stand out from the\n others. By going into the Amazon Echo\n app and to the add device tab you can easily search the name of the brand and set up your led lights. This allows\n  you to ask Amazon alexa to turn on/off your strip lights or even to change colors between Amazon’s 16 pre-programmed\n   colors.\n\ncolor customization: Color customization is overall really good as you can pick basically any color on the\n color wheel. However, through\n Amazon alexa you can only ask for 16 different colors. In order to access the rest of the colors, you must go into\n  the TuyaSmart app and choose a color from the color wheel.\n\n"
+} ,
+  
+  {
+    "title"    : "formatting your jekyll theme (part 2)",
+    "category" : "",
+    "tags"     : " jekyll website design",
+    "url"      : "/archive/posts1/2020/06/03/formatting-optionspart2.html",
+    "date"     : "June 3, 2020",
+    "excerpt"  : "Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website.  \nIn this pos...",
+  "content"  : "Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website.  \nIn this post, I’ll be walking you through the main components of a Jekyll website (Remember that this may vary slightly based on which theme you have chosen for yourself).\n\n1) _Config.yml \nThis file should include all of the customization of your home page.\n\ntitle:\nemail: \ndescription: &amp;gt;- # this means to ignore newlines until &quot;baseurl:&quot;\n\n  home\nbaseurl: &quot;&quot; # the subpath of your site, e.g. /blog\n\nurl: &quot;&quot; # the base hostname &amp;amp; protocol for your site, e.g. http://example.com\n\nheader_text:\nheader_feature_image: \n\nMost of these are self-explanatory. The header_text and header_feature_image are quite cool. This is specifically for the type-on-strap theme I use where a huge banner lays across your screen and you can change the image or the text displayed on it.\n\n2) Layouts and Includes\nLayouts are the base of your website. Some different layouts may include your home page, a page that displays all of your posts, or the page that includes a search bar. Layouts take bits and pieces of _includes html files in order to piece themselves together. The example below is for a normal page that displays all posts on it. The actual code for “blog.html” is not shown, but the code is meant to show how a layout html page interacts with an _includes html page.\n\n---\nlayout: default\n---\n\ninclude blog.html\n\nMost layouts rely on bits of _includes html files in order to display. Includes files are like the header, footer, each post, search bar, etc. All of your other files rely on these include files to get their html and css from. The example below displays the _includes code for a portfolio page.\n\n&amp;lt;!-- Portfolio Grid Section --&amp;gt;\n&amp;lt;div class=&quot;portfolio-grid&quot;&amp;gt;\n    \n    &amp;lt;div class=&quot;portfolio-cell&quot;&amp;gt;\n        &amp;lt;a class=&quot;portfolio-link&quot; data-keyboard=&quot;true&quot; href=&quot;/portfolio/compsci&quot;&amp;gt;\n            &amp;lt;div class=&quot;caption&quot; title=&quot;comp sci tutorial videos&quot;&amp;gt;\n                &amp;lt;div class=&quot;caption-content&quot;&amp;gt;\n                    &amp;lt;i class=&quot;fas fa-search-plus fa-3x&quot;&amp;gt;&amp;lt;/i&amp;gt;\n                &amp;lt;/div&amp;gt;\n            &amp;lt;/div&amp;gt;\n            &amp;lt;img alt=&quot;&quot; class=&quot;&quot; src=&quot;/img/compsci.png&quot;&amp;gt;\n        &amp;lt;/a&amp;gt;\n    &amp;lt;/div&amp;gt;\n    \n    &amp;lt;div class=&quot;portfolio-cell&quot;&amp;gt;\n        &amp;lt;a class=&quot;portfolio-link&quot; data-keyboard=&quot;true&quot; href=&quot;/portfolio/plantbot&quot;&amp;gt;\n            &amp;lt;div class=&quot;caption&quot; title=&quot;plant bot&quot;&amp;gt;\n                &amp;lt;div class=&quot;caption-content&quot;&amp;gt;\n                    &amp;lt;i class=&quot;fas fa-search-plus fa-3x&quot;&amp;gt;&amp;lt;/i&amp;gt;\n                &amp;lt;/div&amp;gt;\n            &amp;lt;/div&amp;gt;\n            &amp;lt;img alt=&quot;&quot; class=&quot;&quot; src=&quot;/img/plantbot.jpg&quot;&amp;gt;\n        &amp;lt;/a&amp;gt;\n    &amp;lt;/div&amp;gt;\n    \n&amp;lt;/div&amp;gt;\n\n3) Posts\nPosts are in their own folder. When you add another markdown file to the folder with the correct post formatting, Jekyll automatically adds this file to your collection of posts.\n\nlayout: post\ntitle:  &quot;&quot;\ndate:  \ntags: # tags you put here are the tags which this post would be listed under in the tags section\n\nexcerpt_separator: &amp;lt;!--more--&amp;gt;\n\nA really smart aspect of posts that Jekyll includes is the excerpt separator. This allows you to place a marker of where you want the excerpt of your post (shown on the home page) to end.\n\n4) Pages\nPages are the tabs that show up at the top of your webpage. Examples are projects, search, tags, etc. They are quite simple to set up, only needing the layout, name, and possibly a feature image.\n\nlayout: page\ntitle: about\npermalink: /about/\nfeature-img: &quot;&quot;\n\n"
+} ,
+  
+  {
+    "title"    : "setting up jekyll-based theme (part 1)",
+    "category" : "",
+    "tags"     : " jekyll website design",
+    "url"      : "/archive/posts1/2020/05/11/jekyll-basedthemepart1.html",
+    "date"     : "May 11, 2020",
+    "excerpt"  : "This is my first website using the Jekyll plug-in. I’ll be walking you through the steps to create a fully-functioning website using a Gem-based theme. On this particular website I used the type-on-strap theme.\n\n\nThings you need:\n\n  access to a co...",
+  "content"  : "This is my first website using the Jekyll plug-in. I’ll be walking you through the steps to create a fully-functioning website using a Gem-based theme. On this particular website I used the type-on-strap theme.\n\n\nThings you need:\n\n  access to a command prompt\n  Ruby environment\n\n\nNow you’re going to want to install Jekyll and bundler gems to your Ruby environment. You can do this by going to the command prompt and typing in the following:\n\ngem install jekyll bundler\njekyll new myblog\ncd myblog\nbundle exec jekyll serve\n# Browse to http://localhost:4000\n\nThis should set up a website using the default jekyll theme: minima. Upon looking into the folder you created in your directory named “myblog”, pay close attention to two files: 1) _config.yml 2) Gemfile\n\nNow, we are going to browse for a theme. Jekyll Themes allows you to browse through a multitude of free themes.\n\n\n\nHere, you can scroll through multiple demos of these themes and find one that you like. Let’s say I like the theme type-on-strap. Go to rubygems.org and search for the theme that you want.\n\nA screen like this should show up. The code I circled is what you should substitute for in your Gemfile (gem “type-on-strap”). In your _config.yml file you should substitute “type-in-strap” instead of “minima” after the “theme:”.\n\n\nFinally, look at the command I circled below to get an idea of what to put in your command prompt. Find the folder “myblog” in your directory and under it enter in the code circled. This should install the theme you want.\n\n\nNow when you go to your local host you should see your website with your newly installed theme. Thanks for reading!\n"
+} 
+  
+  ,
+  
+  {
+  
+  "title"    : "comp sci tutorial videos",
+  "category" : "",
+  "tags"     : " ",
+  "url"      : "/archive/portfolio/compsci",
+  "date"     : "May 17, 2020",
+  "excerpt"  : "\n",
+  "content"  : "\n"
+  
+} ,
+  
+  {
+  
+  "title"    : "plant bot",
+  "category" : "",
+  "tags"     : " ",
+  "url"      : "/archive/portfolio/plantbot",
+  "date"     : "March 29, 2021",
+  "excerpt"  : "\n",
+  "content"  : "\n"
+  
+} 
+  
+]

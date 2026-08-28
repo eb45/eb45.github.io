@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://eb45.github.io/archive/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eb45.github.io/archive/" rel="alternate" type="text/html" /><updated>2026-08-28T14:24:48+00:00</updated><id>https://eb45.github.io/archive/feed.xml</id><title type="html">emma bennett</title><subtitle>home</subtitle><entry><title type="html">CSS integration</title><link href="https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html" rel="alternate" type="text/html" title="CSS integration" /><published>2021-03-27T00:00:00+00:00</published><updated>2021-03-27T00:00:00+00:00</updated><id>https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration</id><content type="html" xml:base="https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html"><![CDATA[<p>This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.</p>
+
+<!--more-->
+
+<p><b>Let’s start with the basics: Where exactly in your HTML file should your CSS reside?</b></p>
+
+<p>An HTML file uses the tag below to store the information on how HTML
+ elements should render on your website. Within this style tag is where the values (color, size, font, etc.) you want
+  to change should be declared.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span> <span class="n">here</span> <span class="n">is</span> <span class="n">where</span> <span class="n">you</span> <span class="n">would</span> <span class="n">add</span> <span class="n">any</span> <span class="no">CSS</span> <span class="n">code</span> <span class="o">&lt;</span><span class="sr">/style&gt; </span></code></pre></figure>
+
+<p><br />
+<b> So now that we’ve covered where the CSS resides, how is it formatted and implemented? </b></p>
+
+<p>For more straight-forward things like transforming text and margin height you use the name of the item (p, h1, h2
+, etc.) that you want to modify and in curly brackets put all of the different ‘transformations’. An example is shown
+ below:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">h1</span><span class="p">{</span>
+   <span class="n">text</span><span class="o">-</span><span class="ss">align: </span><span class="n">center</span><span class="p">;</span>
+   <span class="n">text</span><span class="o">-</span><span class="ss">transform: </span><span class="n">uppercase</span><span class="p">;</span>
+   <span class="ss">color: </span><span class="c1">#4CAF50;</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">top: </span><span class="mi">0</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">bottom: </span><span class="mi">0</span><span class="n">px</span><span class="p">;</span>
+ <span class="p">}</span>
+ </code></pre></figure>
+
+<p>Ok, now that we’ve covered the basics let’s delve into some more complicated CSS! <b> How do animations work in CSS
+? </b></p>
+
+<p>Let’s look at the code for moving text from the right side of the window to the left side. Credits to <a href="https://www.html.am/html-codes/marquees/css-slide-in-text.cfm">this website
+</a>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">div</span><span class="p">.</span><span class="nf">slide</span><span class="o">-</span><span class="n">left</span> <span class="p">{</span>
+  <span class="n">width</span><span class="p">:</span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="n">overflow</span><span class="ss">:hidden</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">div</span><span class="p">.</span><span class="nf">slide</span><span class="o">-</span><span class="n">left</span> <span class="nb">p</span> <span class="p">{</span>
+  <span class="ss">animation: </span><span class="n">slide</span><span class="o">-</span><span class="n">left</span> <span class="mi">12</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="vi">@keyframes</span> <span class="n">slide</span><span class="o">-</span><span class="n">left</span> <span class="p">{</span>
+  <span class="n">from</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">left: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="ss">width: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">to</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">left: </span><span class="mi">0</span><span class="o">%</span><span class="p">;</span>
+    <span class="ss">width: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><em>coding tid-bit</em> - @keyframes specify the animation code by declaring the style change at the start to the end
+ (depicted by the ‘from’ and ‘to’)</p>]]></content><author><name></name></author><category term="posts1" /><category term="jekyll website design" /><summary type="html"><![CDATA[This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.]]></summary></entry><entry><title type="html">creating jekyll post directories (part 3)</title><link href="https://eb45.github.io/archive/posts1/2021/02/03/directoriespart3.html" rel="alternate" type="text/html" title="creating jekyll post directories (part 3)" /><published>2021-02-03T00:00:00+00:00</published><updated>2021-02-03T00:00:00+00:00</updated><id>https://eb45.github.io/archive/posts1/2021/02/03/directoriespart3</id><content type="html" xml:base="https://eb45.github.io/archive/posts1/2021/02/03/directoriespart3.html"><![CDATA[<p><b>What do you do when you want two post directories so only select posts show up on certain places on your site: </b>Post directories.
+<!--more--></p>
+
+<p>See an example of this in my <i>Series/Comp Sci Tutorials</i> and in my <i>Posts</i>.</p>
+
+<p>The easiest way to do this?
+Let’s imagine a scenario. You want one page to display posts about Topic A and the other page to display posts about
+ Topic B.</p>
+<ol>
+  <li>Put .markdown posts of Topic A in a folder called posts1 and the others in another folder called posts2.</li>
+  <li>Within the _includes files (where the html of how your individual pages are generated resides), add a line to the
+ top that specifies where you want your page to get its posts from.</li>
+</ol>
+
+<p>The line to add is the following:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="s2">"for post in site.portfolio"</span>
+<span class="c1">#surround the above statement with % signs</span></code></pre></figure>
+
+<p>What this does is it says to format each of the posts in a specific posts
+  directory (in this case posts1).</p>
+
+<p><em>coding tid-bit</em> - the above format actually follows that of a for-each loop where it looks at every object in the
+   ‘site.portfolio’ folder and formats each into its own blog post.</p>
+
+<p>The upside to having multiple different directories is that they all still work in the search bar and also work as
+ their own filtered tags automatically, but it is easier to accumulate more alike posts together on the same page.</p>
+
+<p>Hopefully you are now comfortable creating different Jekyll directories! Thanks for reading.</p>]]></content><author><name></name></author><category term="posts1" /><category term="jekyll website design" /><summary type="html"><![CDATA[What do you do when you want two post directories so only select posts show up on certain places on your site: Post directories.]]></summary></entry><entry><title type="html">First Plant Bot Post</title><link href="https://eb45.github.io/archive/plantbotposts3/2020/08/05/usingcircuitplayground.html" rel="alternate" type="text/html" title="First Plant Bot Post" /><published>2020-08-05T16:00:00+00:00</published><updated>2020-08-05T16:00:00+00:00</updated><id>https://eb45.github.io/archive/plantbotposts3/2020/08/05/usingcircuitplayground</id><content type="html" xml:base="https://eb45.github.io/archive/plantbotposts3/2020/08/05/usingcircuitplayground.html"><![CDATA[]]></content><author><name></name></author><category term="plantbotposts3" /><category term="plant bot" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Little Robot Friends Kit</title><link href="https://eb45.github.io/archive/tutorials2/2020/08/05/littlerobotfriends.html" rel="alternate" type="text/html" title="Little Robot Friends Kit" /><published>2020-08-05T16:00:00+00:00</published><updated>2020-08-05T16:00:00+00:00</updated><id>https://eb45.github.io/archive/tutorials2/2020/08/05/littlerobotfriends</id><content type="html" xml:base="https://eb45.github.io/archive/tutorials2/2020/08/05/littlerobotfriends.html"><![CDATA[<p>This article focuses on the process of assembling and coding the <i>Little Robot Friends</i> kit. I will use pictures
+ to walk-through all of the steps from soldering the components together to actually creating a multitude of unique
+  programs to run.
+  <!--more--></p>
+
+<h4>What you need:</h4>
+<ul>
+  <li>Little Robot Friends Kit (<a href="https://littlerobotfriends.com/collections/all">at this link!</a>)</li>
+  <li>soldering iron</li>
+  <li>solder</li>
+  <li>pliers</li>
+  <li>tape</li>
+  <li>multimeter (optional, but very useful!)</li>
+</ul>
+
+<h4>Assembling your robot:</h4>
+<p>Take all of the components out of the Little Robot Friends kit and set them out on the table. It’s really useful to
+ see the parts all at once!</p>
+
+<p><img src="/archive/img/step1.png" alt="Step #1" class="img-responsive" />
+Twirl the metal spring into the holes on the top of your robot’s main body. Solder both ends and cut off the excess
+ metal. The ends are definitely spiky so using pliers might be a good move. Finally, be patient in screwing it in the
+  holes as it is difficult to be forced.</p>
+
+<p><img src="/archive/img/step2.png" alt="Step #2" class="img-responsive" />
+Pull the two LEDs in the kit carefully through the two eye holes. With only your hands, you will probably only have
+ success pulling it about 2/3 of the way through. In order to get the LEDs snug against the board, take a pair of
+  pliers and slowly make back and forth motions (pulling and pushing) to pull it completely through. Solder each of
+   the leads onto the board. Then when snipping off the excess metal leads make sure to save two for the speaker!</p>
+
+<p><img src="/archive/img/step3.png" alt="Step #3" class="img-responsive" />
+Add a small blob of solder at the ends of each of the LED leads that you kept. Then attach the prongs to the back of
+ the speaker in an X-formation (place them on top of the copper-colored spaces). Once stuck to the speaker, bend the
+  two leads with pliers to face upwards. Then, add a dab of glue to the back of the speaker and thread the two prongs
+   through the robot’s main board through the designated holes.</p>
+
+<p><img src="/archive/img/personality.png" alt="Personality Resistors" class="img-responsive" />
+Time to pick out your robot’s personalities! <a href="https://www.youtube.com/watch?v=nX9o8DZ5A_g">This video</a> gives a
+ good explanation of what resistors correlate to what personality traits. Above are the ones I chose:</p>
+<ol>
+  <li>Happiness (high resistance) - grumpy</li>
+  <li>Chattiness (semi-high resistance) - pretty chatty</li>
+  <li>Humour (low resistance) - ticklish</li>
+  <li>Enthusiasm (medium) - average enthusiasm</li>
+  <li>Neediness (low resistance) - craves attention</li>
+  <li>Bravery (high resistance) - gets scared easily</li>
+</ol>]]></content><author><name></name></author><category term="tutorials2" /><category term="tutorials" /><summary type="html"><![CDATA[This article focuses on the process of assembling and coding the Little Robot Friends kit. I will use pictures to walk-through all of the steps from soldering the components together to actually creating a multitude of unique programs to run.]]></summary></entry><entry><title type="html">alexa-controlled led light strip review</title><link href="https://eb45.github.io/archive/posts1/2020/06/30/ledlights.html" rel="alternate" type="text/html" title="alexa-controlled led light strip review" /><published>2020-06-30T16:00:00+00:00</published><updated>2020-06-30T16:00:00+00:00</updated><id>https://eb45.github.io/archive/posts1/2020/06/30/ledlights</id><content type="html" xml:base="https://eb45.github.io/archive/posts1/2020/06/30/ledlights.html"><![CDATA[<p>Recently, I received super cool led lights that came with a Wireless Smart Controller which allows me to control the lights by an app or Amazon Echo. In this post I will be highlighting some features that I do and don’t like.</p>
+
+<!--more-->
+
+<p><b>packaging:</b> Packaging was secure and everything was pretty compact. When I opened it the led lights were nicely
+ rolled up and
+ nothing was frayed or broken.</p>
+
+<p><b>adhesiveness:</b> This was the only part that I was not completely satisfied with. Although the light strip itself
+ was advertised to come with a very adhesive backing, it did not end up sticking well to the wall. The tape backing on the strip was extremely sticky, but the strip itself was not as much. When placing it on my wall, I went a couple meters with the tape backing, however it started peeling off as I continued. Ultimately, I used dots of hot glue on the back in order to give extra support (this ended up working quite well).</p>
+
+<p><b>power connection:</b> By printing pieces on our 3D printer, a small white box was created in order to store the
+ wires that came down from the ceiling. In order to make the wires as inconspicuous as possible the box was put
+  parallel to the edge of the curtain so the curtain would hide the wiring.</p>
+
+<p><b>connection to amazon echo:</b> This works marvelously and is what makes this specific brand stand out from the
+ others. By going into the Amazon Echo
+ app and to the add device tab you can easily search the name of the brand and set up your led lights. This allows
+  you to ask Amazon alexa to turn on/off your strip lights or even to change colors between Amazon’s 16 pre-programmed
+   colors.</p>
+
+<p><b>color customization:</b> Color customization is overall really good as you can pick basically any color on the
+ color wheel. However, through
+ Amazon alexa you can only ask for 16 different colors. In order to access the rest of the colors, you must go into
+  the TuyaSmart app and choose a color from the color wheel.</p>]]></content><author><name></name></author><category term="posts1" /><category term="aesthetics" /><summary type="html"><![CDATA[Recently, I received super cool led lights that came with a Wireless Smart Controller which allows me to control the lights by an app or Amazon Echo. In this post I will be highlighting some features that I do and don’t like.]]></summary></entry><entry><title type="html">formatting your jekyll theme (part 2)</title><link href="https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html" rel="alternate" type="text/html" title="formatting your jekyll theme (part 2)" /><published>2020-06-03T16:00:00+00:00</published><updated>2020-06-03T16:00:00+00:00</updated><id>https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2</id><content type="html" xml:base="https://eb45.github.io/archive/posts1/2020/06/03/formatting-optionspart2.html"><![CDATA[<p>Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website. <!--more--> 
+In this post, I’ll be walking you through the main components of a Jekyll website (Remember that this may vary slightly based on which theme you have chosen for yourself).</p>
+
+<h4>1) _Config.yml </h4>
+<p>This file should include all of the customization of your home page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">title:
+email: 
+description: </span><span class="o">&gt;-</span> <span class="c1"># this means to ignore newlines until "baseurl:"
+</span>
+  <span class="n">home</span>
+<span class="ss">baseurl: </span><span class="s2">""</span> <span class="c1"># the subpath of your site, e.g. /blog
+</span>
+<span class="ss">url: </span><span class="s2">""</span> <span class="c1"># the base hostname &amp; protocol for your site, e.g. http://example.com
+</span>
+<span class="ss">header_text:
+header_feature_image: </span></code></pre></figure>
+
+<p>Most of these are self-explanatory. The header_text and header_feature_image are quite cool. This is specifically for the type-on-strap theme I use where a huge banner lays across your screen and you can change the image or the text displayed on it.</p>
+
+<h4>2) Layouts and Includes</h4>
+<p>Layouts are the base of your website. Some different layouts may include your home page, a page that displays all of your posts, or the page that includes a search bar. Layouts take bits and pieces of _includes html files in order to piece themselves together. The example below is for a normal page that displays all posts on it. The actual code for “blog.html” is not shown, but the code is meant to show how a layout html page interacts with an _includes html page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">---</span>
+<span class="ss">layout: </span><span class="n">default</span>
+<span class="o">---</span>
+
+<span class="kp">include</span> <span class="n">blog</span><span class="p">.</span><span class="nf">html</span></code></pre></figure>
+
+<p>Most layouts rely on bits of _includes html files in order to display. Includes files are like the header, footer, each post, search bar, etc. All of your other files rely on these include files to get their html and css from. The example below displays the _includes code for a portfolio page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;!--</span> <span class="no">Portfolio</span> <span class="no">Grid</span> <span class="no">Section</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-grid"</span><span class="o">&gt;</span>
+    
+    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-cell"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">a</span> <span class="k">class</span><span class="o">=</span><span class="s2">"portfolio-link"</span> <span class="n">data</span><span class="o">-</span><span class="n">keyboard</span><span class="o">=</span><span class="s2">"true"</span> <span class="n">href</span><span class="o">=</span><span class="s2">"/archive/portfolio/compsci"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"caption"</span> <span class="n">title</span><span class="o">=</span><span class="s2">"comp sci tutorial videos"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"caption-content"</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s2">"fas fa-search-plus fa-3x"</span><span class="o">&gt;&lt;</span><span class="sr">/i&gt;
+                &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="sr">/div&gt;
+            &lt;img alt="" class="" src="/archive/im</span><span class="n">g</span><span class="o">/</span><span class="n">compsci</span><span class="p">.</span><span class="nf">png</span><span class="s2">"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="</span><span class="n">portfolio</span><span class="o">-</span><span class="n">cell</span><span class="s2">"&gt;
+        &lt;a class="</span><span class="n">portfolio</span><span class="o">-</span><span class="n">link</span><span class="s2">" data-keyboard="</span><span class="kp">true</span><span class="s2">" href="</span><span class="o">/</span><span class="n">portfolio</span><span class="o">/</span><span class="n">plantbot</span><span class="s2">"&gt;
+            &lt;div class="</span><span class="n">caption</span><span class="s2">" title="</span><span class="n">plant</span> <span class="n">bot</span><span class="s2">"&gt;
+                &lt;div class="</span><span class="n">caption</span><span class="o">-</span><span class="n">content</span><span class="s2">"&gt;
+                    &lt;i class="</span><span class="n">fas</span> <span class="n">fa</span><span class="o">-</span><span class="n">search</span><span class="o">-</span><span class="n">plus</span> <span class="n">fa</span><span class="o">-</span><span class="mi">3</span><span class="n">x</span><span class="s2">"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;img alt="" class="" src="</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">plantbot</span><span class="p">.</span><span class="nf">jpg</span><span class="s2">"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;</span></code></pre></figure>
+
+<h4>3) Posts</h4>
+<p>Posts are in their own folder. When you add another markdown file to the folder with the correct post formatting, Jekyll automatically adds this file to your collection of posts.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">layout: </span><span class="n">post</span>
+<span class="ss">title:  </span><span class="s2">""</span>
+<span class="ss">date:  
+tags: </span><span class="c1"># tags you put here are the tags which this post would be listed under in the tags section
+</span>
+<span class="ss">excerpt_separator: </span><span class="o">&lt;!--</span><span class="n">more</span><span class="o">--&gt;</span></code></pre></figure>
+
+<p>A really smart aspect of posts that Jekyll includes is the excerpt separator. This allows you to place a marker of where you want the excerpt of your post (shown on the home page) to end.</p>
+
+<h4>4) Pages</h4>
+<p>Pages are the tabs that show up at the top of your webpage. Examples are projects, search, tags, etc. They are quite simple to set up, only needing the layout, name, and possibly a feature image.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">layout: </span><span class="n">page</span>
+<span class="ss">title: </span><span class="n">about</span>
+<span class="ss">permalink: </span><span class="sr">/about/</span>
+<span class="n">feature</span><span class="o">-</span><span class="ss">img: </span><span class="s2">""</span></code></pre></figure>]]></content><author><name></name></author><category term="posts1" /><category term="jekyll website design" /><summary type="html"><![CDATA[Now, once we have a fully functioning website there are a couple steps to take to customize it to become your own. There are going to be multiple different folders which Jekyll uses to organize the different elements of your website.]]></summary></entry><entry><title type="html">setting up jekyll-based theme (part 1)</title><link href="https://eb45.github.io/archive/posts1/2020/05/11/jekyll-basedthemepart1.html" rel="alternate" type="text/html" title="setting up jekyll-based theme (part 1)" /><published>2020-05-11T23:40:00+00:00</published><updated>2020-05-11T23:40:00+00:00</updated><id>https://eb45.github.io/archive/posts1/2020/05/11/jekyll-basedthemepart1</id><content type="html" xml:base="https://eb45.github.io/archive/posts1/2020/05/11/jekyll-basedthemepart1.html"><![CDATA[<p>This is my first website using the Jekyll plug-in. I’ll be walking you through the steps to create a fully-functioning website using a Gem-based theme. On this particular website I used the <a href="https://github.com/sylhare/Type-on-Strap">type-on-strap theme</a>.</p>
+
+<!--more-->
+<p>Things you need:</p>
+<ul>
+  <li>access to a command prompt</li>
+  <li><a href="https://jekyllrb.com/docs/installation/">Ruby environment</a></li>
+</ul>
+
+<p>Now you’re going to want to install Jekyll and bundler gems to your Ruby environment. You can do this by going to the command prompt and typing in the following:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span> <span class="n">bundler</span>
+<span class="n">jekyll</span> <span class="n">new</span> <span class="n">myblog</span>
+<span class="n">cd</span> <span class="n">myblog</span>
+<span class="n">bundle</span> <span class="nb">exec</span> <span class="n">jekyll</span> <span class="n">serve</span>
+<span class="c1"># Browse to http://localhost:4000</span></code></pre></figure>
+
+<p>This should set up a website using the default jekyll theme: minima. Upon looking into the folder you created in your directory named “myblog”, pay close attention to two files: 1) _config.yml 2) Gemfile</p>
+
+<p>Now, we are going to browse for a theme. <a href="https://jekyllthemes.io/free">Jekyll Themes</a> allows you to browse through a multitude of free themes.</p>
+
+<p><img src="/archive/img/jekyllthemepreview.png" alt="Jekyll Theme" class="img-responsive" /></p>
+
+<p>Here, you can scroll through multiple demos of these themes and find one that you like. Let’s say I like the theme type-on-strap. Go to <a href="https://rubygems.org/">rubygems.org</a> and search for the theme that you want.</p>
+
+<p>A screen like this should show up. The code I circled is what you should substitute for in your Gemfile (gem “type-on-strap”). In your _config.yml file you should substitute “type-in-strap” instead of “minima” after the “theme:”.
+<img src="/archive/img/themegemfile.png" alt="Gemfile install" class="img-responsive" /></p>
+
+<p>Finally, look at the command I circled below to get an idea of what to put in your command prompt. Find the folder “myblog” in your directory and under it enter in the code circled. This should install the theme you want.
+<img src="/archive/img/themeinstall.png" alt="Theme install" class="img-responsive" /></p>
+
+<p>Now when you go to your local host you should see your website with your newly installed theme. Thanks for reading!</p>]]></content><author><name></name></author><category term="posts1" /><category term="jekyll website design" /><summary type="html"><![CDATA[This is my first website using the Jekyll plug-in. I’ll be walking you through the steps to create a fully-functioning website using a Gem-based theme. On this particular website I used the type-on-strap theme.]]></summary></entry></feed>
