@@ -73,13 +73,8 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-feed (0.17.0)
-      jekyll (>= 3.7, < 5.0)
-    jekyll-paginate (1.1.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
-    jekyll-seo-tag (2.9.0)
-      jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.21.2)
@@ -137,11 +132,6 @@ GEM
       google-protobuf (~> 4.31)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
-    type-on-strap (2.4.0)
-      jekyll (>= 3.8, < 5.0)
-      jekyll-feed (~> 0.9)
-      jekyll-paginate (~> 1.1)
-      jekyll-seo-tag (~> 2.6)
     unicode-display_width (2.6.0)
     webrick (1.9.2)
 
@@ -168,10 +158,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3)
-  jekyll-feed
-  jekyll-paginate
-  jekyll-seo-tag
-  type-on-strap (~> 2.4)
   webrick (~> 1.8)
 
 CHECKSUMS
@@ -208,10 +194,7 @@ CHECKSUMS
   http_parser.rb (0.8.1) sha256=9ae8df145b39aa5398b2f90090d651c67bd8e2ebfe4507c966579f641e11097a
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
-  jekyll-feed (0.17.0) sha256=689aab16c877949bb9e7a5c436de6278318a51ecb974792232fd94d8b3acfcc3
-  jekyll-paginate (1.1.0) sha256=880aadf4b02529a93541d508c5cbb744f014cbfc071d0263a31f25ec9066eb64
   jekyll-sass-converter (3.1.0) sha256=83925d84f1d134410c11d0c6643b0093e82e3a3cf127e90757a85294a3862443
-  jekyll-seo-tag (2.9.0) sha256=0260015a8e1df9bf195cdfb0c675b7b2883fd8cbf12556e1c1cbe36a831c6852
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
   json (2.21.2) sha256=1f1d3b7cf2b3ba1a69beca0bb6db13d5438b80bff3cd54cdaaa620b9b07c1c6a
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
@@ -244,7 +227,6 @@ CHECKSUMS
   sass-embedded (1.103.1-x86_64-linux-gnu) sha256=1056cb8031fbceee992a3d07c39e9118864aa280e1ba03d85bc5397bd4479333
   sass-embedded (1.103.1-x86_64-linux-musl) sha256=2f52d9f70030a2d8ddbff8289049df1d38f20f55ba05a87a0049d99fbaa1108c
   terminal-table (3.0.2) sha256=f951b6af5f3e00203fb290a669e0a85c5dd5b051b3b023392ccfd67ba5abae91
-  type-on-strap (2.4.0) sha256=7f08417147cfba49344d7f404ee0497bdfbdb731a74b9ad47c7304f1d10ea16d
   unicode-display_width (2.6.0) sha256=12279874bba6d5e4d2728cef814b19197dbb10d7a7837a869bab65da943b7f5a
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
 

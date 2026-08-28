@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.0
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/archive/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/archive/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/archive/img/logo.jpg" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+
+    <!-- Mermaid 8.13.10 -->
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/archive/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://eb45.github.io';
+      const isCookieConsent = '';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://eb45.github.io/archive/img/cssblog.jpg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>CSS integration | emma bennett</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="CSS integration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left." />
+<meta name="twitter:description" property="og:description" content="This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left." />
+<link rel="canonical" href="https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html" />
+<meta property="og:url" content="https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html" />
+<meta property="og:site_name" content="emma bennett" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="CSS integration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-27T00:00:00+00:00","datePublished":"2021-03-27T00:00:00+00:00","description":"This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.","headline":"CSS integration","mainEntityOfPage":{"@type":"WebPage","@id":"https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html"},"url":"https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="emma bennett" href="https://eb45.github.io/archive/feed.xml"/archive/>
+    <link type="application/atom+xml" rel="alternate" href="https://eb45.github.io/archive/feed.xml" title="emma bennett" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="CSS integration">
+    <meta name="twitter:description" content="This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or...">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://eb45.github.io/archive/img/cssblog.jpg">
+    <meta name="twitter:image:alt" content="CSS integration">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/archive/">
+			<img alt="logo img" class="avatar" src="/archive/img/logo.jpg" />
+		</a>
+        
+        <a class="site-title" aria-label="emma bennett" href="/archive/">
+        emma bennett
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="series" title="series" href="/archive/series/">
+                     series 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="projects" title="projects" href="/archive/projects/">
+                     projects 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="about" title="about" href="/archive/about/">
+                     about 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="find" title="find" href="/archive/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="tags" title="tags" href="/archive/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="CSS integration " aria-label="CSS integration" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="CSS+integration" class="title">CSS integration</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      March 27, 2021
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p>This article will discuss the basic knowledge needed in order for one to integrate CSS into bits of an HTML page. Examples include having an image fade in or having text slide onto the screen from right-to-left.</p>
+
+<!--more-->
+
+<p><b>Let’s start with the basics: Where exactly in your HTML file should your CSS reside?</b></p>
+
+<p>An HTML file uses the tag below to store the information on how HTML
+ elements should render on your website. Within this style tag is where the values (color, size, font, etc.) you want
+  to change should be declared.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span> <span class="n">here</span> <span class="n">is</span> <span class="n">where</span> <span class="n">you</span> <span class="n">would</span> <span class="n">add</span> <span class="n">any</span> <span class="no">CSS</span> <span class="n">code</span> <span class="o">&lt;</span><span class="sr">/style&gt; </span></code></pre></figure>
+
+<p><br />
+<b> So now that we’ve covered where the CSS resides, how is it formatted and implemented? </b></p>
+
+<p>For more straight-forward things like transforming text and margin height you use the name of the item (p, h1, h2
+, etc.) that you want to modify and in curly brackets put all of the different ‘transformations’. An example is shown
+ below:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">h1</span><span class="p">{</span>
+   <span class="n">text</span><span class="o">-</span><span class="ss">align: </span><span class="n">center</span><span class="p">;</span>
+   <span class="n">text</span><span class="o">-</span><span class="ss">transform: </span><span class="n">uppercase</span><span class="p">;</span>
+   <span class="ss">color: </span><span class="c1">#4CAF50;</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">top: </span><span class="mi">0</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">bottom: </span><span class="mi">0</span><span class="n">px</span><span class="p">;</span>
+ <span class="p">}</span>
+ </code></pre></figure>
+
+<p>Ok, now that we’ve covered the basics let’s delve into some more complicated CSS! <b> How do animations work in CSS
+? </b></p>
+
+<p>Let’s look at the code for moving text from the right side of the window to the left side. Credits to <a href="https://www.html.am/html-codes/marquees/css-slide-in-text.cfm">this website
+</a>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">div</span><span class="p">.</span><span class="nf">slide</span><span class="o">-</span><span class="n">left</span> <span class="p">{</span>
+  <span class="n">width</span><span class="p">:</span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="n">overflow</span><span class="ss">:hidden</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">div</span><span class="p">.</span><span class="nf">slide</span><span class="o">-</span><span class="n">left</span> <span class="nb">p</span> <span class="p">{</span>
+  <span class="ss">animation: </span><span class="n">slide</span><span class="o">-</span><span class="n">left</span> <span class="mi">12</span><span class="n">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="vi">@keyframes</span> <span class="n">slide</span><span class="o">-</span><span class="n">left</span> <span class="p">{</span>
+  <span class="n">from</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">left: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+    <span class="ss">width: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">to</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="o">-</span><span class="ss">left: </span><span class="mi">0</span><span class="o">%</span><span class="p">;</span>
+    <span class="ss">width: </span><span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><em>coding tid-bit</em> - @keyframes specify the animation code by declaring the style change at the start to the end
+ (depicted by the ‘from’ and ‘to’)</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=CSS+integration%20https%3A%2F%2Feb45.github.io%2Fposts1%2F2021%2F03%2F27%2FCSS-integration.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+            
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html&title=CSS+integration%20%7C%20emma+bennett"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+           
+        <li>
+            <a href="mailto:?subject=CSS integration%20%7C%20emma bennett&body=https://eb45.github.io/archive/posts1/2021/03/27/CSS-integration.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="#jekyll+website+design">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> jekyll website design</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="creating jekyll post directories (part 3)" href="/archive/posts1/2021/02/03/directoriespart3.html">
+            <p>Next post</p>
+            creating jekyll post directories (part 3)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+  header#main { background-image: url('/archive/img/cssblog.jpg'); }
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a></p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/archive/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/eb45"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://instagram.com/emma.bbennett"
+               title="Follow on Instagram"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
