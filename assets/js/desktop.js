@@ -215,7 +215,6 @@
   const files = {
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
     README: "A tiny shell on a portfolio.\nTry help, ls hobbies, ls photos, ls projects.",
-    "hobbies/fsae.txt": "Duke Motorsports Formula SAE — electrical team.",
     "photos/README": "No photos in this directory.\nThis shell is not a camera roll.",
     "projects/plm.txt": "PLM Research.",
     "projects/sea-temp.txt": "Subsurface sea temperature prediction.",
@@ -224,7 +223,7 @@
   };
   const listings = {
     "": [".profile", "README", "hobbies/", "photos/", "projects/"],
-    hobbies: ["fsae.txt"],
+    hobbies: ["running", "reading", "baking", "playing piano", "playing guitar"],
     photos: ["README"],
     projects: ["plm.txt", "pediatric.txt", "sea-temp.txt", "ttc.txt"],
   };
@@ -292,7 +291,7 @@
   function echo(text, className) {
     if (!welcomeLog || text == null || text === "") return;
     const pre = document.createElement("pre");
-    pre.className = className || "welcome-echo";
+    pre.className = className || "welcome-echo welcome-out";
     pre.textContent = text;
     welcomeLog.appendChild(pre);
   }
@@ -396,13 +395,8 @@
 
     if (cmd === "help" || cmd === "?" || cmd === "man") return { text: helpText() };
     if (cmd === "ls") return { text: runLs(args) };
-    if (cmd === "cat" || cmd === "less" || cmd === "more") {
-      const text = runCat(args);
-      const path = args[0] ? resolvePath(args[0]) : "";
-      const highlight = path === ".profile" || path === "hobbies/fsae.txt";
-      return { text, tone: highlight ? "welcome-echo welcome-out" : "" };
-    }
-    if (cmd === "whoami") return { text: "Emma Bennett", tone: "welcome-echo welcome-out" };
+    if (cmd === "cat" || cmd === "less" || cmd === "more") return { text: runCat(args) };
+    if (cmd === "whoami") return { text: "Emma Bennett" };
     if (cmd === "pwd") return { text: HOME };
     if (cmd === "clear") {
       if (welcomeLog) welcomeLog.replaceChildren();
@@ -422,7 +416,7 @@
     }
     if (cmd === "cd") {
       if (!args[0] || args[0] === "~" || args[0] === HOME) return { text: "" };
-      return { text: "cd: this shell stays in ~. try ls " + args[0].replace(/\/+$/, "") };
+      return { text: "cd: this shell stays in ~" };
     }
     if (cmd === "sudo") return { text: "emma is not in the sudoers file. This incident will be reported." };
     if (cmd === "vim" || cmd === "vi" || cmd === "nvim") return { text: "not today. try cat." };
