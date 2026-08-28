@@ -463,24 +463,67 @@
     welcomeIn.value = "";
   });
 
-  welcomeIn?.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp") {
-      event.preventDefault();
+  function historyKey(key) {
+    if (key === "ArrowUp") {
       if (!cmdHistory.length) return;
       historyAt = Math.max(0, historyAt - 1);
       welcomeIn.value = cmdHistory[historyAt] || "";
       welcomeIn.setSelectionRange(welcomeIn.value.length, welcomeIn.value.length);
     }
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
+    if (key === "ArrowDown") {
       historyAt = Math.min(cmdHistory.length, historyAt + 1);
       welcomeIn.value = cmdHistory[historyAt] || "";
+    }
+  }
+
+  welcomeIn?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      event.preventDefault();
+      historyKey(event.key);
     }
   });
 
   document.getElementById("about")?.addEventListener("pointerdown", (event) => {
-    if (event.target.closest("a, button, #welcome-in")) return;
+    if (event.target.closest("a, button")) return;
     welcomeIn?.focus();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!welcomeIn) return;
+    if (win?.classList.contains("is-shut")) return;
+    if (!document.getElementById("about")?.classList.contains("is-on")) return;
+    if (!spot?.hidden) return;
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (event.key === "Tab" || event.key === "Escape") return;
+
+    const t = event.target;
+    if (t && t !== welcomeIn && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) {
+      return;
+    }
+
+    if (t !== welcomeIn) welcomeIn.focus();
+    if (t === welcomeIn) return;
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+      run(welcomeIn.value);
+      welcomeIn.value = "";
+      return;
+    }
+    if (event.key === "Backspace") {
+      event.preventDefault();
+      welcomeIn.value = welcomeIn.value.slice(0, -1);
+      return;
+    }
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      event.preventDefault();
+      historyKey(event.key);
+      return;
+    }
+    if (event.key.length === 1) {
+      event.preventDefault();
+      welcomeIn.value += event.key;
+    }
   });
 
   const hash = location.hash.slice(1);

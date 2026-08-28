@@ -326,6 +326,7 @@ a:hover { color: var(--olive); }
 
 .stage {
   position: absolute;
+  z-index: 10;
   inset: 3.55rem 8rem 2.4rem 8rem;
   display: flex;
   align-items: center;
@@ -393,6 +394,7 @@ a:hover { color: var(--olive); }
   background: var(--term);
   color: var(--term-ink);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
+  pointer-events: auto;
 }
 
 .welcome-pane.is-on {
@@ -539,6 +541,7 @@ a:hover { color: var(--olive); }
   font-size: inherit;
   line-height: inherit;
   user-select: text;
+  pointer-events: auto;
 }
 
 .welcome-caret {
