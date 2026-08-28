@@ -1,0 +1,124 @@
+---
+layout: desktop
+title: Emma Bennett
+---
+
+<div class="desk">
+  <nav class="icons" aria-label="Desktop">
+    <button type="button" class="icon" data-open="plm">
+      <span class="genome" aria-hidden="true">
+        <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
+      </span>
+      <span>PLM Research</span>
+    </button>
+
+    <div class="project-group">
+      <button type="button" class="icon" data-open="projects" data-spread aria-expanded="false">
+        <span class="folder" aria-hidden="true"></span>
+        <span>Projects</span>
+      </button>
+      <div class="icon-spread">
+        <button type="button" class="icon" data-open="sea">
+          <span class="sea-face" aria-hidden="true">
+            <img src="{{ '/assets/img/sea.png' | relative_url }}" alt="" width="512" height="512">
+          </span>
+          <span>Subsurface sea temp</span>
+        </button>
+        <button type="button" class="icon" data-open="pediatric">
+          <span class="pediatric-face" aria-hidden="true">
+            <img src="{{ '/assets/img/pediatric.png' | relative_url }}" alt="" width="512" height="512">
+          </span>
+          <span>Pediatric domain adaptation</span>
+        </button>
+        <button type="button" class="icon" data-open="ttc">
+          <span class="ttc-face" aria-hidden="true">
+            <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
+          </span>
+          <span>AV TTC prediction</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="icons icons-right" aria-label="Resume">
+    <a class="icon" href="{{ '/assets/emma-bennett-resume.pdf' | relative_url }}">
+      <span class="resume-face" aria-hidden="true"></span>
+      <span>Resume</span>
+    </a>
+  </nav>
+
+  <main class="stage">
+    <section class="win" aria-label="Emma Bennett">
+      <header class="bar">
+        <button type="button" class="back" data-open="projects" hidden aria-label="Back to projects">
+          <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M10.2 2.6 4.8 8l5.4 5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></svg>
+        </button>
+        <span class="path">C:\EMMA\about</span>
+        <button type="button" class="x" data-close aria-label="Close">×</button>
+      </header>
+
+      <div class="pane welcome-pane is-on" id="about">
+        <div class="welcome">
+          <p class="welcome-banner">* Welcome to my Portfolio</p>
+          <h1 class="welcome-title">Welcome to my Portfolio</h1>
+          <pre class="welcome-mark" aria-hidden="true">██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝</pre>
+          <pre class="welcome-term">emma@duke ~ % whoami
+<span class="welcome-out">Emma Bennett</span>
+emma@duke ~ % cat .profile
+<span class="welcome-out">Duke University</span>
+<span class="welcome-out">Electrical/Computer Engineering and Computer Science</span>
+emma@duke ~ % <span class="cursor" aria-hidden="true"></span></pre>
+        </div>
+      </div>
+
+      <div class="pane" id="about-site">
+        <p class="note">This site is a desktop.</p>
+        <p class="note">Use the menus along the top, or the widgets on the desk. Open Projects to spread the work out on the desktop. Resume sits on the right.</p>
+      </div>
+
+      <div class="pane" id="plm">
+        <p class="note">PLM Research</p>
+      </div>
+
+      <div class="pane" id="projects">
+        <div class="folder-grid">
+          <button type="button" class="icon" data-open="sea">
+            <span class="sea-face" aria-hidden="true">
+              <img src="{{ '/assets/img/sea.png' | relative_url }}" alt="" width="512" height="512">
+            </span>
+            <span>Subsurface sea temp</span>
+          </button>
+          <button type="button" class="icon" data-open="pediatric">
+            <span class="pediatric-face" aria-hidden="true">
+            <img src="{{ '/assets/img/pediatric.png' | relative_url }}" alt="" width="512" height="512">
+          </span>
+            <span>Pediatric domain adaptation</span>
+          </button>
+          <button type="button" class="icon" data-open="ttc">
+            <span class="ttc-face" aria-hidden="true">
+            <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
+          </span>
+            <span>AV TTC prediction</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="pane" id="sea">
+        <p class="note">Subsurface sea temperature prediction</p>
+      </div>
+
+      <div class="pane" id="pediatric">
+        <p class="note">Pediatric domain adaptation</p>
+      </div>
+
+      <div class="pane" id="ttc">
+        <p class="note">Autonomous vehicle time-to-collision (TTC) prediction</p>
+      </div>
+    </section>
+  </main>
+</div>

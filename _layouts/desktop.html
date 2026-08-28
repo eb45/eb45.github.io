@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/desktop.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+  <nav class="menubar" aria-label="Menu">
+    <div class="menubar-left">
+      <a class="brand" href="{{ '/' | relative_url }}#about" data-open="about" title="Emma Bennett">eb</a>
+
+      <div class="menu">
+        <button type="button" class="menu-btn">Projects</button>
+        <div class="menu-list">
+          <button type="button" data-open="sea">Subsurface sea temp</button>
+          <button type="button" data-open="pediatric">Pediatric domain adaptation</button>
+          <button type="button" data-open="ttc">Vehicle TTC prediction</button>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button" class="menu-btn">Contact</button>
+        <div class="menu-list">
+          <a href="mailto:emmabennett135@gmail.com">Email</a>
+          <a href="https://github.com/eb45">GitHub</a>
+          <a href="https://www.linkedin.com/in/emma-bennett4">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button" class="menu-btn">Resume</button>
+        <div class="menu-list">
+          <a href="{{ '/assets/emma-bennett-resume.pdf' | relative_url }}">Open PDF</a>
+          <a href="https://www.linkedin.com/in/emma-bennett4">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button" class="menu-btn">About</button>
+        <div class="menu-list">
+          <button type="button" data-open="about">About me</button>
+          <button type="button" data-open="about-site">About this website</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="menubar-right">
+      <button type="button" class="bar-icon" id="spot-btn" aria-label="Search" title="Search">
+        <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9.6 9.6 14 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="square"/></svg>
+      </button>
+      <a class="bar-icon" href="mailto:emmabennett135@gmail.com" aria-label="Email" title="Email">
+        <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M2 4.2 8 8.4 14 4.2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+      </a>
+      <a class="bar-icon" href="https://www.linkedin.com/in/emma-bennett4" aria-label="LinkedIn" title="LinkedIn">in</a>
+      <a class="bar-icon" href="https://github.com/eb45" aria-label="GitHub" title="GitHub">gh</a>
+      <button type="button" class="bar-icon wifi" id="activity-btn" aria-label="GitHub activity" title="GitHub activity" aria-expanded="false" aria-controls="activity">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M1.5 7c3.6-3.2 9.4-3.2 13 0" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M3.8 9.1c2.5-2.2 5.9-2.2 8.4 0" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6.2 11.1c1.1-.9 2.5-.9 3.6 0" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="13.2" r=".9" fill="currentColor"/></svg>
+      </button>
+      <time class="clock" id="clock"></time>
+    </div>
+  </nav>
+
+  <div class="activity" id="activity" hidden>
+    <div class="activity-card">
+      <header class="activity-head">
+        <span>GitHub activity</span>
+        <a href="https://github.com/eb45">eb45</a>
+      </header>
+      <div class="graph-board">
+        <div class="wdays" aria-hidden="true">
+          <span></span><span>M</span><span></span><span>W</span><span></span><span>F</span><span></span>
+        </div>
+        <div class="graph-main">
+          <div class="months" id="activity-months"></div>
+          <div class="graph" id="activity-graph">Loading…</div>
+        </div>
+      </div>
+      <footer class="activity-foot">
+        <p class="activity-meta" id="activity-meta"></p>
+        <p class="activity-legend" aria-hidden="true">Less <span class="day l0"></span><span class="day l1"></span><span class="day l2"></span><span class="day l3"></span><span class="day l4"></span> More</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="spot" id="spot" hidden>
+    <div class="spot-card">
+      <input type="search" id="spot-input" placeholder="Jump to a project" autocomplete="off">
+      <ul id="spot-list"></ul>
+    </div>
+  </div>
+
+  {{ content }}
+  <script src="{{ '/assets/js/desktop.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+</body>
+</html>
