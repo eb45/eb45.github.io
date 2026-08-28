@@ -1,0 +1,499 @@
+:root {
+  --paper: #F7F4EC;
+  --ink: #1A1A18;
+  --blue: #2C3E5A;
+  --trail: #4A6B5A;
+  --rule: #D8D2C2;
+  --data: #6B6759;
+  --rail-x: 2.15rem;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Inter, Arial, sans-serif;
+  font-size: 17.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  font-feature-settings: "tnum" 1;
+  position: relative;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 20;
+  background: var(--paper);
+  color: var(--blue);
+}
+
+.rail {
+  position: absolute;
+  left: var(--rail-x);
+  top: 0;
+  bottom: 0;
+  width: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.rail-track,
+.rail-progress {
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  bottom: 4rem;
+  width: 1px;
+  background: var(--rule);
+  transform: translateX(-0.5px);
+}
+
+.rail-progress {
+  background: var(--blue);
+  top: 4rem;
+  bottom: auto;
+  height: 0;
+  opacity: 0.85;
+}
+
+.rail-here {
+  position: fixed;
+  left: var(--rail-x);
+  top: 40vh;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--blue) 18%, transparent);
+  z-index: 3;
+}
+
+.log {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem 4.25rem;
+  position: relative;
+}
+
+.kicker {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 9vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+  margin-top: 1.15rem;
+}
+
+.thesis {
+  margin: 1.35rem 0 0;
+  max-width: 28rem;
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.here-label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 2.4rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--data);
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--blue) 50%, transparent);
+  animation: pulse 2.4s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--blue) 45%, transparent); }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-head {
+  margin-bottom: 2.2rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.card {
+  position: relative;
+  padding: 1.6rem 0 1.85rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.card:last-child {
+  padding-bottom: 0.4rem;
+}
+
+.waypoint-id {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.card h3,
+.trip-log h3,
+.run-place {
+  margin: 0 0 0.45rem;
+  font-size: 1.28rem;
+  font-weight: 650;
+}
+
+.lede {
+  margin: 0;
+  color: var(--ink);
+  max-width: 38rem;
+}
+
+.chips,
+.stats,
+.waypoints-list,
+.sheet {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.95rem;
+}
+
+.chips li {
+  border: 1px solid var(--rule);
+  padding: 0.18rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--data);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.1rem;
+}
+
+.stats .num {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.stats .unit {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--data);
+}
+
+[data-waypoint] {
+  position: relative;
+}
+
+[data-waypoint]::before {
+  content: "";
+  position: absolute;
+  left: calc(-4.25rem + var(--rail-x) - 4px);
+  top: 1.75rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid var(--blue);
+  transform: scale(0.6);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease, background 0.3s ease;
+}
+
+.hero[data-waypoint]::before,
+.end[data-waypoint]::before,
+.section[data-waypoint]::before {
+  top: auto;
+}
+
+.hero[data-waypoint]::before {
+  top: calc(50% - 4px);
+}
+
+.section[data-waypoint]::before {
+  top: 4.9rem;
+}
+
+.end[data-waypoint]::before {
+  top: 5.1rem;
+}
+
+[data-waypoint].in-view::before {
+  transform: scale(1);
+  opacity: 1;
+  background: var(--blue);
+}
+
+.run-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.map {
+  width: 100%;
+  height: 22rem;
+  background: color-mix(in srgb, var(--rule) 35%, var(--paper));
+  border: 1px solid var(--rule);
+}
+
+.map-wide { height: 26rem; }
+
+.spark {
+  width: 100%;
+  height: 64px;
+  display: block;
+  overflow: visible;
+}
+
+.spark path {
+  fill: none;
+  stroke: var(--trail);
+  stroke-width: 1.5;
+}
+
+.spark .fill {
+  stroke: none;
+  fill: color-mix(in srgb, var(--trail) 12%, transparent);
+}
+
+.routes-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.trip-log {
+  border: 1px solid var(--rule);
+  padding: 1.2rem 1.15rem 1.3rem;
+  min-height: 8rem;
+}
+
+.trip-region {
+  margin: 0 0 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--data);
+}
+
+.sheet {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--rule);
+}
+
+.sheet li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.sheet figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sheet img {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+  filter: saturate(0.92);
+}
+
+.sheet figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.85rem;
+  background: color-mix(in srgb, var(--ink) 55%, transparent);
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-feature-settings: "tnum" 1;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.sheet figure:hover figcaption,
+.sheet figure:focus-within figcaption {
+  opacity: 1;
+  transform: none;
+}
+
+.end {
+  padding: 4.5rem 0 2rem;
+  position: relative;
+}
+
+.coords {
+  margin: 0 0 1.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: 0.04em;
+}
+
+.waypoints-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+}
+
+.waypoints-list li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.waypoints-list .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex: none;
+}
+
+a {
+  color: var(--blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover { text-decoration-thickness: 2px; }
+
+.leaflet-container {
+  background: #ece7db;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--rule);
+}
+
+@media (min-width: 720px) {
+  :root { --rail-x: 2.6rem; }
+  .log { padding-left: 5.5rem; padding-right: 2rem; }
+  [data-waypoint]::before { left: calc(-5.5rem + var(--rail-x) - 4px); }
+  .sheet {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  .sheet li:first-child {
+    grid-row: 1 / span 2;
+  }
+  .sheet li:first-child img { height: 100%; min-height: 28rem; }
+  .routes-grid {
+    grid-template-columns: 1.4fr 0.9fr;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 719px) {
+  .rail-here { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pulse { animation: none; }
+  [data-waypoint]::before {
+    transform: scale(1);
+    opacity: 1;
+    background: var(--blue);
+    transition: none;
+  }
+}

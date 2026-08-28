@@ -1,0 +1,156 @@
+---
+layout: log
+title: Emma Bennett — Field Log
+description: A field log of builds, runs, and routes.
+---
+
+<main id="log" class="log">
+  <header class="hero" data-waypoint="00" id="start">
+    <p class="kicker">Field log</p>
+    <h1>Emma Bennett</h1>
+    <p class="thesis">ECE &amp; CS at Duke. Builds, miles, and field notes in one continuous log.</p>
+    <p class="here-label"><span class="pulse" aria-hidden="true"></span> Current location · Durham, NC</p>
+  </header>
+
+  <section class="section" id="builds" aria-labelledby="builds-label">
+    <header class="section-head">
+      <p class="kicker" id="builds-label">Logged builds</p>
+      <h2>Projects as waypoints</h2>
+    </header>
+
+    <article class="card" data-waypoint="01">
+      <p class="waypoint-id">Waypoint 01</p>
+      <h3>LinkedIn</h3>
+      <p class="lede">LLM-driven autofixer pipeline for sync-to-async Python migrations — agents that open pull requests on their own.</p>
+      <ul class="chips" aria-label="Stack">
+        <li>LangGraph</li>
+        <li>LangSmith</li>
+        <li>Python</li>
+        <li>Deep agents</li>
+      </ul>
+    </article>
+
+    <article class="card" data-waypoint="02">
+      <p class="waypoint-id">Waypoint 02</p>
+      <h3>MITRE</h3>
+      <p class="lede">LLM-driven cyber agents on a GPU cluster, communicating to map a network and capture a flag in live-fire environments.</p>
+      <ul class="chips">
+        <li>Python</li>
+        <li>Jupyter</li>
+        <li>LLMs</li>
+      </ul>
+      <ul class="stats" aria-label="Highlights">
+        <li><span class="num">2024</span><span class="unit">Black Hat</span></li>
+      </ul>
+    </article>
+
+    <article class="card" data-waypoint="03">
+      <p class="waypoint-id">Waypoint 03</p>
+      <h3>CrowdStrike</h3>
+      <p class="lede">Data lake for security monitoring of previously siloed third-party apps, plus an automated Adaptive Shield ↔ ServiceNow ticket loop.</p>
+      <ul class="chips">
+        <li>Azure</li>
+        <li>Databricks</li>
+        <li>Apache Spark</li>
+        <li>Python</li>
+      </ul>
+    </article>
+
+    <article class="card" data-waypoint="04">
+      <p class="waypoint-id">Waypoint 04</p>
+      <h3>Duke Research</h3>
+      <p class="lede">PLM pooling strategy benchmarking for protein fitness prediction on FLIP GB1, with Professor NaderiAlizadeh.</p>
+      <ul class="chips">
+        <li>Protein LMs</li>
+        <li>FLIP GB1</li>
+      </ul>
+      <ul class="stats">
+        <li><span class="num">432</span><span class="unit">runs</span></li>
+        <li><span class="num">6</span><span class="unit">backbones</span></li>
+        <li><span class="num">6</span><span class="unit">pooling strategies</span></li>
+      </ul>
+    </article>
+
+    <article class="card" data-waypoint="05">
+      <p class="waypoint-id">Waypoint 05</p>
+      <h3>Duke FSAE</h3>
+      <p class="lede">Electrics and PCB work on the Formula SAE car — hardware that has to survive the track, not just the bench.</p>
+      <ul class="chips">
+        <li>PCB</li>
+        <li>Electrics</li>
+        <li>Duke Motorsports</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="section" id="runs" data-waypoint="06" aria-labelledby="runs-label">
+    <header class="section-head">
+      <p class="kicker" id="runs-label">Runs</p>
+      <h2>Actual miles</h2>
+    </header>
+    <div class="run-block">
+      <div class="run-meta">
+        <p class="waypoint-id">Campus Drive</p>
+        <p class="run-place">Durham, NC</p>
+        <ul class="stats" id="run-stats">
+          <li><span class="num" data-stat="km">—</span><span class="unit">km</span></li>
+          <li><span class="num" data-stat="gain">—</span><span class="unit">m gain</span></li>
+        </ul>
+      </div>
+      <div id="run-map" class="map" role="img" aria-label="Map of the Campus Drive run"></div>
+      <svg id="run-spark" class="spark" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true"></svg>
+    </div>
+  </section>
+
+  <section class="section" id="routes" data-waypoint="07" aria-labelledby="routes-label">
+    <header class="section-head">
+      <p class="kicker" id="routes-label">Routes</p>
+      <h2>Places logged</h2>
+    </header>
+    <div class="routes-grid">
+      <div id="routes-map" class="map map-wide" role="img" aria-label="Map of logged travel routes"></div>
+      <aside class="trip-log" id="trip-log">
+        <p class="waypoint-id">Trip log</p>
+        <h3 id="trip-title">Select a pin</h3>
+        <p class="trip-region" id="trip-region">New Zealand &amp; Virginia</p>
+        <p class="lede" id="trip-notes">Click a waypoint on the map to open the entry.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="captures" data-waypoint="08" aria-labelledby="captures-label">
+    <header class="section-head">
+      <p class="kicker" id="captures-label">Captures</p>
+      <h2>Contact sheet</h2>
+    </header>
+    <ul class="sheet">
+      <li>
+        <figure>
+          <img src="{{ '/assets/img/captures/sunflower.jpg' | relative_url }}" alt="Sunflowers in a field at golden hour" width="1600" height="2133" loading="lazy">
+          <figcaption><span>Virginia</span><span>Golden hour</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="{{ '/assets/img/captures/sky.jpg' | relative_url }}" alt="Storm light and clouds at sunset" width="1600" height="1200" loading="lazy">
+          <figcaption><span>Shenandoah</span><span>Skyline Drive</span></figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="{{ '/assets/img/captures/nightsky.jpg' | relative_url }}" alt="Milky Way over a dark sky" width="1200" height="1600" loading="lazy">
+          <figcaption><span>Durham, NC</span><span>Night</span></figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="end" data-waypoint="09" id="end">
+    <p class="kicker">End of log</p>
+    <p class="coords">36.0014° N&nbsp;&nbsp;78.9382° W</p>
+    <ul class="waypoints-list">
+      <li><span class="dot"></span><a href="https://github.com/eb45">github.com/eb45</a></li>
+      <li><span class="dot"></span><a href="https://www.linkedin.com/in/emma-bennett4">linkedin.com/in/emma-bennett4</a></li>
+    </ul>
+  </footer>
+</main>
