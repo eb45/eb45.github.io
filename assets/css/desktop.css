@@ -15,6 +15,7 @@
 html, body {
   margin: 0;
   height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -421,7 +422,14 @@ a:hover { color: var(--olive); }
   max-width: 100%;
 }
 
-.welcome-title {
+.welcome-mark-short {
+  display: none;
+  margin: 0 0 1.15rem;
+  color: var(--term-accent);
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
   position: absolute;
   width: 1px;
   height: 1px;
@@ -677,30 +685,123 @@ h1 {
 }
 
 @media (max-width: 720px) {
-  .clock { display: none; }
+  .clock,
+  .hide-phone { display: none; }
 
   .menubar {
-    top: 0;
-    height: 2.15rem;
-    font-size: 0.7rem;
+    height: 2.4rem;
+    padding: 0 0.2rem;
+    font-size: 0.68rem;
   }
 
-  .menu-btn { padding: 0.42rem 0.4rem 0; }
+  .brand,
+  .menu-btn,
+  .bar-icon {
+    padding: 0 0.4rem;
+  }
+
+  .menu-btn { padding-top: 0.38rem; }
+
+  .menubar-left {
+    overflow-x: auto;
+  }
+
+  .menubar-left .menu:nth-last-child(-n+2) .menu-list {
+    left: auto;
+    right: 0;
+  }
+
+  .menu-list a,
+  .menu-list button {
+    padding: 0.5rem 0.75rem;
+  }
 
   .icons {
-    top: 3.5rem;
-    left: 0.6rem;
+    top: auto;
+    bottom: 0.55rem;
+    left: 0.35rem;
+    right: 4.6rem;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.35rem;
   }
 
   .icons-right {
+    top: auto;
+    bottom: 0.55rem;
     left: auto;
-    right: 0.6rem;
+    right: 0.35rem;
   }
 
-  .stage { inset: 3.5rem 6.4rem 1.2rem 6.4rem; }
+  .project-group {
+    flex-direction: column-reverse;
+    gap: 0.7rem;
+  }
+
+  .icon,
+  .widget {
+    width: 4.6rem;
+    font-size: 0.58rem;
+  }
+
+  .stage {
+    inset: 2.7rem 0.45rem 5.4rem 0.45rem;
+  }
 
   .win {
     width: 100%;
-    height: min(34rem, 100%);
+    height: 100%;
+  }
+
+  .welcome-pane.is-on {
+    padding: 0.85rem 0.75rem 1rem;
+  }
+
+  .welcome-banner {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.65rem;
+    max-width: 100%;
+  }
+
+  .welcome-mark { display: none; }
+
+  .welcome-mark-short { display: block; }
+
+  .welcome-term {
+    font-size: 0.74rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .welcome-out { font-size: 0.92rem; }
+
+  .spot {
+    padding-top: 5.5rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  .spot-card { width: 100%; }
+
+  .spot-card input { font-size: 1rem; }
+
+  .activity {
+    top: 2.4rem;
+    right: 0.4rem;
+    left: 0.4rem;
+  }
+
+  .activity-card { width: 100%; }
+
+  .activity-foot {
+    flex-wrap: wrap;
+  }
+
+  .day,
+  .months span {
+    width: 8px;
+    height: 8px;
+    flex-basis: 8px;
   }
 }
