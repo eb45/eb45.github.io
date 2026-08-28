@@ -214,18 +214,16 @@
   const HOME = "/Users/emma";
   const files = {
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
-    README: "A tiny shell on a portfolio.\nTry help, ls hobbies, ls photos, ls projects.",
-    "photos/README": "No photos in this directory.\nThis shell is not a camera roll.",
-    "projects/plm.txt": "PLM Research.",
-    "projects/sea-temp.txt": "Subsurface sea temperature prediction.",
-    "projects/pediatric.txt": "Pediatric domain adaptation.",
-    "projects/ttc.txt": "Autonomous vehicle time-to-collision prediction.",
   };
   const listings = {
-    "": [".profile", "README", "hobbies/", "photos/", "projects/"],
+    "": [".profile", "hobbies/", "projects/"],
     hobbies: ["running", "reading", "baking", "playing piano", "playing guitar"],
-    photos: ["README"],
-    projects: ["plm.txt", "pediatric.txt", "sea-temp.txt", "ttc.txt"],
+    projects: [
+      "PLM Research",
+      "Subsurface sea temp",
+      "Pediatric domain adaptation",
+      "AV TTC prediction",
+    ],
   };
   const openMap = {
     projects: "projects",
@@ -315,7 +313,6 @@
       "  help                 this list",
       "  ls [dir]             list files",
       "                       ls hobbies",
-      "                       ls photos",
       "                       ls projects",
       "  cat <file>           read a file",
       "  whoami",
