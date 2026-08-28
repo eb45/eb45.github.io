@@ -437,6 +437,8 @@ a:hover { color: var(--olive); }
   font-weight: 500;
   letter-spacing: 0.14em;
 }
+
+.welcome-title {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -457,18 +459,80 @@ a:hover { color: var(--olive); }
   font-weight: 500;
 }
 
-.cursor {
-  display: inline-block;
-  width: 0.5em;
-  height: 1em;
-  margin-left: 0.08em;
-  background: var(--term-ink);
-  vertical-align: -0.12em;
-  animation: blink 1.1s step-end infinite;
+.welcome-shell {
+  width: 100%;
+  margin-top: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
+.welcome-log {
+  width: 100%;
+}
+
+.welcome-replay,
+.welcome-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  width: 100%;
+  margin: 0;
+}
+
+.welcome-ps1 {
+  flex: none;
+  color: var(--term-ink);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: inherit;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.welcome-cmd {
+  min-width: 0;
+  color: var(--term-ink);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.welcome-echo {
+  margin: 0 0 0.15rem;
+  color: var(--term-ink);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.welcome-echo.welcome-out {
+  color: #c9d3b8;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+#welcome-form {
+  margin: 0;
+}
+
+#welcome-in {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--term-ink);
+  caret-color: var(--term-ink);
+  outline: none;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.note code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.84em;
 }
 
 .pic {
@@ -781,13 +845,17 @@ h1 {
 
   .welcome-mark-short { display: block; }
 
-  .welcome-term {
+  .welcome-term,
+  .welcome-shell {
     font-size: 0.74rem;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
 
-  .welcome-out { font-size: 0.92rem; }
+  .welcome-out,
+  .welcome-echo.welcome-out { font-size: 0.92rem; }
+
+  #welcome-in { font-size: 16px; }
 
   .spot {
     padding-top: 5.5rem;

@@ -60,6 +60,7 @@
     }
     if (projectGroup?.classList.contains("is-open")) spreadBtn?.classList.add("is-open");
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
+    if (id === "about") focusWelcome();
   }
 
   function hideWin() {
@@ -202,6 +203,294 @@
       closeSpot();
       show(hits[spotIndex].open);
     }
+  });
+
+  const welcomeLog = document.getElementById("welcome-log");
+  const welcomeForm = document.getElementById("welcome-form");
+  const welcomeIn = document.getElementById("welcome-in");
+  const resumeHref =
+    document.querySelector(".icons-right a.icon")?.getAttribute("href") ||
+    "/assets/emma-bennett-resume.pdf";
+  const HOME = "/Users/emma";
+  const files = {
+    ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
+    README: "A tiny shell on a portfolio.\nTry help, ls hobbies, ls photos, ls projects.",
+    "hobbies/fsae.txt": "Duke Motorsports Formula SAE — electrical team.",
+    "photos/README": "No photos in this directory.\nThis shell is not a camera roll.",
+    "projects/plm.txt": "PLM Research.",
+    "projects/sea-temp.txt": "Subsurface sea temperature prediction.",
+    "projects/pediatric.txt": "Pediatric domain adaptation.",
+    "projects/ttc.txt": "Autonomous vehicle time-to-collision prediction.",
+  };
+  const listings = {
+    "": [".profile", "README", "hobbies/", "photos/", "projects/"],
+    hobbies: ["fsae.txt"],
+    photos: ["README"],
+    projects: ["plm.txt", "pediatric.txt", "sea-temp.txt", "ttc.txt"],
+  };
+  const openMap = {
+    projects: "projects",
+    project: "projects",
+    plm: "plm",
+    research: "plm",
+    sea: "sea",
+    "sea-temp": "sea",
+    pediatric: "pediatric",
+    ttc: "ttc",
+    about: "about",
+    site: "about-site",
+    "about-site": "about-site",
+  };
+  const cmdHistory = [];
+  let historyAt = 0;
+
+  function focusWelcome() {
+    if (!welcomeIn) return;
+    if (!document.getElementById("about")?.classList.contains("is-on")) return;
+    if (!document.getElementById("spot")?.hidden) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    welcomeIn.focus({ preventScroll: true });
+  }
+
+  function normalize(raw) {
+    if (!raw || raw === "~" || raw === "." || raw === "./") return "";
+    let path = String(raw).trim();
+    if (path === HOME || path === HOME + "/") return "";
+    if (path.startsWith("~/")) path = path.slice(2);
+    else if (path.startsWith(HOME + "/")) path = path.slice(HOME.length + 1);
+    else if (path.startsWith("/")) return null;
+    path = path.replace(/\/+$/, "");
+    const parts = [];
+    for (const part of path.split("/")) {
+      if (!part || part === ".") continue;
+      if (part === "..") parts.pop();
+      else parts.push(part);
+    }
+    return parts.join("/");
+  }
+
+  function kind(path) {
+    if (path === null) return "missing";
+    if (Object.prototype.hasOwnProperty.call(listings, path)) return "dir";
+    if (Object.prototype.hasOwnProperty.call(files, path)) return "file";
+    return "missing";
+  }
+
+  function resolvePath(raw) {
+    const path = normalize(raw);
+    if (kind(path) !== "missing") return path;
+    if (path === null) return null;
+    const name = String(raw).replace(/\/+$/, "").split("/").pop();
+    if (!name) return path;
+    const fileHits = Object.keys(files).filter((key) => key === name || key.endsWith("/" + name));
+    if (fileHits.length === 1) return fileHits[0];
+    const dirHits = Object.keys(listings).filter((key) => key === name);
+    if (dirHits.length === 1) return dirHits[0];
+    return path;
+  }
+
+  function echo(text, className) {
+    if (!welcomeLog || text == null || text === "") return;
+    const pre = document.createElement("pre");
+    pre.className = className || "welcome-echo";
+    pre.textContent = text;
+    welcomeLog.appendChild(pre);
+  }
+
+  function replay(cmd) {
+    if (!welcomeLog) return;
+    const line = document.createElement("div");
+    line.className = "welcome-replay";
+    const ps1 = document.createElement("span");
+    ps1.className = "welcome-ps1";
+    ps1.textContent = "emma@duke ~ %";
+    const typed = document.createElement("span");
+    typed.className = "welcome-cmd";
+    typed.textContent = cmd;
+    line.append(ps1, typed);
+    welcomeLog.appendChild(line);
+  }
+
+  function helpText() {
+    return [
+      "try:",
+      "  help                 this list",
+      "  ls [dir]             list files",
+      "                       ls hobbies",
+      "                       ls photos",
+      "                       ls projects",
+      "  cat <file>           read a file",
+      "  whoami",
+      "  pwd",
+      "  open projects|resume",
+      "  contact",
+      "  github",
+      "  clear",
+    ].join("\n");
+  }
+
+  function runLs(args) {
+    const targets = args.length ? args : [""];
+    const blocks = [];
+    for (const arg of targets) {
+      if (arg.startsWith("-")) continue;
+      const path = resolvePath(arg === "" ? "~" : arg);
+      const type = kind(path);
+      if (type === "dir") {
+        const body = listings[path].join("\n");
+        blocks.push(targets.length > 1 ? (path || "~") + ":\n" + body : body);
+      } else if (type === "file") {
+        blocks.push(path.split("/").pop());
+      } else {
+        blocks.push("ls: " + arg + ": No such file or directory");
+      }
+    }
+    return blocks.join("\n\n") || listings[""].join("\n");
+  }
+
+  function runCat(args) {
+    if (!args.length) return "cat: missing file operand";
+    return args
+      .map((arg) => {
+        const path = resolvePath(arg);
+        const type = kind(path);
+        if (type === "dir") return "cat: " + arg + ": Is a directory";
+        if (type === "file") return files[path];
+        return "cat: " + arg + ": No such file or directory";
+      })
+      .join("\n\n");
+  }
+
+  function runOpen(args) {
+    const target = (args[0] || "").toLowerCase();
+    if (!target) return "usage: open projects|resume";
+    if (target === "resume" || target === "cv") {
+      window.open(resumeHref, "_blank", "noopener");
+      return "opening resume…";
+    }
+    if (target === "github" || target === "gh") {
+      window.open("https://github.com/eb45", "_blank", "noopener");
+      return "https://github.com/eb45";
+    }
+    if (target === "linkedin") {
+      window.open("https://www.linkedin.com/in/emma-bennett4", "_blank", "noopener");
+      return "https://www.linkedin.com/in/emma-bennett4";
+    }
+    if (target === "mail" || target === "email" || target === "contact") {
+      window.location.href = "mailto:emmabennett135@gmail.com";
+      return "emmabennett135@gmail.com";
+    }
+    const id = openMap[target];
+    if (id) {
+      show(id);
+      return "opening " + target + "…";
+    }
+    return "open: " + target + ": nothing to open";
+  }
+
+  function dispatch(line) {
+    const tokens = line.trim().split(/\s+/).filter(Boolean);
+    if (!tokens.length) return { text: "" };
+    const cmd = tokens[0];
+    const args = tokens.slice(1);
+
+    if (cmd === "help" || cmd === "?" || cmd === "man") return { text: helpText() };
+    if (cmd === "ls") return { text: runLs(args) };
+    if (cmd === "cat" || cmd === "less" || cmd === "more") {
+      const text = runCat(args);
+      const path = args[0] ? resolvePath(args[0]) : "";
+      const highlight = path === ".profile" || path === "hobbies/fsae.txt";
+      return { text, tone: highlight ? "welcome-echo welcome-out" : "" };
+    }
+    if (cmd === "whoami") return { text: "Emma Bennett", tone: "welcome-echo welcome-out" };
+    if (cmd === "pwd") return { text: HOME };
+    if (cmd === "clear") {
+      if (welcomeLog) welcomeLog.replaceChildren();
+      return { text: "", silent: true };
+    }
+    if (cmd === "open") return { text: runOpen(args) };
+    if (cmd === "contact" || cmd === "email" || cmd === "mail") {
+      return {
+        text: "emmabennett135@gmail.com\nhttps://github.com/eb45\nhttps://www.linkedin.com/in/emma-bennett4",
+      };
+    }
+    if (cmd === "github" || cmd === "gh") {
+      return { text: "https://github.com/eb45" };
+    }
+    if (cmd === "linkedin") {
+      return { text: "https://www.linkedin.com/in/emma-bennett4" };
+    }
+    if (cmd === "cd") {
+      if (!args[0] || args[0] === "~" || args[0] === HOME) return { text: "" };
+      return { text: "cd: this shell stays in ~. try ls " + args[0].replace(/\/+$/, "") };
+    }
+    if (cmd === "sudo") return { text: "emma is not in the sudoers file. This incident will be reported." };
+    if (cmd === "vim" || cmd === "vi" || cmd === "nvim") return { text: "not today. try cat." };
+    if (cmd === "emacs" || cmd === "nano") return { text: "read-only. try cat." };
+    if (cmd === "exit" || cmd === "logout" || cmd === "quit") {
+      return { text: "this is a website. use the red ×, or keep typing." };
+    }
+    if (cmd === "rm" || cmd === "mkdir" || cmd === "touch" || cmd === "mv" || cmd === "cp") {
+      return { text: cmd + ": read-only file system" };
+    }
+    if (cmd === "ssh") return { text: "ssh: connection refused" };
+    if (cmd === "ping") return { text: "pong" };
+    if (cmd === "date") return { text: new Date().toString() };
+    if (cmd === "uname") return { text: "Darwin emma.duke 24.0.0" };
+    if (cmd === "echo") return { text: args.join(" ") };
+    if (cmd === "history") {
+      return { text: cmdHistory.map((item, i) => String(i + 1).padStart(4, " ") + "  " + item).join("\n") };
+    }
+    if (cmd === "neofetch") {
+      return {
+        text: [
+          "emma@duke",
+          "-----------",
+          "OS: Duke ECE + CS",
+          "Host: this desktop",
+          "Shell: pretend zsh",
+          "Try: help",
+        ].join("\n"),
+      };
+    }
+    return { text: "zsh: command not found: " + cmd };
+  }
+
+  function run(line) {
+    replay(line);
+    if (line.trim()) {
+      cmdHistory.push(line);
+      historyAt = cmdHistory.length;
+    }
+    const result = dispatch(line);
+    if (!result.silent && result.text) echo(result.text, result.tone);
+    welcomeIn?.scrollIntoView({ block: "nearest" });
+  }
+
+  welcomeForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    run(welcomeIn.value);
+    welcomeIn.value = "";
+  });
+
+  welcomeIn?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      if (!cmdHistory.length) return;
+      historyAt = Math.max(0, historyAt - 1);
+      welcomeIn.value = cmdHistory[historyAt] || "";
+      welcomeIn.setSelectionRange(welcomeIn.value.length, welcomeIn.value.length);
+    }
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      historyAt = Math.min(cmdHistory.length, historyAt + 1);
+      welcomeIn.value = cmdHistory[historyAt] || "";
+    }
+  });
+
+  document.getElementById("about")?.addEventListener("click", (event) => {
+    if (event.target.closest("a, button")) return;
+    welcomeIn?.focus();
   });
 
   const hash = location.hash.slice(1);
