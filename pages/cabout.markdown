@@ -30,7 +30,7 @@ Currently, my main project is continuing to think of and create easy-to-follow, 
    
   </div>
     <div class="column">
-          <img src="/img/profile.jpg" alt="profile" width="150"/>
+          <img src="{{ '/img/profile.jpg' | relative_url }}" alt="profile" width="150"/>
     </div>
 </div>
 
