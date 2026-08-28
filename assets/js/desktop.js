@@ -74,14 +74,21 @@
 
   menus.forEach((menu) => {
     menu.querySelector(".menu-btn")?.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
       const open = menu.classList.contains("is-open");
       closeMenus();
       menu.classList.toggle("is-open", !open);
     });
+    menu.querySelector(".menu-list")?.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
   });
 
-  document.addEventListener("click", closeMenus);
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".menu")) return;
+    closeMenus();
+  });
 
   openers.forEach((el) => {
     el.addEventListener("click", (event) => {

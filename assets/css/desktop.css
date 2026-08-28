@@ -96,6 +96,13 @@ a:hover { color: var(--olive); }
 
 .menu { position: relative; }
 
+.menu-btn,
+.bar-icon,
+.menu-list a,
+.menu-list button {
+  touch-action: manipulation;
+}
+
 .menu.is-open .menu-btn,
 .menu-btn:hover,
 .brand:hover,
@@ -702,13 +709,19 @@ h1 {
 
   .menu-btn { padding-top: 0.38rem; }
 
-  .menubar-left {
-    overflow-x: auto;
+  .menu.is-open { z-index: 90; }
+
+  .menu-list {
+    position: fixed;
+    top: 2.4rem;
+    left: 0.25rem;
+    z-index: 120;
+    max-width: calc(100vw - 0.5rem);
   }
 
   .menubar-left .menu:nth-last-child(-n+2) .menu-list {
     left: auto;
-    right: 0;
+    right: 0.25rem;
   }
 
   .menu-list a,
