@@ -77,8 +77,10 @@ emma@duke ~ % cat .profile
             <div class="welcome-log" id="welcome-log" aria-live="polite"></div>
             <form class="welcome-line" id="welcome-form" action="#" autocomplete="off">
               <label class="welcome-ps1" for="welcome-in">emma@duke ~ %</label>
-              <input id="welcome-in" name="welcome-cmd" type="text" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus aria-label="Terminal command">
-              <span class="cursor welcome-caret" aria-hidden="true"></span>
+              <span class="welcome-edit">
+                <input id="welcome-in" name="welcome-cmd" type="text" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus aria-label="Terminal command">
+                <span class="cursor welcome-caret" aria-hidden="true"></span>
+              </span>
             </form>
           </div>
         </div>

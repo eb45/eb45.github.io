@@ -518,9 +518,14 @@ a:hover { color: var(--olive); }
   margin: 0;
 }
 
-#welcome-in {
+.welcome-edit {
+  position: relative;
   flex: 1 1 auto;
   min-width: 6rem;
+}
+
+#welcome-in {
+  display: block;
   width: 100%;
   height: 1.45em;
   margin: 0;
@@ -537,11 +542,14 @@ a:hover { color: var(--olive); }
 }
 
 .welcome-caret {
-  flex: none;
+  position: absolute;
+  left: 0;
+  top: 0.22em;
+  pointer-events: none;
 }
 
 #welcome-form:focus-within .welcome-caret {
-  display: none;
+  visibility: hidden;
 }
 
 .cursor {
