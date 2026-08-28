@@ -247,7 +247,6 @@
     if (!welcomeIn) return;
     if (!document.getElementById("about")?.classList.contains("is-on")) return;
     if (!document.getElementById("spot")?.hidden) return;
-    if (!window.matchMedia("(pointer: fine)").matches) return;
     welcomeIn.focus({ preventScroll: true });
   }
 
@@ -482,8 +481,8 @@
     }
   });
 
-  document.getElementById("about")?.addEventListener("click", (event) => {
-    if (event.target.closest("a, button")) return;
+  document.getElementById("about")?.addEventListener("pointerdown", (event) => {
+    if (event.target.closest("a, button, #welcome-in")) return;
     welcomeIn?.focus();
   });
 
