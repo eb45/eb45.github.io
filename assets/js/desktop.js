@@ -18,6 +18,7 @@
     work: "C:\\EMMA\\experience",
     skills: "C:\\EMMA\\skills",
   };
+  let openedFromTerminal = false;
 
   function closeMenus() {
     menus.forEach((menu) => menu.classList.remove("is-open"));
@@ -28,7 +29,8 @@
     activityBtn?.setAttribute("aria-expanded", "false");
   }
 
-  function show(id) {
+  function show(id, opts) {
+    opts = opts || {};
     if (!ids.size) {
       if (id) location.href = "/#" + id;
       return;
@@ -36,16 +38,25 @@
     if (id === "term") id = "about";
     if (!ids.has(id)) return;
 
+    if (opts.fromTerminal) openedFromTerminal = true;
+    else if (id !== "about") openedFromTerminal = false;
+
     win?.classList.remove("is-shut");
     panes.forEach((pane) => pane.classList.toggle("is-on", pane.id === id));
     openers.forEach((el) => el.classList.toggle("is-open", el.dataset.open === id));
     if (path) path.textContent = labels[id] || "C:\\EMMA\\" + id;
-    if (backBtn) backBtn.hidden = true;
+    if (backBtn) backBtn.hidden = id === "about";
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
     if (id === "about") {
-      resetWelcome();
+      if (!opts.keepTerminal) resetWelcome();
+      openedFromTerminal = false;
       requestAnimationFrame(focusWelcome);
     }
+  }
+
+  function showFromShell(id) {
+    if (id === "about") show("about", { keepTerminal: true });
+    else show(id, { fromTerminal: true });
   }
 
   function hideWin() {
@@ -87,6 +98,13 @@
   });
 
   document.querySelector("[data-close]")?.addEventListener("click", hideWin);
+
+  backBtn?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeMenus();
+    show("about", { keepTerminal: openedFromTerminal });
+  });
 
   const projects = [
     { label: "Work experience", open: "work" },
@@ -379,7 +397,7 @@
     }
     const id = openMap[target];
     if (id) {
-      show(id);
+      showFromShell(id);
       return "opening " + target + "…";
     }
     return "open: " + target + ": nothing to open";
@@ -407,11 +425,11 @@
       };
     }
     if (cmd === "experience" || cmd === "work") {
-      show("work");
+      showFromShell("work");
       return { text: "opening experience…" };
     }
     if (cmd === "skills" || cmd === "skill") {
-      show("skills");
+      showFromShell("skills");
       return { text: "opening skills…" };
     }
     if (cmd === "contact") {
