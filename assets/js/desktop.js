@@ -110,7 +110,7 @@
   const projects = [
     { label: "Work experience", open: "work" },
     { label: "Skills", open: "skills" },
-    { label: "PLM Research", open: "plm" },
+    { label: "Pooling benchmarking for PLMs", open: "plm" },
     { label: "Subsurface sea temp prediction", open: "sea" },
     { label: "Pediatric CXR classification", open: "pediatric" },
     { label: "Autonomous vehicle TTC prediction", open: "ttc" },
@@ -219,7 +219,7 @@
     "": [".profile", "hobbies/", "projects/", "skills"],
     hobbies: ["running", "reading", "baking", "playing piano", "playing guitar"],
     projects: [
-      "PLM Research",
+      "Pooling benchmarking for PLMs",
       "Subsurface sea temp",
       "Pediatric CXR classification",
       "Autonomous Vehicle TTC prediction",
