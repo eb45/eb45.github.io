@@ -23,7 +23,7 @@ body {
 }
 
 .plain {
-  max-width: 46rem;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 2.4rem 1.4rem 4.5rem;
 }
@@ -45,7 +45,7 @@ body {
 
 .plain-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 15.5rem;
+  grid-template-columns: minmax(0, 1fr) 18rem;
   grid-template-areas:
     "id photo"
     "copy photo";
@@ -279,7 +279,7 @@ body {
   }
 
   .plain-portrait {
-    max-width: 16.5rem;
+    max-width: 18rem;
     justify-self: start;
   }
 
