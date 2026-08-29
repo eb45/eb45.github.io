@@ -32,13 +32,11 @@ body {
   padding: 2.2rem 1.6rem 4rem;
 }
 
-.plain-top {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 0 2.4rem;
-}
-
 .desk-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
   display: inline-block;
   padding: 0.42rem 0.75rem;
   border: 1px solid var(--olive);
@@ -523,7 +521,7 @@ body.lightbox-on { overflow: hidden; }
 
 @media (max-width: 640px) {
   .plain {
-    padding: 1.2rem 1.1rem 3.2rem;
+    padding: 3.4rem 1.1rem 3.2rem;
   }
 
   .plain-intro {
