@@ -827,7 +827,6 @@ body.lightbox-on { overflow: hidden; }
 .portrait-inner {
   position: relative;
   display: block;
-  overflow: hidden;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
 }
@@ -842,10 +841,6 @@ body.lightbox-on { overflow: hidden; }
   height: auto;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-}
-
-.portrait-front {
-  border: 1px solid var(--olive);
 }
 
 .portrait-back {
