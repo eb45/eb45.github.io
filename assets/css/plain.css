@@ -302,7 +302,8 @@ body {
   object-position: center;
 }
 
-.project-card[data-project="sea"] .project-thumb img { object-position: top; }
+.project-card[data-project="sea"] .project-thumb img,
+.project-card[data-project="plm"] .project-thumb img { object-position: top; }
 
 .project-card-body {
   display: flex;
