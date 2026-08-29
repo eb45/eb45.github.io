@@ -645,6 +645,10 @@ body.lightbox-on { overflow: hidden; }
   }
 
   .plain-intro .about-copy { margin-top: 0; }
+
+  .activity {
+    grid-template-columns: 1fr;
+  }
 }
 
 .reveal {

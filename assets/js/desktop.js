@@ -222,7 +222,7 @@
       "PLM Research",
       "Subsurface sea temp",
       "Pediatric CXR classification",
-      "AV TTC prediction",
+      "Autonomous Vehicle TTC prediction",
     ],
   };
   const openMap = {
