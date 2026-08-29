@@ -1,5 +1,5 @@
 (function () {
-  const cards = Array.from(document.querySelectorAll("[data-project]"));
+  const cards = Array.from(document.querySelectorAll(".project-card[data-project]"));
   const pops = Array.from(document.querySelectorAll(".project-pop"));
 
   function openPop(id) {
@@ -9,11 +9,25 @@
 
   function closePop(pop) {
     if (pop.open) pop.close();
-    pop.querySelectorAll("video").forEach((video) => video.pause());
+  }
+
+  function isControl(el) {
+    return Boolean(el.closest("a, button, [data-lightbox]"));
   }
 
   cards.forEach((card) => {
-    card.addEventListener("click", () => openPop(card.dataset.project));
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.addEventListener("click", (event) => {
+      if (isControl(event.target)) return;
+      openPop(card.dataset.project);
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (isControl(event.target)) return;
+      event.preventDefault();
+      openPop(card.dataset.project);
+    });
   });
 
   pops.forEach((pop) => {
@@ -27,11 +41,10 @@
         event.clientY > box.bottom;
       if (outside) closePop(pop);
     });
-    pop.addEventListener("close", () => {
-      pop.querySelectorAll("video").forEach((video) => video.pause());
-    });
   });
+})();
 
+(function () {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(
     document.querySelectorAll(".plain-intro, .plain section, .timeline > li, .project-card")
@@ -56,4 +69,30 @@
   );
 
   items.forEach((el) => io.observe(el));
+})();
+
+(function () {
+  const links = Array.from(document.querySelectorAll(".side-nav a[href^='#']"));
+  if (!links.length) return;
+
+  const targets = links
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  if (!targets.length) return;
+
+  function setOn(id) {
+    links.forEach((link) => link.classList.toggle("is-on", link.getAttribute("href") === "#" + id));
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setOn(visible.target.id);
+    },
+    { threshold: [0.25, 0.5, 0.75], rootMargin: "-15% 0px -55% 0px" }
+  );
+
+  targets.forEach((el) => io.observe(el));
 })();
