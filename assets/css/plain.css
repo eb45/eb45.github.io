@@ -122,9 +122,10 @@ body {
 
 .plain h1 {
   margin: 0 0 0.2rem;
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .plain .links {
@@ -177,10 +178,10 @@ body {
 
 .plain h2 {
   margin: 0 0 0.95rem;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 1.02rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--olive);
 }
 
@@ -374,8 +375,9 @@ body {
 
 .plain h3 {
   margin: 0;
-  font-size: 1.02rem;
-  font-weight: 500;
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-size: 1.18rem;
+  font-weight: 600;
 }
 
 .plain .timeline h3 {
