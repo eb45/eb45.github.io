@@ -96,3 +96,12 @@
 
   targets.forEach((el) => io.observe(el));
 })();
+
+(function () {
+  document.querySelectorAll(".portrait-flip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const on = btn.classList.toggle("is-flipped");
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+})();
