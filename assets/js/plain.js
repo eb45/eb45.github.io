@@ -1,4 +1,50 @@
 (function () {
+  const cards = Array.from(document.querySelectorAll(".project-card[data-project]"));
+  const pops = Array.from(document.querySelectorAll(".project-pop"));
+
+  function openPop(id) {
+    const pop = document.getElementById("project-" + id);
+    if (pop && typeof pop.showModal === "function") pop.showModal();
+  }
+
+  function closePop(pop) {
+    if (pop.open) pop.close();
+  }
+
+  function isControl(el) {
+    return Boolean(el.closest("a, button, [data-lightbox]"));
+  }
+
+  cards.forEach((card) => {
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.addEventListener("click", (event) => {
+      if (isControl(event.target)) return;
+      openPop(card.dataset.project);
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      if (isControl(event.target)) return;
+      event.preventDefault();
+      openPop(card.dataset.project);
+    });
+  });
+
+  pops.forEach((pop) => {
+    pop.querySelector(".project-pop-close")?.addEventListener("click", () => closePop(pop));
+    pop.addEventListener("click", (event) => {
+      const box = pop.getBoundingClientRect();
+      const outside =
+        event.clientX < box.left ||
+        event.clientX > box.right ||
+        event.clientY < box.top ||
+        event.clientY > box.bottom;
+      if (outside) closePop(pop);
+    });
+  });
+})();
+
+(function () {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(
     document.querySelectorAll(".plain-intro, .plain section, .timeline > li, .project-card")

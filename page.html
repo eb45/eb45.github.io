@@ -184,51 +184,52 @@ permalink: /
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <article class="project-card" id="project-plm">
-        <p class="project-card-kicker">Research · Language Models</p>
-        <h3>Protein Language Models</h3>
-        <p class="project-course">Independent research · Duke University School of Medicine</p>
-        <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+      <article class="project-card" data-project="plm">
         <figure class="project-thumb">
           <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="Protein language model figure" width="357" height="801">
         </figure>
+        <div class="project-card-body">
+          <h3>Protein Language Models</h3>
+          <p class="project-course">Independent research · Duke School of Medicine</p>
+          <p>Benchmarking pooling strategies across protein-language models for fitness prediction.</p>
+        </div>
       </article>
-      <article class="project-card" id="project-sea">
-        <p class="project-card-kicker">Computer Vision · Remote Sensing</p>
-        <h3>Subsurface sea temperature</h3>
-        <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
-        <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
-        <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM.</p>
+      <article class="project-card" data-project="sea">
         <figure class="project-thumb">
-          <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
-            <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
-          </button>
+          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
         </figure>
+        <div class="project-card-body">
+          <h3>Subsurface sea temperature</h3>
+          <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
+          <p>ConvLSTM reconstruction of subsurface ocean temperature from surface climate fields.</p>
+        </div>
         <p class="project-links">
           <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
           <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
         </p>
       </article>
-      <article class="project-card" id="project-pediatric">
-        <p class="project-card-kicker">Medical Imaging · Deep Learning</p>
-        <h3>Pediatric CXR classification</h3>
-        <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
-        <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+      <article class="project-card" data-project="pediatric">
         <figure class="project-thumb">
           <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
         </figure>
+        <div class="project-card-body">
+          <h3>Pediatric CXR classification</h3>
+          <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
+          <p>Adult-to-pediatric chest X-ray domain adaptation with CLIP-style pretraining.</p>
+        </div>
         <p class="project-links">
           <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
       </article>
-      <article class="project-card" id="project-ttc">
-        <p class="project-card-kicker">Robotics · Computer Vision</p>
-        <h3>AV TTC prediction</h3>
-        <p class="project-course">Independent research project</p>
-        <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
+      <article class="project-card" data-project="ttc">
         <figure class="project-thumb">
           <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
         </figure>
+        <div class="project-card-body">
+          <h3>AV TTC prediction</h3>
+          <p class="project-course">Independent research project</p>
+          <p>Time-to-collision risk scores on nuScenes with a frozen StreamPETR detector.</p>
+        </div>
         <p class="project-links">
           <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
@@ -236,6 +237,76 @@ permalink: /
       </article>
     </div>
   </section>
+
+  <dialog class="project-pop" id="project-plm" aria-labelledby="project-plm-title">
+    <header class="project-pop-bar">
+      <h3 id="project-plm-title">Protein Language Models</h3>
+      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
+    </header>
+    <div class="project-pop-body">
+      <p class="project-course">Independent research · Duke University School of Medicine</p>
+      <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+      <figure class="shot">
+        <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="Protein language model figure" width="357" height="801">
+      </figure>
+    </div>
+  </dialog>
+
+  <dialog class="project-pop" id="project-sea" aria-labelledby="project-sea-title">
+    <header class="project-pop-bar">
+      <h3 id="project-sea-title">Subsurface sea temperature</h3>
+      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
+    </header>
+    <div class="project-pop-body">
+      <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
+      <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
+      <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM.</p>
+      <figure class="shot poster">
+        <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
+          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+        </button>
+      </figure>
+      <p class="project-links">
+        <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog class="project-pop" id="project-pediatric" aria-labelledby="project-pediatric-title">
+    <header class="project-pop-bar">
+      <h3 id="project-pediatric-title">Pediatric CXR classification</h3>
+      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
+    </header>
+    <div class="project-pop-body">
+      <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
+      <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+      <figure class="shot">
+        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+      </figure>
+      <p class="project-links">
+        <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </div>
+  </dialog>
+
+  <dialog class="project-pop" id="project-ttc" aria-labelledby="project-ttc-title">
+    <header class="project-pop-bar">
+      <h3 id="project-ttc-title">AV TTC prediction</h3>
+      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
+    </header>
+    <div class="project-pop-body">
+      <p class="project-course">Independent research project</p>
+      <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
+      <figure class="shot">
+        <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
+      </figure>
+      <p class="project-links">
+        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </p>
+    </div>
+  </dialog>
 
   <section class="skills" id="skills">
     <h2>Skills</h2>
