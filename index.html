@@ -10,7 +10,7 @@ permalink: /desktop/
       <span class="genome" aria-hidden="true">
         <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
       </span>
-      <span>PLM Research</span>
+      <span>Pooling benchmarking for PLMs</span>
     </button>
 
     <button type="button" class="icon" data-open="sea">
@@ -272,9 +272,12 @@ emma@duke ~ % cat .profile
       <div class="pane project" id="plm">
         <div class="project-split">
           <div class="project-copy">
-            <h2>Protein Language Models</h2>
+            <h2>Pooling benchmarking for PLMs</h2>
             <p class="lede">Independent research · Duke University School of Medicine</p>
-            <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+            <p>Protein language models are used for many sequence-level prediction tasks, but converting their token embeddings into a single vector usually depends on a pooling choice that is treated as a default. This project treats that choice as something worth measuring on its own.</p>
+            <p>I am building a reproducible benchmarking framework so pooling methods can be swapped under the same training and evaluation setup, along with the pretrained encoder and a few other experiment knobs. The current scope is protein fitness prediction, evaluated with Spearman correlation.</p>
+            <p>The pipeline uses a shared experiment entry point and several pooling families — mean, max, top-k, light attention, SWE, and BoM — so they can be compared without changing the rest of the stack.</p>
+            <p>This work is still in progress and not yet released, so this write-up stays high-level on purpose.</p>
           </div>
           <div class="project-media">
             <figure class="shot">
@@ -290,7 +293,7 @@ emma@duke ~ % cat .profile
             <span class="genome" aria-hidden="true">
               <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
             </span>
-            <span>PLM Research</span>
+            <span>Pooling benchmarking for PLMs</span>
           </button>
           <button type="button" class="icon" data-open="sea">
             <span class="sea-face" aria-hidden="true">

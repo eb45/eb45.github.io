@@ -189,9 +189,9 @@ permalink: /
           <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="Protein language model figure" width="357" height="801">
         </figure>
         <div class="project-card-body">
-          <h3>Protein Language Models</h3>
+          <h3>Pooling benchmarking for PLMs</h3>
           <p class="project-course">Independent research · Duke School of Medicine</p>
-          <p>Benchmarking pooling strategies across protein-language models for fitness prediction.</p>
+          <p>A reproducible framework for comparing how protein language models pool sequence representations.</p>
         </div>
       </article>
       <article class="project-card" data-project="sea">
@@ -240,12 +240,15 @@ permalink: /
 
   <dialog class="project-pop" id="project-plm" aria-labelledby="project-plm-title">
     <header class="project-pop-bar">
-      <h3 id="project-plm-title">Protein Language Models</h3>
+      <h3 id="project-plm-title">Pooling benchmarking for PLMs</h3>
       <button type="button" class="project-pop-close" aria-label="Close">Close</button>
     </header>
     <div class="project-pop-body">
       <p class="project-course">Independent research · Duke University School of Medicine</p>
-      <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+      <p>Protein language models are used for many sequence-level prediction tasks, but converting their token embeddings into a single vector usually depends on a pooling choice that is treated as a default. This project treats that choice as something worth measuring on its own.</p>
+      <p>I am building a reproducible benchmarking framework so pooling methods can be swapped under the same training and evaluation setup, along with the pretrained encoder and a few other experiment knobs. The current scope is protein fitness prediction, evaluated with Spearman correlation.</p>
+      <p>The pipeline uses a shared experiment entry point and several pooling families — mean, max, top-k, light attention, SWE, and BoM — so they can be compared without changing the rest of the stack.</p>
+      <p>This work is still in progress and not yet released, so this write-up stays high-level on purpose.</p>
       <figure class="shot">
         <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="Protein language model figure" width="357" height="801">
       </figure>
