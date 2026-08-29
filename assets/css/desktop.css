@@ -4,7 +4,8 @@
   --ink: #1c1b18;
   --mute: #6a655c;
   --olive: #4c5544;
-  --line: rgba(28, 27, 24, 0.08);
+  --olive-deep: #3a4234;
+  --line: rgba(76, 85, 68, 0.16);
   --term: #161513;
   --term-ink: #e8e4dc;
   --term-accent: #ff4d8d;
@@ -648,14 +649,24 @@ h1 {
   margin-top: 1rem;
 }
 
-.project-link a {
+.project-link a,
+.project-link .text-link {
   color: var(--olive);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.78rem;
   text-decoration: none;
 }
 
-.project-link a:hover { text-decoration: underline; }
+.project-link a:hover,
+.project-link .text-link:hover { text-decoration: underline; }
+
+.project-link .text-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
 
 .project-gallery {
   display: grid;
@@ -912,8 +923,9 @@ body.lightbox-on { overflow: hidden; }
 .tech-chips li {
   margin: 0;
   padding: 0.18rem 0.5rem;
-  border: 1px solid var(--ink);
-  background: var(--paper);
+  border: 1px solid var(--olive);
+  background: var(--olive);
+  color: var(--pane);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.68rem;
 }

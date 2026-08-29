@@ -53,12 +53,13 @@ permalink: /
         <li>Built an LLM-based autofixer using LangChain that detects sync-blocking calls in async Python code and auto-generates fixes. Reduced event-loop stalls by 85% (10K→1.3K/day) in a production backend service.</li>
         <li>Scaled fix correctness evaluation via a Kafka-to-Pinot telemetry pipeline, resolving hundreds of violations across 17 internal services at an 89.8% average fix score.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
           <li>LangChain</li>
-          <li>Large Language Models</li>
+          <li>LangGraph</li>
+          <li>LLMs</li>
           <li>Kafka</li>
           <li>Apache Pinot</li>
           <li>SQL</li>
@@ -73,7 +74,7 @@ permalink: /
         <li>Designed and developed a data lake to enable security monitoring of previously siloed 3rd-party applications within CrowdStrike’s Adaptive Shield platform using Azure, Databricks, Apache Spark, and Python.</li>
         <li>Built an automated ticket workflow in Python between Adaptive Shield and ServiceNow to open and close tickets based on security checks, eliminating manual ticketing overhead.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
@@ -93,7 +94,7 @@ permalink: /
         <li>Developing a reproducible deep learning benchmarking framework to evaluate pooling strategies across protein-language models for protein fitness prediction.</li>
         <li>Implementing mean, max, top-k, light attention, SWE, and BOM pooling in a unified training pipeline, measured via Spearman correlation across PLM architectures, seeds, and LoRA ranks.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
@@ -113,7 +114,7 @@ permalink: /
       <ul>
         <li>Designed and implemented cyber agents that generate and execute action plans in simulation and live-fire environments by adapting AI planning algorithms for the cybersecurity domain. Used Python and Jupyter Notebook.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
@@ -131,11 +132,11 @@ permalink: /
       <ul>
         <li>Researched and implemented a cyber agent architecture where communications among agents are entirely driven by LLMs on a GPU cluster. Agents communicate to search the network topology and capture a flag. Results presented at Black Hat 2024.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
-          <li>Large Language Models</li>
+          <li>LLMs</li>
           <li>Multi-agent</li>
           <li>GPU</li>
           <li>Network Topology</li>
@@ -149,7 +150,7 @@ permalink: /
       <ul>
         <li>Researched and implemented in Go a new adversarial cost algorithm based on A*, factoring in weighted cost from detected adversarial cyber agent nodes. Also implemented a network simulation tool in NetworkX.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Go</li>
@@ -166,7 +167,7 @@ permalink: /
       <ul>
         <li>Analyzed Zeek logs from a network security monitoring tool and performed anomaly detection with several machine learning algorithms. Used Python and scikit-learn.</li>
       </ul>
-      <details class="tech">
+      <details class="tech" open>
         <summary>Technologies used</summary>
         <ul class="tech-chips">
           <li>Python</li>
@@ -183,94 +184,63 @@ permalink: /
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <button type="button" class="project-card" data-project="plm">
-        <span class="project-card-hint">Open</span>
-        <h3>PLM Research</h3>
-        <p>Pooling strategies for protein fitness prediction</p>
-      </button>
-      <button type="button" class="project-card" data-project="sea">
-        <span class="project-card-hint">Open</span>
-        <h3>Subsurface sea temp</h3>
-        <p>ConvLSTM reconstruction of subsurface ocean temperature</p>
-      </button>
-      <button type="button" class="project-card" data-project="pediatric">
-        <span class="project-card-hint">Open</span>
+      <article class="project-card" id="project-plm">
+        <p class="project-card-kicker">Research · Language Models</p>
+        <h3>Protein Language Models</h3>
+        <p class="project-course">Independent research · Duke University School of Medicine</p>
+        <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+        <figure class="project-thumb">
+          <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="Protein language model figure" width="357" height="801">
+        </figure>
+      </article>
+      <article class="project-card" id="project-sea">
+        <p class="project-card-kicker">Computer Vision · Remote Sensing</p>
+        <h3>Subsurface sea temperature</h3>
+        <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
+        <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
+        <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM.</p>
+        <figure class="project-thumb">
+          <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
+            <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+          </button>
+        </figure>
+        <p class="project-links">
+          <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
+        </p>
+      </article>
+      <article class="project-card" id="project-pediatric">
+        <p class="project-card-kicker">Medical Imaging · Deep Learning</p>
         <h3>Pediatric CXR classification</h3>
-        <p>Adult-to-pediatric chest X-ray domain adaptation</p>
-      </button>
-      <button type="button" class="project-card" data-project="ttc">
-        <span class="project-card-hint">Open</span>
+        <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
+        <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+        <figure class="project-thumb">
+          <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+        </figure>
+        <p class="project-links">
+          <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </article>
+      <article class="project-card" id="project-ttc">
+        <p class="project-card-kicker">Robotics · Computer Vision</p>
         <h3>AV TTC prediction</h3>
-        <p>Time-to-collision risk scores on nuScenes</p>
-      </button>
+        <p class="project-course">Independent research project</p>
+        <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
+        <figure class="project-thumb">
+          <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
+        </figure>
+        <p class="project-links">
+          <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </p>
+      </article>
     </div>
   </section>
-
-  <dialog class="project-pop" id="project-plm" aria-labelledby="project-plm-title">
-    <header class="project-pop-bar">
-      <h3 id="project-plm-title">PLM Research</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-sea" aria-labelledby="project-sea-title">
-    <header class="project-pop-bar">
-      <h3 id="project-sea-title">Subsurface sea temp</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
-      <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM. ECE 661.</p>
-      <figure class="shot poster">
-        <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
-          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
-        </button>
-        <figcaption>ECE 661 poster · click to enlarge</figcaption>
-      </figure>
-      <p><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-pediatric" aria-labelledby="project-pediatric-title">
-    <header class="project-pop-bar">
-      <h3 id="project-pediatric-title">Pediatric CXR classification</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
-        <figcaption>Ground truth vs. prediction</figcaption>
-      </figure>
-      <p><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-ttc" aria-labelledby="project-ttc-title">
-    <header class="project-pop-bar">
-      <h3 id="project-ttc-title">AV TTC prediction</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
-        <figcaption>Intersection</figcaption>
-      </figure>
-      <p>
-        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo</a>
-      </p>
-    </div>
-  </dialog>
 
   <section class="skills" id="skills">
     <h2>Skills</h2>
     <p><span>Languages</span> · Python, Java, C, Go, SQL</p>
-    <p><span>AI/ML</span> · LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy</p>
+    <p><span>AI/ML</span> · LLMs, LangChain, LangGraph, PyTorch, TensorFlow, scikit-learn, NumPy</p>
     <p><span>Infra/Data</span> · Kafka, Apache Pinot, Databricks, Apache Spark, Azure, Docker, OpenTelemetry</p>
     <p><span>Platforms</span> · GitHub, Linux, Windows</p>
   </section>
@@ -281,10 +251,10 @@ permalink: /
       <h3>Duke Motorsports FSAE · Electrics</h3>
       <p class="when">September 2023 – Present</p>
       <ul>
-        <li>Led the design and iteration of high-reliability PCBs for the vehicle steering interface.</li>
-        <li>Integrated ECUs with custom wiring harnesses and battery subsystems.</li>
+        <li>Led the design and iteration of high-reliability PCBs for the vehicle steering interface, applying aerospace-grade design practices (signal integrity, thermal management).</li>
+        <li>Integrated embedded control units (ECUs) with custom wiring harnesses and battery subsystems, delivering a low-latency, fault-tolerant control architecture.</li>
+        <li>Took the steering-interface boards from schematic through layout, assembly, and on-car bring-up so the electrics stayed reliable under race-weekend noise and vibration.</li>
       </ul>
     </article>
-    <p class="hobbies">Running · reading · baking · piano · guitar</p>
   </section>
 </article>
