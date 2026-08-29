@@ -9,6 +9,7 @@
   const backBtn = document.querySelector(".bar .back");
   const labels = {
     about: "C:\\EMMA\\about",
+    me: "C:\\EMMA\\about\\me",
     "about-site": "C:\\EMMA\\about\\site",
     plm: "C:\\EMMA\\plm-research",
     projects: "C:\\EMMA\\projects",
@@ -234,7 +235,8 @@
     pediatric: "pediatric",
     cxr: "pediatric",
     ttc: "ttc",
-    about: "about",
+    about: "me",
+    me: "me",
     site: "about-site",
     "about-site": "about-site",
     work: "work",
@@ -420,9 +422,8 @@
     }
     if (cmd === "open") return { text: runOpen(args) };
     if (cmd === "about") {
-      return {
-        text: "Emma Bennett\nDuke University\nElectrical/Computer Engineering and Computer Science",
-      };
+      showFromShell("me");
+      return { text: "opening about…" };
     }
     if (cmd === "experience" || cmd === "work") {
       showFromShell("work");

@@ -655,6 +655,43 @@ h1 {
   color: var(--ink);
 }
 
+.about-me.is-on {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 32rem;
+}
+
+.about-copy p {
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.about-copy p:first-child {
+  color: var(--olive);
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.about-copy p:last-child { margin-bottom: 0; }
+
+.about-photo {
+  display: block;
+  flex: 0 0 11.5rem;
+  width: 11.5rem;
+  height: 15.2rem;
+  object-fit: cover;
+  object-position: 55% 18%;
+  border: 1px solid var(--olive);
+}
+
 .site-guide p:last-child { margin-bottom: 0; }
 
 .timeline {
@@ -1078,6 +1115,17 @@ h1 {
 
   .welcome-pane.is-on {
     padding: 0.85rem 0.75rem 1rem;
+  }
+
+  .about-me.is-on {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .about-photo {
+    flex: 0 0 auto;
+    width: 8.5rem;
+    height: 11.2rem;
   }
 
   .welcome-banner {
