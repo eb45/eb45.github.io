@@ -378,6 +378,15 @@ body {
   object-position: center;
 }
 
+.project-thumb-plm {
+  height: 13.5rem;
+  background: #fff;
+}
+
+.project-thumb-plm img {
+  object-fit: contain;
+}
+
 .project-card-body {
   display: flex;
   flex-direction: column;
