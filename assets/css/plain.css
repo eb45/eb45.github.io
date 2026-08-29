@@ -534,3 +534,28 @@ body.lightbox-on { overflow: hidden; }
 
   .plain-intro .about-copy { margin-top: 0; }
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.15rem);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.from-left { transform: translateX(-1.4rem); }
+
+.reveal.from-right { transform: translateX(1.4rem); }
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.from-left,
+  .reveal.from-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

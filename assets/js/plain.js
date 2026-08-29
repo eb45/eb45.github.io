@@ -1,7 +1,6 @@
 (function () {
   const cards = Array.from(document.querySelectorAll("[data-project]"));
   const pops = Array.from(document.querySelectorAll(".project-pop"));
-  if (!cards.length) return;
 
   function openPop(id) {
     const pop = document.getElementById("project-" + id);
@@ -32,4 +31,29 @@
       pop.querySelectorAll("video").forEach((video) => video.pause());
     });
   });
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = Array.from(
+    document.querySelectorAll(".plain-intro, .plain section, .timeline > li, .project-card")
+  );
+  if (!items.length || reduce) return;
+
+  items.forEach((el) => {
+    el.classList.add("reveal");
+    if (el.matches(".timeline > li:nth-child(odd)")) el.classList.add("from-left");
+    if (el.matches(".timeline > li:nth-child(even)")) el.classList.add("from-right");
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
+  );
+
+  items.forEach((el) => io.observe(el));
 })();
