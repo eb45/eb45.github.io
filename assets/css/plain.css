@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: 2.2rem 1.6rem 4rem;
+  padding: 4.6rem 1.6rem 4rem;
 }
 
 .plain-intro,
@@ -176,16 +176,12 @@ body {
 .about-copy p:last-child { margin-bottom: 0; }
 
 .plain h2 {
-  display: inline-block;
   margin: 0 0 0.95rem;
-  padding: 0.28rem 0.7rem;
-  background: var(--olive);
-  color: var(--paper);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.72rem;
+  font-size: 1.02rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--olive);
 }
 
 .plain section { margin: 0 0 2.3rem; }
@@ -290,6 +286,10 @@ body {
   flex-direction: column;
   gap: 0.28rem;
   padding: 0.85rem 1rem 0.35rem;
+}
+
+.project-card:not(:has(.project-links)) .project-card-body {
+  padding-bottom: 0.95rem;
 }
 
 .project-card h3 { margin: 0; }
@@ -427,12 +427,9 @@ body {
 .plain .skills p { margin: 0 0 0.35rem; }
 
 .plain .skills span {
-  display: inline-block;
-  padding: 0.12rem 0.42rem;
-  background: var(--olive);
-  color: var(--paper);
+  color: var(--olive);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.72rem;
+  font-size: 0.86rem;
 }
 
 .tech {
@@ -602,7 +599,7 @@ body.lightbox-on { overflow: hidden; }
 
 @media (max-width: 640px) {
   .plain {
-    padding: 3.4rem 1.1rem 3.2rem;
+    padding: 4.4rem 1.1rem 3.2rem;
   }
 
   .plain-intro {
