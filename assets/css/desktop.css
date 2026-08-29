@@ -391,10 +391,10 @@ a:hover { color: var(--olive); }
 }
 
 .welcome-mark {
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.1rem;
   color: var(--term-accent);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: clamp(0.42rem, 1.35vw, 0.78rem);
+  font-size: clamp(0.36rem, 1.15vw, 0.68rem);
   line-height: 1.05;
   letter-spacing: 0;
   overflow-x: auto;
