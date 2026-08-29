@@ -191,6 +191,24 @@ body {
 
 .plain section { margin: 0 0 2.3rem; }
 
+.activity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+  gap: 1.2rem 1.5rem;
+  align-items: start;
+}
+
+.activity-photo {
+  margin: 0;
+}
+
+.activity-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--olive);
+}
+
 .work h2,
 .work .timeline {
   max-width: none;
