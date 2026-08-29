@@ -5,8 +5,16 @@ permalink: /
 ---
 
 <a class="desk-switch" href="{{ '/desktop/' | relative_url }}">switch to desktop view!</a>
+<nav class="side-nav" aria-label="On this page">
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#activities">Activities</a>
+</nav>
 <article class="plain">
-  <header class="plain-intro">
+  <header class="plain-intro" id="about">
     <div class="plain-intro-id">
       <h1>Emma Bennett</h1>
       <p class="role">Duke University · Computer Science and Electrical &amp; Computer Engineering · AI/ML</p>
@@ -25,7 +33,7 @@ permalink: /
     </div>
   </header>
 
-  <section>
+  <section id="education">
     <h2>Education</h2>
     <article>
       <h3>Duke University</h3>
@@ -35,7 +43,7 @@ permalink: /
     </article>
   </section>
 
-  <section class="work">
+  <section class="work" id="experience">
     <h2>Work experience</h2>
     <ol class="timeline">
     <li>
@@ -173,7 +181,7 @@ permalink: /
     </ol>
   </section>
 
-  <section class="projects">
+  <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
       <button type="button" class="project-card" data-project="plm">
@@ -260,7 +268,7 @@ permalink: /
     </div>
   </dialog>
 
-  <section class="skills">
+  <section class="skills" id="skills">
     <h2>Skills</h2>
     <p><span>Languages</span> · Python, Java, C, Go, SQL</p>
     <p><span>AI/ML</span> · LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy</p>
@@ -268,7 +276,7 @@ permalink: /
     <p><span>Platforms</span> · GitHub, Linux, Windows</p>
   </section>
 
-  <section>
+  <section id="activities">
     <h2>Activities</h2>
     <article>
       <h3>Duke Motorsports FSAE · Electrics</h3>

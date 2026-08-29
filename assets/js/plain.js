@@ -57,3 +57,31 @@
 
   items.forEach((el) => io.observe(el));
 })();
+
+(function () {
+  const links = Array.from(document.querySelectorAll(".side-nav a[href^='#']"));
+  if (!links.length) return;
+
+  const targets = links
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+  if (!targets.length) return;
+
+  const byId = new Map(links.map((link) => [link.getAttribute("href").slice(1), link]));
+
+  function setOn(id) {
+    links.forEach((link) => link.classList.toggle("is-on", link.getAttribute("href") === "#" + id));
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setOn(visible.target.id);
+    },
+    { threshold: [0.25, 0.5, 0.75], rootMargin: "-15% 0px -55% 0px" }
+  );
+
+  targets.forEach((el) => io.observe(el));
+})();
