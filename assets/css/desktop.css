@@ -678,6 +678,60 @@ h1 {
 
 .timeline ul li + li { margin-top: 0.35rem; }
 
+.tech {
+  margin-top: 0.7rem;
+}
+
+.tech summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--olive);
+  list-style: none;
+}
+
+.tech summary::-webkit-details-marker { display: none; }
+
+.tech summary::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  translate: 0 -0.08rem;
+}
+
+.tech[open] summary::after {
+  transform: rotate(225deg);
+  translate: 0 0.08rem;
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-chips li {
+  margin: 0;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+}
+
+.timeline .tech-chips li + li { margin-top: 0; }
+
 .skill-list {
   display: grid;
   gap: 1.1rem;
