@@ -119,6 +119,14 @@ body {
   background: var(--pane);
   border: 1px solid var(--olive);
   box-shadow: 4px 4px 0 rgba(76, 85, 68, 0.16);
+  transition: padding 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.plain-portrait:has(.is-flipped) {
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 .portrait-flip {
@@ -134,6 +142,7 @@ body {
 .portrait-inner {
   position: relative;
   display: block;
+  overflow: hidden;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
 }
@@ -156,7 +165,8 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: var(--paper);
+  border: 0;
+  background: transparent;
   transform: rotateY(180deg);
 }
 
@@ -196,6 +206,9 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.portrait-front {
   border: 1px solid rgba(76, 85, 68, 0.4);
 }
 
