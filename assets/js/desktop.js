@@ -9,6 +9,7 @@
   const backBtn = document.querySelector(".bar .back");
   const labels = {
     about: "C:\\EMMA\\about",
+    me: "C:\\EMMA\\about\\me",
     "about-site": "C:\\EMMA\\about\\site",
     plm: "C:\\EMMA\\plm-research",
     projects: "C:\\EMMA\\projects",
@@ -16,7 +17,9 @@
     pediatric: "C:\\EMMA\\projects\\pediatric",
     ttc: "C:\\EMMA\\projects\\ttc",
     work: "C:\\EMMA\\experience",
+    skills: "C:\\EMMA\\skills",
   };
+  let openedFromTerminal = false;
 
   function closeMenus() {
     menus.forEach((menu) => menu.classList.remove("is-open"));
@@ -27,7 +30,8 @@
     activityBtn?.setAttribute("aria-expanded", "false");
   }
 
-  function show(id) {
+  function show(id, opts) {
+    opts = opts || {};
     if (!ids.size) {
       if (id) location.href = "/#" + id;
       return;
@@ -35,13 +39,25 @@
     if (id === "term") id = "about";
     if (!ids.has(id)) return;
 
+    if (opts.fromTerminal) openedFromTerminal = true;
+    else if (id !== "about") openedFromTerminal = false;
+
     win?.classList.remove("is-shut");
     panes.forEach((pane) => pane.classList.toggle("is-on", pane.id === id));
     openers.forEach((el) => el.classList.toggle("is-open", el.dataset.open === id));
     if (path) path.textContent = labels[id] || "C:\\EMMA\\" + id;
-    if (backBtn) backBtn.hidden = true;
+    if (backBtn) backBtn.hidden = id === "about";
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
-    if (id === "about") focusWelcome();
+    if (id === "about") {
+      if (!opts.keepTerminal) resetWelcome();
+      openedFromTerminal = false;
+      requestAnimationFrame(focusWelcome);
+    }
+  }
+
+  function showFromShell(id) {
+    if (id === "about") show("about", { keepTerminal: true });
+    else show(id, { fromTerminal: true });
   }
 
   function hideWin() {
@@ -84,11 +100,19 @@
 
   document.querySelector("[data-close]")?.addEventListener("click", hideWin);
 
+  backBtn?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeMenus();
+    show("about", { keepTerminal: openedFromTerminal });
+  });
+
   const projects = [
     { label: "Work experience", open: "work" },
+    { label: "Skills", open: "skills" },
     { label: "PLM Research", open: "plm" },
     { label: "Subsurface sea temp prediction", open: "sea" },
-    { label: "Pediatric domain adaptation", open: "pediatric" },
+    { label: "Pediatric CXR classification", open: "pediatric" },
     { label: "Autonomous vehicle TTC prediction", open: "ttc" },
   ];
 
@@ -184,14 +208,20 @@
   const HOME = "/Users/emma";
   const files = {
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
+    skills: [
+      "Languages   Python, Java, C, Go, SQL",
+      "AI/ML       LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy",
+      "Infra/Data  Kafka, Apache Pinot, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
+      "Platforms   GitHub, Linux, Windows",
+    ].join("\n"),
   };
   const listings = {
-    "": [".profile", "hobbies/", "projects/"],
+    "": [".profile", "hobbies/", "projects/", "skills"],
     hobbies: ["running", "reading", "baking", "playing piano", "playing guitar"],
     projects: [
       "PLM Research",
       "Subsurface sea temp",
-      "Pediatric domain adaptation",
+      "Pediatric CXR classification",
       "AV TTC prediction",
     ],
   };
@@ -203,14 +233,18 @@
     sea: "sea",
     "sea-temp": "sea",
     pediatric: "pediatric",
+    cxr: "pediatric",
     ttc: "ttc",
-    about: "about",
+    about: "me",
+    me: "me",
     site: "about-site",
     "about-site": "about-site",
     work: "work",
     experience: "work",
     job: "work",
     jobs: "work",
+    skills: "skills",
+    skill: "skills",
   };
   const cmdHistory = [];
   let historyAt = 0;
@@ -223,6 +257,14 @@
     const activity = document.getElementById("activity");
     if (activity && !activity.hidden) return false;
     return true;
+  }
+
+  function resetWelcome() {
+    welcomeLog?.replaceChildren();
+    if (welcomeIn) welcomeIn.value = "";
+    cmdHistory.length = 0;
+    historyAt = 0;
+    document.getElementById("about")?.scrollTo(0, 0);
   }
 
   function focusWelcome() {
@@ -299,7 +341,9 @@
       "  cat <file>           read a file",
       "  whoami",
       "  pwd",
-      "  open projects|work",
+      "  about",
+      "  experience",
+      "  skills",
       "  contact",
       "  github",
       "  clear",
@@ -340,7 +384,7 @@
 
   function runOpen(args) {
     const target = (args[0] || "").toLowerCase();
-    if (!target) return "usage: open projects|work";
+    if (!target) return "usage: open projects|work|skills";
     if (target === "github" || target === "gh") {
       window.open("https://github.com/eb45", "_blank", "noopener");
       return "https://github.com/eb45";
@@ -355,7 +399,7 @@
     }
     const id = openMap[target];
     if (id) {
-      show(id);
+      showFromShell(id);
       return "opening " + target + "…";
     }
     return "open: " + target + ": nothing to open";
@@ -377,6 +421,18 @@
       return { text: "", silent: true };
     }
     if (cmd === "open") return { text: runOpen(args) };
+    if (cmd === "about") {
+      showFromShell("me");
+      return { text: "opening about…" };
+    }
+    if (cmd === "experience" || cmd === "work") {
+      showFromShell("work");
+      return { text: "opening experience…" };
+    }
+    if (cmd === "skills" || cmd === "skill") {
+      showFromShell("skills");
+      return { text: "opening skills…" };
+    }
     if (cmd === "contact") {
       return {
         text: "https://github.com/eb45\nhttps://www.linkedin.com/in/emma-bennett4",
@@ -442,6 +498,14 @@
     welcomeIn.value = "";
   });
 
+  document.querySelectorAll("[data-cmd]").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      run(btn.dataset.cmd);
+    });
+  });
+
   function historyKey(key) {
     if (key === "ArrowUp") {
       if (!cmdHistory.length) return;
@@ -463,6 +527,7 @@
   });
 
   function typeIntoWelcome(event) {
+    if (document.body.classList.contains("lightbox-on")) return;
     if (!welcomeReady()) return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
     if (event.key === "Tab" || event.key === "Escape") return;
@@ -505,7 +570,12 @@
     requestAnimationFrame(focusWelcome);
   });
 
-  window.addEventListener("pageshow", focusWelcome);
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted && document.getElementById("about")?.classList.contains("is-on")) {
+      resetWelcome();
+    }
+    focusWelcome();
+  });
   window.addEventListener("focus", focusWelcome);
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) focusWelcome();
