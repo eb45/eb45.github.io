@@ -245,10 +245,11 @@ permalink: /
     </header>
     <div class="project-pop-body">
       <p class="project-course">Independent research · Duke University School of Medicine</p>
-      <p>Protein language models are used for many sequence-level prediction tasks, but converting their token embeddings into a single vector usually depends on a pooling choice that is treated as a default. This project treats that choice as something worth measuring on its own.</p>
-      <p>I am building a reproducible benchmarking framework so pooling methods can be swapped under the same training and evaluation setup, along with the pretrained encoder and a few other experiment knobs. The current scope is protein fitness prediction, evaluated with Spearman correlation.</p>
-      <p>The pipeline uses a shared experiment entry point and several pooling families — mean, max, top-k, light attention, SWE, and BoM — so they can be compared without changing the rest of the stack.</p>
-      <p>This work is still in progress and not yet released, so this write-up stays high-level on purpose.</p>
+      <p>Protein language models encode a sequence as token embeddings, then a pooling step collapses those tokens into one vector for a prediction head. That pooling choice is usually a default, even though it decides which sequence information actually reaches the head.</p>
+      <p>This project is a benchmarking framework that treats pooling as an experimental variable. A single command-line entry point swaps the task, pretrained encoder, pooling method, LoRA rank, and seed while keeping training, evaluation, and logging the same.</p>
+      <p>The current task is protein fitness prediction: a regression problem on the FLIP GB1 split. The readout after pooling is a linear head. Evaluation is Spearman rank correlation on the held-out test set, with the best validation checkpoint kept for that comparison.</p>
+      <p>Backbones in the grid include ProtT5-XL, ESM2-650M, DPLM-650M, Ankh-base, ESM-plus-plus, and Profluent E1. Pooling families are mean, max, top-k (k = 5), light attention, sliced Wasserstein embeddings (SWE), and bag-of-mers (BoM; window 100, stride 20).</p>
+      <p>Each backbone–pooling pair is run as a linear probe (frozen encoder) and with LoRA fine-tuning at ranks 2, 4, and 8, with scaling α = 4r on the attention projection matrices. Training uses AdamW (learning rate 3×10⁻⁴, 20 epochs, effective batch size 128) and is repeated across three seeds. Runs are logged with the full hyperparameter set so pooling can be compared under matched conditions.</p>
       <figure class="shot">
         <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="Experiment dashboard for protein language model pooling runs" width="1693" height="854">
       </figure>
