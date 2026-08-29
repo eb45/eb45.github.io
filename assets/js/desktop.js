@@ -154,6 +154,7 @@
 
   function closeSpot() {
     spot.hidden = true;
+    focusWelcome();
   }
 
   spotBtn?.addEventListener("click", (event) => {
@@ -241,10 +242,18 @@
   const cmdHistory = [];
   let historyAt = 0;
 
+  function welcomeReady() {
+    if (!welcomeIn) return false;
+    if (!document.getElementById("about")?.classList.contains("is-on")) return false;
+    if (win?.classList.contains("is-shut")) return false;
+    if (spot && !spot.hidden) return false;
+    const activity = document.getElementById("activity");
+    if (activity && !activity.hidden) return false;
+    return true;
+  }
+
   function focusWelcome() {
-    if (!welcomeIn) return;
-    if (!document.getElementById("about")?.classList.contains("is-on")) return;
-    if (!document.getElementById("spot")?.hidden) return;
+    if (!welcomeReady()) return;
     welcomeIn.focus({ preventScroll: true });
   }
 
@@ -455,6 +464,7 @@
     const result = dispatch(line);
     if (!result.silent && result.text) echo(result.text, result.tone);
     welcomeIn?.scrollIntoView({ block: "nearest" });
+    focusWelcome();
   }
 
   welcomeForm?.addEventListener("submit", (event) => {
@@ -483,16 +493,8 @@
     }
   });
 
-  document.getElementById("about")?.addEventListener("pointerdown", (event) => {
-    if (event.target.closest("a, button")) return;
-    welcomeIn?.focus();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!welcomeIn) return;
-    if (win?.classList.contains("is-shut")) return;
-    if (!document.getElementById("about")?.classList.contains("is-on")) return;
-    if (!spot?.hidden) return;
+  function typeIntoWelcome(event) {
+    if (!welcomeReady()) return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
     if (event.key === "Tab" || event.key === "Escape") return;
 
@@ -501,8 +503,9 @@
       return;
     }
 
-    if (t !== welcomeIn) welcomeIn.focus();
     if (t === welcomeIn) return;
+
+    welcomeIn.focus({ preventScroll: true });
 
     if (event.key === "Enter") {
       event.preventDefault();
@@ -524,7 +527,23 @@
       event.preventDefault();
       welcomeIn.value += event.key;
     }
+  }
+
+  window.addEventListener("keydown", typeIntoWelcome, true);
+
+  document.addEventListener("pointerup", (event) => {
+    if (event.target.closest(".menu, .bar-icon, .icon, .spot, .activity, a, button")) return;
+    requestAnimationFrame(focusWelcome);
   });
+
+  window.addEventListener("pageshow", focusWelcome);
+  window.addEventListener("focus", focusWelcome);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) focusWelcome();
+  });
+  requestAnimationFrame(focusWelcome);
+  setTimeout(focusWelcome, 0);
+  setTimeout(focusWelcome, 200);
 
   const hash = location.hash.slice(1);
   if (hash && ids.has(hash)) show(hash);
