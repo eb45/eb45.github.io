@@ -224,7 +224,7 @@ a:hover { color: var(--olive); }
 .icon.is-open { color: var(--olive); }
 
 .folder,
-.resume-face {
+.work-face {
   width: 2rem;
   height: 1.55rem;
   border: 1px solid var(--ink);
@@ -265,34 +265,33 @@ a:hover { color: var(--olive); }
   object-fit: contain;
 }
 
-.resume-face {
+.work-face {
   position: relative;
   width: 1.55rem;
   height: 2rem;
 }
 
-.resume-face::after {
+.work-face::before {
   content: "";
   position: absolute;
-  top: -1px;
-  right: -1px;
-  border-top: 7px solid var(--paper);
-  border-left: 7px solid var(--ink);
+  top: 0.28rem;
+  bottom: 0.28rem;
+  left: 50%;
+  width: 1px;
+  background: var(--ink);
 }
 
-.resume-face::before {
+.work-face::after {
   content: "";
   position: absolute;
-  top: 0.45rem;
-  left: 0.22rem;
-  right: 0.22rem;
-  height: 1.1rem;
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--ink) 0 1px,
-    transparent 1px 4px
-  );
-  opacity: 0.35;
+  left: 50%;
+  top: 0.38rem;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  border: 1px solid var(--ink);
+  background: var(--olive);
+  box-shadow: 0 6px 0 0 var(--pane), 0 6px 0 1px var(--ink), 0 12px 0 0 var(--pane), 0 12px 0 1px var(--ink);
 }
 
 .sea-face,
@@ -601,6 +600,66 @@ h1 {
 }
 
 .pane > p + p { margin-top: 0.75rem; }
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0.1rem 0 0 0.85rem;
+  border-left: 1px solid var(--ink);
+}
+
+.timeline > li {
+  position: relative;
+  padding: 0 0 1.25rem 1.15rem;
+}
+
+.timeline > li:last-child { padding-bottom: 0.15rem; }
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 0.38rem;
+  left: -0.85rem;
+  width: 7px;
+  height: 7px;
+  margin-left: -4px;
+  border: 1px solid var(--ink);
+  background: var(--olive);
+}
+
+.timeline .when {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  color: var(--mute);
+}
+
+.timeline h2 {
+  margin: 0.12rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.timeline .where {
+  margin: 0.12rem 0 0.4rem;
+  font-size: 0.82rem;
+  color: var(--mute);
+}
+
+.timeline ul {
+  margin: 0;
+  padding-left: 1.05rem;
+}
+
+.timeline ul li {
+  margin: 0;
+  font-size: 0.86rem;
+}
+
+.timeline ul li + li { margin-top: 0.35rem; }
+
+.icons-right .icon { width: 7.2rem; }
 
 .files {
   list-style: none;

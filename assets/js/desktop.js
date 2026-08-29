@@ -27,6 +27,7 @@
     sea: "C:\\EMMA\\projects\\sea-temp",
     pediatric: "C:\\EMMA\\projects\\pediatric",
     ttc: "C:\\EMMA\\projects\\ttc",
+    work: "C:\\EMMA\\experience",
   };
 
   function closeMenus() {
@@ -114,6 +115,7 @@
   document.querySelector("[data-close]")?.addEventListener("click", hideWin);
 
   const projects = [
+    { label: "Work experience", open: "work" },
     { label: "PLM Research", open: "plm" },
     { label: "Subsurface sea temp prediction", open: "sea" },
     { label: "Pediatric domain adaptation", open: "pediatric" },
@@ -209,9 +211,6 @@
   const welcomeLog = document.getElementById("welcome-log");
   const welcomeForm = document.getElementById("welcome-form");
   const welcomeIn = document.getElementById("welcome-in");
-  const resumeHref =
-    document.querySelector(".icons-right a.icon")?.getAttribute("href") ||
-    "/assets/emma-bennett-resume.pdf";
   const HOME = "/Users/emma";
   const files = {
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
@@ -238,6 +237,10 @@
     about: "about",
     site: "about-site",
     "about-site": "about-site",
+    work: "work",
+    experience: "work",
+    job: "work",
+    jobs: "work",
   };
   const cmdHistory = [];
   let historyAt = 0;
@@ -326,7 +329,7 @@
       "  cat <file>           read a file",
       "  whoami",
       "  pwd",
-      "  open projects|resume",
+      "  open projects|work",
       "  contact",
       "  github",
       "  clear",
@@ -367,11 +370,7 @@
 
   function runOpen(args) {
     const target = (args[0] || "").toLowerCase();
-    if (!target) return "usage: open projects|resume";
-    if (target === "resume" || target === "cv") {
-      window.open(resumeHref, "_blank", "noopener");
-      return "opening resume…";
-    }
+    if (!target) return "usage: open projects|work";
     if (target === "github" || target === "gh") {
       window.open("https://github.com/eb45", "_blank", "noopener");
       return "https://github.com/eb45";
