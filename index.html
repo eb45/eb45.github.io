@@ -7,10 +7,10 @@ permalink: /desktop/
 <div class="desk">
   <nav class="icons" aria-label="Desktop">
     <button type="button" class="icon" data-open="plm">
-      <span class="genome" aria-hidden="true">
-        <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
+      <span class="plm-face" aria-hidden="true">
+        <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="" width="1693" height="854">
       </span>
-      <span>PLM Research</span>
+      <span>Pooling benchmarking for PLMs</span>
     </button>
 
     <button type="button" class="icon" data-open="sea">
@@ -29,7 +29,7 @@ permalink: /desktop/
       <span class="ttc-face" aria-hidden="true">
         <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
       </span>
-      <span>AV TTC prediction</span>
+      <span>Autonomous Vehicle TTC prediction</span>
     </button>
   </nav>
 
@@ -98,7 +98,7 @@ emma@duke ~ % cat .profile
       <div class="pane about-me" id="me">
         <div class="about-copy">
           <p>Hi! I’m Emma, an Electrical/Computer Engineering and CS double major at Duke.</p>
-          <p>This past summer I interned at LinkedIn as a software engineer on the Service Runtime infra team. Before that, I’ve worked and done research across AI/ML, cybersecurity, and bioinformatics.</p>
+          <p>This past summer I interned at LinkedIn as a software engineer intern on the Service Runtime infra team. Before that, I’ve worked and done research across AI/ML, Computer and Information Security, and bioinformatics.</p>
           <p>Outside of school, I’m usually out on a run, playing piano or guitar, or exploring Durham with friends.</p>
         </div>
         <img class="about-photo" src="{{ '/assets/img/emma.jpg' | relative_url }}" alt="Emma Bennett" width="844" height="976">
@@ -120,12 +120,13 @@ emma@duke ~ % cat .profile
               <li>Built an LLM-based autofixer using LangChain that detects sync-blocking calls in async Python code and auto-generates fixes. Reduced event-loop stalls by 85% (10K→1.3K/day) in a production backend service.</li>
               <li>Scaled fix correctness evaluation via a Kafka-to-Pinot telemetry pipeline, resolving hundreds of violations across 17 internal services at an 89.8% average fix score.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
                 <li>LangChain</li>
-                <li>Large Language Models</li>
+                <li>LangGraph</li>
+                <li>LLMs</li>
                 <li>Kafka</li>
                 <li>Apache Pinot</li>
                 <li>SQL</li>
@@ -140,7 +141,7 @@ emma@duke ~ % cat .profile
               <li>Designed and developed a data lake to enable security monitoring of previously siloed 3rd-party applications within CrowdStrike’s Adaptive Shield platform using Azure, Databricks, Apache Spark, and Python.</li>
               <li>Built an automated ticket workflow in Python between Adaptive Shield and ServiceNow to open and close tickets based on security checks, eliminating manual ticketing overhead.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
@@ -160,7 +161,7 @@ emma@duke ~ % cat .profile
               <li>Developing a reproducible deep learning benchmarking framework to evaluate pooling strategies across protein-language models for protein fitness prediction.</li>
               <li>Implementing mean, max, top-k, light attention, SWE, and BOM pooling in a unified training pipeline, measured via Spearman correlation across PLM architectures, seeds, and LoRA ranks.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
@@ -180,7 +181,7 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Designed and implemented cyber agents that generate and execute action plans in simulation and live-fire environments by adapting AI planning algorithms for the cybersecurity domain. Used Python and Jupyter Notebook.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
@@ -198,11 +199,11 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Researched and implemented a cyber agent architecture where communications among agents are entirely driven by LLMs on a GPU cluster. Agents communicate to search the network topology and capture a flag. Results presented at Black Hat 2024.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
-                <li>Large Language Models</li>
+                <li>LLMs</li>
                 <li>Multi-agent</li>
                 <li>GPU</li>
                 <li>Network Topology</li>
@@ -216,7 +217,7 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Researched and implemented in Go a new adversarial cost algorithm based on A*, factoring in weighted cost from detected adversarial cyber agent nodes. Also implemented a network simulation tool in NetworkX.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Go</li>
@@ -233,7 +234,7 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Analyzed Zeek logs from a network security monitoring tool and performed anomaly detection with several machine learning algorithms. Used Python and scikit-learn.</li>
             </ul>
-            <details class="tech">
+            <details class="tech" open>
               <summary>Technologies used</summary>
               <ul class="tech-chips">
                 <li>Python</li>
@@ -255,7 +256,7 @@ emma@duke ~ % cat .profile
           </div>
           <div>
             <dt>AI/ML</dt>
-            <dd>LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy</dd>
+            <dd>LLMs, LangChain, LangGraph, PyTorch, TensorFlow, scikit-learn, NumPy</dd>
           </div>
           <div>
             <dt>Infra/Data</dt>
@@ -268,17 +269,32 @@ emma@duke ~ % cat .profile
         </dl>
       </div>
 
-      <div class="pane" id="plm">
-        <p class="note">PLM Research</p>
+      <div class="pane project" id="plm">
+        <div class="project-split">
+          <div class="project-copy">
+            <h2>Pooling benchmarking for PLMs</h2>
+            <p class="lede">Independent research · Duke University School of Medicine</p>
+            <p>Protein language models encode a sequence as token embeddings, then a pooling step collapses those tokens into one vector for a prediction head. That pooling choice is usually a default, even though it decides which sequence information actually reaches the head.</p>
+            <p>This project is a benchmarking framework that treats pooling as an experimental variable. A single command-line entry point swaps the task, pretrained encoder, pooling method, LoRA rank, and seed while keeping training, evaluation, and logging the same.</p>
+            <p>The current task is protein fitness prediction: a regression problem on the FLIP GB1 split. The readout after pooling is a linear head. Evaluation is Spearman rank correlation on the held-out test set, with the best validation checkpoint kept for that comparison.</p>
+            <p>Backbones in the grid include ProtT5-XL, ESM2-650M, DPLM-650M, Ankh-base, ESM-plus-plus, and Profluent E1. Pooling families are mean, max, top-k (k = 5), light attention, sliced Wasserstein embeddings (SWE), and bag-of-mers (BoM; window 100, stride 20).</p>
+            <p>Each backbone–pooling pair is run as a linear probe (frozen encoder) and with LoRA fine-tuning at ranks 2, 4, and 8, with scaling α = 4r on the attention projection matrices. Training uses AdamW (learning rate 3×10⁻⁴, 20 epochs, effective batch size 128) and is repeated across three seeds. Runs are logged with the full hyperparameter set so pooling can be compared under matched conditions.</p>
+          </div>
+          <div class="project-media">
+            <figure class="shot">
+              <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="Experiment dashboard for protein language model pooling runs" width="1693" height="854">
+            </figure>
+          </div>
+        </div>
       </div>
 
       <div class="pane" id="projects">
         <div class="folder-grid">
           <button type="button" class="icon" data-open="plm">
-            <span class="genome" aria-hidden="true">
-              <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
+            <span class="plm-face" aria-hidden="true">
+              <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="" width="1693" height="854">
             </span>
-            <span>PLM Research</span>
+            <span>Pooling benchmarking for PLMs</span>
           </button>
           <button type="button" class="icon" data-open="sea">
             <span class="sea-face" aria-hidden="true">
@@ -296,7 +312,7 @@ emma@duke ~ % cat .profile
             <span class="ttc-face" aria-hidden="true">
             <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
           </span>
-            <span>AV TTC prediction</span>
+            <span>Autonomous Vehicle TTC prediction</span>
           </button>
         </div>
       </div>
@@ -305,10 +321,13 @@ emma@duke ~ % cat .profile
         <div class="project-split">
           <div class="project-copy">
             <h2>Subsurface sea temperature</h2>
-            <p class="lede">Deep learning reconstruction of sea subsurface temperature from surface climate fields.</p>
+            <p class="lede">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
             <p>The model takes sea surface temperature, sea surface height, zonal and meridional surface wind, plus latitude and longitude, and predicts temperature at depth. Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure: convolutions use local neighborhood and sparse connections instead of flattening the map.</p>
             <p>Experiments include ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM.</p>
-            <p class="project-link"><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
+            <p class="project-link">
+              <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster →</button>
+            </p>
           </div>
           <div class="project-media">
             <figure class="shot poster">
@@ -325,9 +344,10 @@ emma@duke ~ % cat .profile
         <div class="project-split">
           <div class="project-copy">
             <h2>Pediatric CXR classification</h2>
-            <p class="lede">CLIP-style domain adaptation from adult chest X-rays to pediatric pneumonia vs. normal.</p>
+            <p class="lede">ECE 685D · Introduction to Deep Learning · graduate-level</p>
+            <p>CLIP-style domain adaptation from adult chest X-rays to pediatric pneumonia vs. normal.</p>
             <p>An image–text model is pretrained with contrastive loss on adult NIH CXRs, then the image encoder is fine-tuned on the Kermany pediatric set. At test time the image is classified by nearest text prompt (Normal / Pneumonia). That pipeline is compared with a pediatric-only ResNet trained with cross-entropy, and with two other adaptation methods: domain-adversarial training (DANN) and optimal-transport Wasserstein (sliced Wasserstein distance).</p>
-            <p>Learning curves report AUC and F1 against the fraction of pediatric data; evaluation includes ROC, precision–recall, calibration, and Grad-CAM. ECE 685 final project.</p>
+            <p>Learning curves report AUC and F1 against the fraction of pediatric data; evaluation includes ROC, precision–recall, calibration, and Grad-CAM.</p>
             <p class="project-link"><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
           </div>
           <div class="project-media">
@@ -342,13 +362,14 @@ emma@duke ~ % cat .profile
       <div class="pane project" id="ttc">
         <div class="project-split">
           <div class="project-copy">
-            <h2>AV TTC prediction</h2>
-            <p class="lede">Time-to-collision as a risk score on nuScenes, using a frozen StreamPETR detector and a small MLP head.</p>
+            <h2>Autonomous Vehicle TTC prediction</h2>
+            <p class="lede">Independent research project</p>
+            <p>Time-to-collision as a risk score on nuScenes, using a frozen StreamPETR detector and a small MLP head.</p>
             <p>Ground-truth TTC is built from a physics closure (distance over closing speed, capped at 10&nbsp;s). A physics baseline runs that same formula on StreamPETR boxes and velocities. A learned head regresses seconds-to-collision from object query features, with and without explicit velocity embeddings, so the same detections yield both an interpretable baseline and a learned estimate.</p>
             <p>On the trainval split, the physics baseline is strongest overall (MAE 1.48&nbsp;s). Adding velocity to the MLP recovers most of the gap (MAE 1.71&nbsp;s vs 3.57&nbsp;s for query features alone). Short-horizon bins stay hard: nuScenes has almost no sub-second collisions, so the learned head has little supervision there. Built on StreamPETR (ICCV 2023).</p>
             <p class="project-link">
               <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub →</a>
-              <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo →</a>
+              <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube →</a>
             </p>
           </div>
           <div class="project-media">
@@ -358,7 +379,7 @@ emma@duke ~ % cat .profile
             </figure>
             <div class="project-clips">
               <figure class="shot">
-                <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
+                <img src="{{ '/assets/img/projects/ttc/intersection.gif' | relative_url }}" alt="Intersection scene with time-to-collision overlay" width="1400" height="1139">
                 <figcaption>Intersection</figcaption>
               </figure>
               <figure class="shot">
