@@ -527,6 +527,7 @@
   });
 
   function typeIntoWelcome(event) {
+    if (document.body.classList.contains("lightbox-on")) return;
     if (!welcomeReady()) return;
     if (event.metaKey || event.ctrlKey || event.altKey) return;
     if (event.key === "Tab" || event.key === "Escape") return;

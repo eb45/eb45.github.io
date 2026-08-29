@@ -304,34 +304,12 @@ emma@duke ~ % cat .profile
         <h2>Subsurface sea temperature</h2>
         <p class="lede">Deep learning reconstruction of sea subsurface temperature from surface climate fields.</p>
         <p>The model takes sea surface temperature, sea surface height, zonal and meridional surface wind, plus latitude and longitude, and predicts temperature at depth. Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure: convolutions use local neighborhood and sparse connections instead of flattening the map.</p>
-        <div class="project-gallery">
-          <figure class="shot">
-            <img src="{{ '/assets/img/projects/sea/sst.jpg' | relative_url }}" alt="Sea surface temperature field" width="672" height="461">
-            <figcaption>Sea surface temperature</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="{{ '/assets/img/projects/sea/ssh.jpg' | relative_url }}" alt="Sea surface height field" width="686" height="455">
-            <figcaption>Sea surface height</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="{{ '/assets/img/projects/sea/ussw.jpg' | relative_url }}" alt="Zonal surface wind field" width="675" height="452">
-            <figcaption>Zonal surface wind</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="{{ '/assets/img/projects/sea/vssw.jpg' | relative_url }}" alt="Meridional surface wind field" width="691" height="460">
-            <figcaption>Meridional surface wind</figcaption>
-          </figure>
-        </div>
-        <p>Experiments include ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM. Training can be watched as a 2D map each epoch, since every sample is tied to latitude and longitude.</p>
-        <figure class="shot">
-          <img src="{{ '/assets/img/projects/sea/training.jpg' | relative_url }}" alt="Training accuracy visualized on a latitude-longitude map" width="612" height="996">
-          <figcaption>Training visualized as a 2D map</figcaption>
-        </figure>
-        <figure class="shot">
-          <video autoplay muted loop playsinline>
-            <source src="{{ '/assets/img/projects/sea/st-heatmap.mp4' | relative_url }}" type="video/mp4">
-          </video>
-          <figcaption>Subsurface temperature heatmap over time</figcaption>
+        <p>Experiments include ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM.</p>
+        <figure class="shot poster">
+          <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
+            <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+          </button>
+          <figcaption>ECE 661 poster · click to enlarge</figcaption>
         </figure>
         <p class="project-link"><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
       </div>

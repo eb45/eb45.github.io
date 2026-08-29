@@ -683,6 +683,62 @@ h1 {
   color: var(--olive);
 }
 
+.zoom {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.zoom:focus-visible {
+  outline: 1px solid var(--olive);
+  outline-offset: 2px;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem;
+  background: rgba(28, 27, 24, 0.78);
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--olive);
+  background: var(--paper);
+  cursor: zoom-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.85rem;
+  border: 1px solid var(--paper);
+  background: transparent;
+  color: var(--paper);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+body.lightbox-on { overflow: hidden; }
+
 .project-gallery .shot,
 .project-clips .shot { margin: 0; }
 
