@@ -6,19 +6,7 @@
   const menus = Array.from(document.querySelectorAll(".menu"));
   const ids = new Set(panes.map((pane) => pane.id));
 
-  const parent = {
-    sea: "projects",
-    pediatric: "projects",
-    ttc: "projects",
-  };
-  const projectGroup = document.querySelector(".project-group");
-  const spreadBtn = document.querySelector("[data-spread]");
   const backBtn = document.querySelector(".bar .back");
-
-  function setSpread(open) {
-    projectGroup?.classList.toggle("is-open", open);
-    spreadBtn?.setAttribute("aria-expanded", open ? "true" : "false");
-  }
   const labels = {
     about: "C:\\EMMA\\about",
     "about-site": "C:\\EMMA\\about\\site",
@@ -51,15 +39,7 @@
     panes.forEach((pane) => pane.classList.toggle("is-on", pane.id === id));
     openers.forEach((el) => el.classList.toggle("is-open", el.dataset.open === id));
     if (path) path.textContent = labels[id] || "C:\\EMMA\\" + id;
-    if (backBtn) {
-      const up = parent[id];
-      backBtn.hidden = !up;
-      if (up) {
-        backBtn.dataset.open = up;
-        backBtn.setAttribute("aria-label", "Back to " + up);
-      }
-    }
-    if (projectGroup?.classList.contains("is-open")) spreadBtn?.classList.add("is-open");
+    if (backBtn) backBtn.hidden = true;
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
     if (id === "about") focusWelcome();
   }
@@ -70,7 +50,6 @@
     openers.forEach((el) => el.classList.remove("is-open"));
     if (path) path.textContent = "C:\\EMMA";
     if (backBtn) backBtn.hidden = true;
-    if (projectGroup?.classList.contains("is-open")) spreadBtn?.classList.add("is-open");
     if (location.hash) history.replaceState(null, "", location.pathname);
   }
 
@@ -99,16 +78,6 @@
       event.preventDefault();
       event.stopPropagation();
       closeMenus();
-      if (el.hasAttribute("data-spread")) {
-        const opening = !projectGroup?.classList.contains("is-open");
-        setSpread(opening);
-        if (opening) show("projects");
-        else {
-          const on = panes.find((pane) => pane.classList.contains("is-on"));
-          if (on && (on.id === "projects" || parent[on.id])) hideWin();
-        }
-        return;
-      }
       show(el.dataset.open);
     });
   });

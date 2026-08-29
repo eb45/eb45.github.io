@@ -175,32 +175,6 @@ a:hover { color: var(--olive); }
   align-items: center;
 }
 
-.project-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.55rem;
-}
-
-.icon-spread {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.55rem;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  pointer-events: none;
-  transition: max-height 0.28s ease, opacity 0.2s ease;
-}
-
-.project-group.is-open .icon-spread {
-  max-height: 18rem;
-  opacity: 1;
-  overflow: visible;
-  pointer-events: auto;
-}
-
 .icon,
 .widget {
   display: flex;
@@ -223,32 +197,6 @@ a:hover { color: var(--olive); }
 .widget:hover,
 .icon.is-open { color: var(--olive); }
 
-.folder,
-.work-face {
-  width: 2rem;
-  height: 1.55rem;
-  border: 1px solid var(--ink);
-  background: var(--pane);
-}
-
-.folder {
-  position: relative;
-  height: 1.25rem;
-  margin-top: 0.32rem;
-}
-
-.folder::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -1px;
-  width: 0.65rem;
-  height: 6px;
-  border: 1px solid var(--ink);
-  border-bottom: 0;
-  background: var(--pane);
-}
-
 .genome {
   display: grid;
   place-items: center;
@@ -269,6 +217,8 @@ a:hover { color: var(--olive); }
   position: relative;
   width: 1.55rem;
   height: 2rem;
+  border: 1px solid var(--ink);
+  background: var(--pane);
 }
 
 .work-face::before {
@@ -897,6 +847,7 @@ h1 {
     left: 0.35rem;
     right: 4.6rem;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 0.35rem;
@@ -907,11 +858,6 @@ h1 {
     bottom: 0.55rem;
     left: auto;
     right: 0.35rem;
-  }
-
-  .project-group {
-    flex-direction: column-reverse;
-    gap: 0.7rem;
   }
 
   .icon,
