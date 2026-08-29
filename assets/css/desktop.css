@@ -664,32 +664,45 @@ h1 {
   margin: 0.15rem 0 1rem;
 }
 
+.pane.project.is-on {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(22rem, 1.2fr);
+  align-items: start;
+  column-gap: 1.5rem;
+  row-gap: 0.55rem;
+}
+
+.pane.project h2,
+.pane.project .lede,
+.pane.project > p {
+  grid-column: 1;
+}
+
+.pane.project > .shot,
+.pane.project > .project-clips {
+  grid-column: 2;
+}
+
+.pane.project .project-link { grid-column: 1; }
+
 .project-clips {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
-  max-width: 28rem;
-  margin: 0.15rem 0 1rem;
+  margin: 0.15rem 0 0.2rem;
 }
 
 .shot {
-  margin: 0 0 0.95rem;
+  margin: 0 0 0.75rem;
 }
 
 .shot img,
 .shot video {
   display: block;
   width: 100%;
-  max-width: 22rem;
   height: auto;
   border: 1px solid var(--olive);
   background: var(--paper);
-}
-
-#pediatric .shot img,
-#ttc .shot img,
-#ttc .shot video {
-  max-width: 16rem;
 }
 
 .shot figcaption {
@@ -1226,8 +1239,13 @@ body.lightbox-on { overflow: hidden; }
     padding: 0.85rem 0.75rem 1rem;
   }
 
-  .project-gallery {
+  .project-gallery,
+  .project-clips {
     grid-template-columns: 1fr;
+  }
+
+  .pane.project.is-on {
+    display: block;
   }
 
   .about-me.is-on {
