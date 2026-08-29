@@ -29,7 +29,7 @@ permalink: /desktop/
       <span class="ttc-face" aria-hidden="true">
         <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
       </span>
-      <span>AV TTC prediction</span>
+      <span>Autonomous Vehicle TTC prediction</span>
     </button>
   </nav>
 
@@ -308,7 +308,7 @@ emma@duke ~ % cat .profile
             <span class="ttc-face" aria-hidden="true">
             <img src="{{ '/assets/img/ttc.png' | relative_url }}" alt="" width="512" height="512">
           </span>
-            <span>AV TTC prediction</span>
+            <span>Autonomous Vehicle TTC prediction</span>
           </button>
         </div>
       </div>
@@ -358,7 +358,7 @@ emma@duke ~ % cat .profile
       <div class="pane project" id="ttc">
         <div class="project-split">
           <div class="project-copy">
-            <h2>AV TTC prediction</h2>
+            <h2>Autonomous Vehicle TTC prediction</h2>
             <p class="lede">Independent research project</p>
             <p>Time-to-collision as a risk score on nuScenes, using a frozen StreamPETR detector and a small MLP head.</p>
             <p>Ground-truth TTC is built from a physics closure (distance over closing speed, capped at 10&nbsp;s). A physics baseline runs that same formula on StreamPETR boxes and velocities. A learned head regresses seconds-to-collision from object query features, with and without explicit velocity embeddings, so the same detections yield both an interpretable baseline and a learned estimate.</p>
@@ -375,7 +375,7 @@ emma@duke ~ % cat .profile
             </figure>
             <div class="project-clips">
               <figure class="shot">
-                <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
+                <img src="{{ '/assets/img/projects/ttc/intersection.gif' | relative_url }}" alt="Intersection scene with time-to-collision overlay" width="1400" height="1139">
                 <figcaption>Intersection</figcaption>
               </figure>
               <figure class="shot">
