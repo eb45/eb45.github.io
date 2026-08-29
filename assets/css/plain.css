@@ -38,14 +38,22 @@ body {
   margin: 0 0 2.4rem;
 }
 
-.plain-top a {
-  color: var(--mute);
+.desk-switch {
+  display: inline-block;
+  padding: 0.42rem 0.75rem;
+  border: 1px solid var(--olive);
+  background: var(--olive);
+  color: var(--paper);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.72rem;
   text-decoration: none;
 }
 
-.plain-top a:hover { color: var(--olive); }
+.desk-switch:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
 
 .plain-intro {
   display: grid;
