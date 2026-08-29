@@ -100,7 +100,13 @@ body {
   font-size: 0.74rem;
 }
 
-.plain article { margin: 0 0 1.35rem; }
+.plain article a {
+  color: var(--olive);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.plain article a:hover { color: var(--ink); }
 
 .plain ul {
   margin: 0.4rem 0 0;

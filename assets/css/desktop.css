@@ -610,6 +610,43 @@ h1 {
   color: var(--mute);
 }
 
+.project h2 {
+  margin: 0 0 0.4rem;
+  color: var(--olive);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.project .lede {
+  margin: 0 0 0.85rem;
+  color: var(--olive);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.project p {
+  margin: 0 0 0.75rem;
+  max-width: 40rem;
+  color: var(--ink);
+}
+
+.project p:last-child { margin-bottom: 0; }
+
+.project-link {
+  margin-top: 1rem;
+}
+
+.project-link a {
+  color: var(--olive);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.project-link a:hover { text-decoration: underline; }
+
 .pane > p + p { margin-top: 0.75rem; }
 
 .site-guide p {
