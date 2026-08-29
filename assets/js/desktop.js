@@ -41,7 +41,10 @@
     if (path) path.textContent = labels[id] || "C:\\EMMA\\" + id;
     if (backBtn) backBtn.hidden = true;
     if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
-    if (id === "about") focusWelcome();
+    if (id === "about") {
+      resetWelcome();
+      requestAnimationFrame(focusWelcome);
+    }
   }
 
   function hideWin() {
@@ -223,6 +226,14 @@
     const activity = document.getElementById("activity");
     if (activity && !activity.hidden) return false;
     return true;
+  }
+
+  function resetWelcome() {
+    welcomeLog?.replaceChildren();
+    if (welcomeIn) welcomeIn.value = "";
+    cmdHistory.length = 0;
+    historyAt = 0;
+    document.getElementById("about")?.scrollTo(0, 0);
   }
 
   function focusWelcome() {
@@ -523,7 +534,12 @@
     requestAnimationFrame(focusWelcome);
   });
 
-  window.addEventListener("pageshow", focusWelcome);
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted && document.getElementById("about")?.classList.contains("is-on")) {
+      resetWelcome();
+    }
+    focusWelcome();
+  });
   window.addEventListener("focus", focusWelcome);
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) focusWelcome();

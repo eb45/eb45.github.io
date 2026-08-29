@@ -1,0 +1,130 @@
+:root {
+  --paper: #f4efe6;
+  --pane: #f7f3ea;
+  --ink: #1c1b18;
+  --mute: #6a655c;
+  --olive: #4c5544;
+  --line: rgba(28, 27, 24, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.plain {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.4rem 1.4rem 4.5rem;
+}
+
+.plain-top {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 2.4rem;
+}
+
+.plain-top a {
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+
+.plain-top a:hover { color: var(--olive); }
+
+.plain-head { margin: 0 0 0.85rem; }
+
+.plain h1 {
+  margin: 0 0 0.2rem;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.plain .role {
+  margin: 0 0 0.85rem;
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.plain .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+  margin: 0 0 2.4rem;
+}
+
+.plain .links a {
+  color: var(--olive);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.plain h2 {
+  margin: 0 0 0.85rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.plain section { margin: 0 0 2.1rem; }
+
+.plain h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.plain .when,
+.plain .where {
+  margin: 0.1rem 0 0;
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.74rem;
+}
+
+.plain article { margin: 0 0 1.35rem; }
+
+.plain ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.plain li { margin: 0 0 0.3rem; }
+
+.plain p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.plain .skills p { margin: 0 0 0.35rem; }
+
+.plain .skills span {
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}
+
+.plain .hobbies {
+  margin-top: 0.85rem;
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+}

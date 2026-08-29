@@ -69,26 +69,6 @@ a:hover { color: var(--olive); }
   align-items: stretch;
 }
 
-.skip-link {
-  position: absolute;
-  z-index: 81;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  height: 2.15rem;
-  padding: 0.42rem 0.75rem 0 0.75rem;
-  color: var(--mute);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.72rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.skip-link:hover { color: var(--ink); }
-
-.menubar-left { padding-left: 11.4rem; }
-
 .brand,
 .menu-btn,
 .bar-icon,
@@ -176,6 +156,26 @@ a:hover { color: var(--olive); }
 .desk {
   position: relative;
   height: 100%;
+}
+
+.plain-link {
+  position: absolute;
+  z-index: 20;
+  right: 1.15rem;
+  bottom: 0.65rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid var(--ink);
+  background: var(--pane);
+  color: var(--ink);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.plain-link:hover {
+  background: var(--olive);
+  color: var(--pane);
 }
 
 .icons {
@@ -296,7 +296,7 @@ a:hover { color: var(--olive); }
 .stage {
   position: absolute;
   z-index: 10;
-  inset: 3.55rem 8rem 2.4rem 8rem;
+  inset: 3.55rem 8rem 2.85rem 8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -857,14 +857,6 @@ h1 {
   .clock,
   .hide-phone { display: none; }
 
-  .skip-link {
-    height: 2.4rem;
-    font-size: 0.62rem;
-    padding: 0.38rem 0.45rem 0 0.4rem;
-  }
-
-  .menubar-left { padding-left: 8.6rem; }
-
   .menubar {
     height: 2.4rem;
     padding: 0 0.2rem;
@@ -918,6 +910,14 @@ h1 {
     right: 0.35rem;
   }
 
+  .plain-link {
+    top: 2.55rem;
+    right: 0.45rem;
+    bottom: auto;
+    font-size: 0.62rem;
+    padding: 0.28rem 0.48rem;
+  }
+
   .icon,
   .widget {
     width: 4.6rem;
@@ -925,7 +925,7 @@ h1 {
   }
 
   .stage {
-    inset: 2.7rem 0.45rem 5.4rem 0.45rem;
+    inset: 4.35rem 0.45rem 5.4rem 0.45rem;
   }
 
   .win {
