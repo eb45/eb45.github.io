@@ -839,6 +839,7 @@ body.lightbox-on { overflow: hidden; }
   display: block;
   width: 16rem;
   height: auto;
+  background: transparent;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
