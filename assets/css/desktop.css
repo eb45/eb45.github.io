@@ -666,7 +666,9 @@ h1 {
 
 .project-clips {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
+  max-width: 28rem;
   margin: 0.15rem 0 1rem;
 }
 
@@ -678,9 +680,16 @@ h1 {
 .shot video {
   display: block;
   width: 100%;
+  max-width: 22rem;
   height: auto;
   border: 1px solid var(--olive);
   background: var(--paper);
+}
+
+#pediatric .shot img,
+#ttc .shot img,
+#ttc .shot video {
+  max-width: 16rem;
 }
 
 .shot figcaption {
