@@ -299,7 +299,8 @@
       "  cat <file>           read a file",
       "  whoami",
       "  pwd",
-      "  open projects|work",
+      "  about",
+      "  experience",
       "  contact",
       "  github",
       "  clear",
@@ -377,6 +378,15 @@
       return { text: "", silent: true };
     }
     if (cmd === "open") return { text: runOpen(args) };
+    if (cmd === "about") {
+      return {
+        text: "Emma Bennett\nDuke University\nElectrical/Computer Engineering and Computer Science",
+      };
+    }
+    if (cmd === "experience" || cmd === "work") {
+      show("work");
+      return { text: "opening experience…" };
+    }
     if (cmd === "contact") {
       return {
         text: "https://github.com/eb45\nhttps://www.linkedin.com/in/emma-bennett4",
@@ -440,6 +450,14 @@
     event.preventDefault();
     run(welcomeIn.value);
     welcomeIn.value = "";
+  });
+
+  document.querySelectorAll("[data-cmd]").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      run(btn.dataset.cmd);
+    });
   });
 
   function historyKey(key) {

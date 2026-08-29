@@ -69,6 +69,26 @@ a:hover { color: var(--olive); }
   align-items: stretch;
 }
 
+.skip-link {
+  position: absolute;
+  z-index: 81;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: 2.15rem;
+  padding: 0.42rem 0.75rem 0 0.75rem;
+  color: var(--mute);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.skip-link:hover { color: var(--ink); }
+
+.menubar-left { padding-left: 11.4rem; }
+
 .brand,
 .menu-btn,
 .bar-icon,
@@ -504,6 +524,36 @@ a:hover { color: var(--olive); }
   visibility: hidden;
 }
 
+.welcome-hint {
+  margin: 0.4rem 0 0.5rem;
+  color: #8a9180;
+  font-size: 0.74rem;
+}
+
+.welcome-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.welcome-chip {
+  padding: 0.1rem 0.42rem;
+  border: 1px solid #6a7364;
+  background: transparent;
+  color: #c9d3b8;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.welcome-chip:hover,
+.welcome-chip:focus-visible {
+  border-color: var(--term-accent);
+  color: var(--term-accent);
+  outline: none;
+}
+
 .cursor {
   display: inline-block;
   width: 0.5em;
@@ -806,6 +856,14 @@ h1 {
 @media (max-width: 720px) {
   .clock,
   .hide-phone { display: none; }
+
+  .skip-link {
+    height: 2.4rem;
+    font-size: 0.62rem;
+    padding: 0.38rem 0.45rem 0 0.4rem;
+  }
+
+  .menubar-left { padding-left: 8.6rem; }
 
   .menubar {
     height: 2.4rem;
