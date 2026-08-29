@@ -6,8 +6,7 @@
   --olive: #4c5544;
   --olive-deep: #3a4234;
   --olive-soft: #6b7464;
-  --olive-wash: rgba(76, 85, 68, 0.1);
-  --line: rgba(76, 85, 68, 0.16);
+  --line: rgba(28, 27, 24, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -25,11 +24,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   color: var(--ink);
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(to right, var(--line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background: var(--paper);
   font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.55;
@@ -41,8 +36,6 @@ body {
   min-height: 100dvh;
   margin: 0 auto;
   padding: 2.2rem 1.6rem 4rem;
-  background: rgba(247, 243, 234, 0.92);
-  box-shadow: 0 0 0 1px rgba(76, 85, 68, 0.12);
 }
 
 .plain-intro,
@@ -195,16 +188,7 @@ body {
   text-transform: uppercase;
 }
 
-.plain section {
-  margin: 0 0 2.3rem;
-  padding: 1rem 1.05rem 1.15rem;
-  background: var(--olive-wash);
-  border: 1px solid rgba(76, 85, 68, 0.22);
-}
-
-.plain .work {
-  padding: 1rem 1.05rem 1.15rem;
-}
+.plain section { margin: 0 0 2.3rem; }
 
 .work h2,
 .work .timeline {
