@@ -91,7 +91,7 @@
     { label: "Work experience", open: "work" },
     { label: "PLM Research", open: "plm" },
     { label: "Subsurface sea temp prediction", open: "sea" },
-    { label: "Pediatric domain adaptation", open: "pediatric" },
+    { label: "Pediatric CXR classification", open: "pediatric" },
     { label: "Autonomous vehicle TTC prediction", open: "ttc" },
   ];
 
@@ -194,7 +194,7 @@
     projects: [
       "PLM Research",
       "Subsurface sea temp",
-      "Pediatric domain adaptation",
+      "Pediatric CXR classification",
       "AV TTC prediction",
     ],
   };
@@ -206,6 +206,7 @@
     sea: "sea",
     "sea-temp": "sea",
     pediatric: "pediatric",
+    cxr: "pediatric",
     ttc: "ttc",
     about: "about",
     site: "about-site",
