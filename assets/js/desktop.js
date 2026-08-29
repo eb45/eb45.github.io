@@ -662,7 +662,7 @@
       loaded = true;
     } catch (err) {
       graph.textContent = "Could not load the contribution grid.";
-      if (meta) meta.innerHTML = '<a href="https://github.com/eb45">Open GitHub instead</a>';
+      if (meta) meta.innerHTML = '<a href="https://github.com/eb45" target="_blank" rel="noopener noreferrer">Open GitHub instead</a>';
     }
   }
 
