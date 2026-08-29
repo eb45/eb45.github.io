@@ -374,6 +374,7 @@ a:hover { color: var(--olive); }
   justify-content: flex-start;
   padding: 1.25rem 1.4rem 1.6rem;
   cursor: text;
+  overflow-x: hidden;
 }
 
 .welcome {
@@ -382,6 +383,7 @@ a:hover { color: var(--olive); }
   align-items: flex-start;
   width: 100%;
   text-align: left;
+  container-type: inline-size;
 }
 
 .welcome-banner {
@@ -393,24 +395,26 @@ a:hover { color: var(--olive); }
 }
 
 .welcome-mark {
-  margin: 0 0 1.1rem;
+  margin: 0 0 1.15rem;
   color: var(--term-accent);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: clamp(0.36rem, 1.15vw, 0.68rem);
+  font-size: min(0.68rem, calc(100cqi / 64));
   line-height: 1.05;
   letter-spacing: 0;
-  overflow-x: auto;
+  overflow: hidden;
   max-width: 100%;
+  white-space: pre;
 }
 
 .welcome-mark-short {
   display: none;
   margin: 0 0 1.15rem;
   color: var(--term-accent);
-  font-size: clamp(1.35rem, 9vw, 1.85rem);
+  font-size: clamp(1rem, 6.2vw, 1.65rem);
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   line-height: 1.12;
+  white-space: nowrap;
 }
 
 .welcome-title {
