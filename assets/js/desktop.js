@@ -75,6 +75,7 @@
   }
 
   menus.forEach((menu) => {
+    if (!menu.querySelector(".menu-list")) return;
     menu.querySelector(".menu-btn")?.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
