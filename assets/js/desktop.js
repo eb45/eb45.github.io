@@ -380,9 +380,9 @@
       window.open("https://www.linkedin.com/in/emma-bennett4", "_blank", "noopener");
       return "https://www.linkedin.com/in/emma-bennett4";
     }
-    if (target === "mail" || target === "email" || target === "contact") {
-      window.location.href = "mailto:emmabennett135@gmail.com";
-      return "emmabennett135@gmail.com";
+    if (target === "contact") {
+      window.open("https://www.linkedin.com/in/emma-bennett4", "_blank", "noopener");
+      return "https://www.linkedin.com/in/emma-bennett4";
     }
     const id = openMap[target];
     if (id) {
@@ -408,9 +408,9 @@
       return { text: "", silent: true };
     }
     if (cmd === "open") return { text: runOpen(args) };
-    if (cmd === "contact" || cmd === "email" || cmd === "mail") {
+    if (cmd === "contact") {
       return {
-        text: "emmabennett135@gmail.com\nhttps://github.com/eb45\nhttps://www.linkedin.com/in/emma-bennett4",
+        text: "https://github.com/eb45\nhttps://www.linkedin.com/in/emma-bennett4",
       };
     }
     if (cmd === "github" || cmd === "gh") {
