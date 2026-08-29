@@ -25,11 +25,11 @@ body {
 }
 
 .plain {
-  max-width: none;
+  max-width: 54rem;
   min-height: 100vh;
   min-height: 100dvh;
-  margin: 0;
-  padding: 1.6rem 3.2vw 3.8rem;
+  margin: 0 auto;
+  padding: 2.2rem 1.6rem 4rem;
 }
 
 .plain-top {
@@ -142,9 +142,7 @@ body {
 
 .work h2,
 .work .timeline {
-  max-width: 62rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: none;
 }
 
 .timeline {
@@ -530,8 +528,8 @@ body.lightbox-on { overflow: hidden; }
   }
 
   .plain-portrait {
-    max-width: 18rem;
-    justify-self: start;
+    max-width: 16rem;
+    justify-self: center;
   }
 
   .plain-intro .about-copy { margin-top: 0; }
