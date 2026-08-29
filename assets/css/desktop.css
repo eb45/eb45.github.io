@@ -1236,8 +1236,8 @@ body.lightbox-on { overflow: hidden; }
     grid-template-columns: 1fr;
   }
 
-  .pane.project.is-on {
-    display: block;
+  .project-split {
+    grid-template-columns: 1fr;
   }
 
   .about-me.is-on {
