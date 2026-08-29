@@ -405,9 +405,10 @@ a:hover { color: var(--olive); }
   display: none;
   margin: 0 0 1.15rem;
   color: var(--term-accent);
-  font-size: 1.85rem;
+  font-size: clamp(1.35rem, 9vw, 1.85rem);
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
+  line-height: 1.12;
 }
 
 .welcome-title {
