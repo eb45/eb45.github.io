@@ -7,6 +7,8 @@
   --olive-deep: #3a4234;
   --olive-soft: #6b7464;
   --line: rgba(28, 27, 24, 0.08);
+  --serif: var(--serif);
+  --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -25,7 +27,7 @@ body {
   min-height: 100dvh;
   color: var(--ink);
   background: var(--paper);
-  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--sans);
   font-size: 16px;
   line-height: 1.55;
 }
@@ -53,7 +55,7 @@ body {
   border: 1px solid var(--olive);
   background: var(--olive);
   color: var(--paper);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.72rem;
   text-decoration: none;
 }
@@ -79,7 +81,7 @@ body {
   display: inline-block;
   padding: 0.38rem 0.62rem;
   color: var(--olive);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -122,7 +124,7 @@ body {
 
 .plain h1 {
   margin: 0 0 0.2rem;
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-family: var(--serif);
   font-size: clamp(2.2rem, 3.4vw, 2.9rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -141,7 +143,7 @@ body {
   border: 1px solid var(--olive);
   background: var(--olive);
   color: var(--paper);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.72rem;
   text-decoration: none;
 }
@@ -178,7 +180,7 @@ body {
 
 .plain h2 {
   margin: 0 0 0.95rem;
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-family: var(--serif);
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -299,7 +301,7 @@ body {
 .project-pop-body .project-course {
   margin: 0;
   color: var(--olive);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.7rem;
   line-height: 1.4;
 }
@@ -344,9 +346,9 @@ body {
   flex: 1;
   min-width: 0;
   margin: 0;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
   color: inherit;
 }
 
@@ -354,7 +356,7 @@ body {
   border: 1px solid var(--pane);
   background: transparent;
   color: var(--pane);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -375,7 +377,7 @@ body {
 
 .plain h3 {
   margin: 0;
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
+  font-family: var(--serif);
   font-size: 1.18rem;
   font-weight: 600;
 }
@@ -388,7 +390,7 @@ body {
 .plain .where {
   margin: 0.1rem 0 0;
   color: var(--mute);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.74rem;
 }
 
@@ -396,7 +398,7 @@ body {
 .project-pop-body a,
 .text-link {
   color: var(--olive);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.78rem;
 }
 
@@ -430,7 +432,7 @@ body {
 
 .plain .skills span {
   color: var(--olive);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.86rem;
 }
 
@@ -443,7 +445,7 @@ body {
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -483,7 +485,7 @@ body {
   border: 1px solid var(--olive);
   background: var(--olive);
   color: var(--paper);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.68rem;
 }
 
@@ -512,7 +514,7 @@ body {
 
 .shot figcaption {
   margin: 0.28rem 0 0;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.68rem;
   color: var(--olive);
 }
@@ -564,7 +566,7 @@ body {
   border: 1px solid var(--paper);
   background: transparent;
   color: var(--paper);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--sans);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
