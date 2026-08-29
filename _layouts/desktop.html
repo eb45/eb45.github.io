@@ -7,7 +7,7 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/desktop.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
@@ -18,8 +18,9 @@
       <div class="menu">
         <button type="button" class="menu-btn">Projects</button>
         <div class="menu-list">
+          <button type="button" data-open="plm">PLM Research</button>
           <button type="button" data-open="sea">Subsurface sea temp</button>
-          <button type="button" data-open="pediatric">Pediatric domain adaptation</button>
+          <button type="button" data-open="pediatric">Pediatric CXR classification</button>
           <button type="button" data-open="ttc">Vehicle TTC prediction</button>
         </div>
       </div>
@@ -37,9 +38,13 @@
       </div>
 
       <div class="menu">
+        <button type="button" class="menu-btn" data-open="skills">Skills</button>
+      </div>
+
+      <div class="menu">
         <button type="button" class="menu-btn">About</button>
         <div class="menu-list">
-          <button type="button" data-open="about">About me</button>
+          <button type="button" data-open="me">About me</button>
           <button type="button" data-open="about-site">About this website</button>
         </div>
       </div>
@@ -89,5 +94,6 @@
 
   {{ content }}
   <script src="{{ '/assets/js/desktop.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@ title: Emma Bennett
       <span class="pediatric-face" aria-hidden="true">
         <img src="{{ '/assets/img/pediatric.png' | relative_url }}" alt="" width="512" height="512">
       </span>
-      <span>Pediatric domain adaptation</span>
+      <span>Pediatric CXR classification</span>
     </button>
     <button type="button" class="icon" data-open="ttc">
       <span class="ttc-face" aria-hidden="true">
@@ -32,17 +32,25 @@ title: Emma Bennett
     </button>
   </nav>
 
-  <nav class="icons icons-right" aria-label="Work experience">
+  <nav class="icons icons-right" aria-label="Experience and skills">
     <button type="button" class="icon" data-open="work">
-      <span class="work-face" aria-hidden="true"></span>
+      <span class="work-face" aria-hidden="true">
+        <img src="{{ '/assets/img/work.png' | relative_url }}" alt="" width="512" height="512">
+      </span>
       <span>Work experience</span>
     </button>
+    <button type="button" class="icon" data-open="skills">
+      <span class="skills-face" aria-hidden="true"></span>
+      <span>Skills</span>
+    </button>
   </nav>
+
+  <a class="plain-link" href="{{ '/page/' | relative_url }}">View as standard page</a>
 
   <main class="stage">
     <section class="win" aria-label="Emma Bennett">
       <header class="bar">
-        <button type="button" class="back" data-open="projects" hidden aria-label="Back to projects">
+        <button type="button" class="back" hidden aria-label="Back to terminal">
           <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M10.2 2.6 4.8 8l5.4 5.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/></svg>
         </button>
         <span class="path">C:\EMMA\about</span>
@@ -52,14 +60,14 @@ title: Emma Bennett
       <div class="pane welcome-pane is-on" id="about">
         <div class="welcome">
           <p class="welcome-banner">* Welcome to my Portfolio</p>
-          <h1 class="welcome-title">Welcome to my Portfolio</h1>
-          <pre class="welcome-mark" aria-hidden="true">██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
-██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
-██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗
-██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝
-╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
- ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝</pre>
-          <p class="welcome-mark-short" aria-hidden="true">WELCOME</p>
+          <h1 class="welcome-title">Emma Bennett</h1>
+          <pre class="welcome-mark" aria-hidden="true">███████╗███╗   ███╗███╗   ███╗ █████╗     ██████╗ ███████╗███╗   ██╗███╗   ██╗███████╗████████╗████████╗
+██╔════╝████╗ ████║████╗ ████║██╔══██╗    ██╔══██╗██╔════╝████╗  ██║████╗  ██║██╔════╝╚══██╔══╝╚══██╔══╝
+█████╗  ██╔████╔██║██╔████╔██║███████║    ██████╔╝█████╗  ██╔██╗ ██║██╔██╗ ██║█████╗     ██║      ██║
+██╔══╝  ██║╚██╔╝██║██║╚██╔╝██║██╔══██║    ██╔══██╗██╔══╝  ██║╚██╗██║██║╚██╗██║██╔══╝     ██║      ██║
+███████╗██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║    ██████╔╝███████╗██║ ╚████║██║ ╚████║███████╗   ██║      ██║
+╚══════╝╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝   ╚═╝      ╚═╝</pre>
+          <p class="welcome-mark-short" aria-hidden="true">EMMA BENNETT</p>
           <pre class="welcome-term">emma@duke ~ % whoami
 <span class="welcome-out">Emma Bennett</span>
 emma@duke ~ % cat .profile
@@ -74,14 +82,31 @@ emma@duke ~ % cat .profile
                 <span class="cursor welcome-caret" aria-hidden="true"></span>
               </span>
             </form>
+            <p class="welcome-hint">Try: help · about · experience · skills · contact</p>
+            <div class="welcome-chips" role="group" aria-label="Suggested commands">
+              <button type="button" class="welcome-chip" data-cmd="help">[help]</button>
+              <button type="button" class="welcome-chip" data-cmd="about">[about]</button>
+              <button type="button" class="welcome-chip" data-cmd="experience">[experience]</button>
+              <button type="button" class="welcome-chip" data-cmd="skills">[skills]</button>
+              <button type="button" class="welcome-chip" data-cmd="contact">[contact]</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="pane" id="about-site">
-        <p class="note">This site is a desktop.</p>
-        <p class="note">Use the menus along the top, or the widgets on the desk. Work experience sits on the right.</p>
-        <p class="note">On the About me prompt, try <code>help</code>.</p>
+      <div class="pane about-me" id="me">
+        <div class="about-copy">
+          <p>Hi! I’m Emma, an Electrical/Computer Engineering and CS double major at Duke.</p>
+          <p>This past summer I interned at LinkedIn as a software engineer on the Service Runtime infra team. Before that, I’ve worked and done research across AI/ML, cybersecurity, and bioinformatics.</p>
+          <p>Outside of school, I’m usually out on a run, playing piano or guitar, or exploring Durham with friends.</p>
+        </div>
+        <img class="about-photo" src="{{ '/assets/img/emma.jpg' | relative_url }}" alt="Emma Bennett" width="844" height="976">
+      </div>
+
+      <div class="pane site-guide" id="about-site">
+        <p>There are two ways to view this site: this desktop, and a standard website.</p>
+        <p>Use the menus along the top or the icons on the desktop to explore.</p>
+        <p><a href="{{ '/page/' | relative_url }}">View as standard page →</a></p>
       </div>
 
       <div class="pane" id="work">
@@ -94,6 +119,17 @@ emma@duke ~ % cat .profile
               <li>Built an LLM-based autofixer using LangChain that detects sync-blocking calls in async Python code and auto-generates fixes. Reduced event-loop stalls by 85% (10K→1.3K/day) in a production backend service.</li>
               <li>Scaled fix correctness evaluation via a Kafka-to-Pinot telemetry pipeline, resolving hundreds of violations across 17 internal services at an 89.8% average fix score.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>LangChain</li>
+                <li>Large Language Models</li>
+                <li>Kafka</li>
+                <li>Apache Pinot</li>
+                <li>SQL</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">May 2025 – August 2025</p>
@@ -103,6 +139,17 @@ emma@duke ~ % cat .profile
               <li>Designed and developed a data lake to enable security monitoring of previously siloed 3rd-party applications within CrowdStrike’s Adaptive Shield platform using Azure, Databricks, Apache Spark, and Python.</li>
               <li>Built an automated ticket workflow in Python between Adaptive Shield and ServiceNow to open and close tickets based on security checks, eliminating manual ticketing overhead.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>Microsoft Azure</li>
+                <li>Databricks</li>
+                <li>Apache Spark</li>
+                <li>ServiceNow</li>
+                <li>SQL</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">September 2024 – Present</p>
@@ -112,6 +159,18 @@ emma@duke ~ % cat .profile
               <li>Developing a reproducible deep learning benchmarking framework to evaluate pooling strategies across protein-language models for protein fitness prediction.</li>
               <li>Implementing mean, max, top-k, light attention, SWE, and BOM pooling in a unified training pipeline, measured via Spearman correlation across PLM architectures, seeds, and LoRA ranks.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>PyTorch</li>
+                <li>Deep Learning</li>
+                <li>LoRA</li>
+                <li>Transformers</li>
+                <li>NumPy</li>
+                <li>Machine Learning</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">May 2024 – August 2024</p>
@@ -120,6 +179,16 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Designed and implemented cyber agents that generate and execute action plans in simulation and live-fire environments by adapting AI planning algorithms for the cybersecurity domain. Used Python and Jupyter Notebook.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>Jupyter Notebook</li>
+                <li>Machine Learning</li>
+                <li>Planning Algorithms</li>
+                <li>Simulation</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">June 2023 – August 2023</p>
@@ -128,6 +197,16 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Researched and implemented a cyber agent architecture where communications among agents are entirely driven by LLMs on a GPU cluster. Agents communicate to search the network topology and capture a flag. Results presented at Black Hat 2024.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>Large Language Models</li>
+                <li>Multi-agent</li>
+                <li>GPU</li>
+                <li>Network Topology</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">June 2022 – August 2022</p>
@@ -136,6 +215,15 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Researched and implemented in Go a new adversarial cost algorithm based on A*, factoring in weighted cost from detected adversarial cyber agent nodes. Also implemented a network simulation tool in NetworkX.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Go</li>
+                <li>NetworkX</li>
+                <li>Network Simulation</li>
+                <li>Python</li>
+              </ul>
+            </details>
           </li>
           <li>
             <p class="when">June 2021 – August 2021</p>
@@ -144,8 +232,39 @@ emma@duke ~ % cat .profile
             <ul>
               <li>Analyzed Zeek logs from a network security monitoring tool and performed anomaly detection with several machine learning algorithms. Used Python and scikit-learn.</li>
             </ul>
+            <details class="tech">
+              <summary>Technologies used</summary>
+              <ul class="tech-chips">
+                <li>Python</li>
+                <li>scikit-learn</li>
+                <li>NumPy</li>
+                <li>Zeek</li>
+                <li>Machine Learning</li>
+              </ul>
+            </details>
           </li>
         </ol>
+      </div>
+
+      <div class="pane" id="skills">
+        <dl class="skill-list">
+          <div>
+            <dt>Languages</dt>
+            <dd>Python, Java, C, Go, SQL</dd>
+          </div>
+          <div>
+            <dt>AI/ML</dt>
+            <dd>LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy</dd>
+          </div>
+          <div>
+            <dt>Infra/Data</dt>
+            <dd>Kafka, Apache Pinot, Databricks, Apache Spark, Azure, Docker, OpenTelemetry</dd>
+          </div>
+          <div>
+            <dt>Platforms</dt>
+            <dd>GitHub, Linux, Windows</dd>
+          </div>
+        </dl>
       </div>
 
       <div class="pane" id="plm">
@@ -154,6 +273,12 @@ emma@duke ~ % cat .profile
 
       <div class="pane" id="projects">
         <div class="folder-grid">
+          <button type="button" class="icon" data-open="plm">
+            <span class="genome" aria-hidden="true">
+              <img src="{{ '/assets/img/genome.png' | relative_url }}" alt="" width="357" height="801">
+            </span>
+            <span>PLM Research</span>
+          </button>
           <button type="button" class="icon" data-open="sea">
             <span class="sea-face" aria-hidden="true">
               <img src="{{ '/assets/img/sea.png' | relative_url }}" alt="" width="512" height="512">
@@ -164,7 +289,7 @@ emma@duke ~ % cat .profile
             <span class="pediatric-face" aria-hidden="true">
             <img src="{{ '/assets/img/pediatric.png' | relative_url }}" alt="" width="512" height="512">
           </span>
-            <span>Pediatric domain adaptation</span>
+            <span>Pediatric CXR classification</span>
           </button>
           <button type="button" class="icon" data-open="ttc">
             <span class="ttc-face" aria-hidden="true">
@@ -175,16 +300,81 @@ emma@duke ~ % cat .profile
         </div>
       </div>
 
-      <div class="pane" id="sea">
-        <p class="note">Subsurface sea temperature prediction</p>
+      <div class="pane project" id="sea">
+        <div class="project-split">
+          <div class="project-copy">
+            <h2>Subsurface sea temperature</h2>
+            <p class="lede">Deep learning reconstruction of sea subsurface temperature from surface climate fields.</p>
+            <p>The model takes sea surface temperature, sea surface height, zonal and meridional surface wind, plus latitude and longitude, and predicts temperature at depth. Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure: convolutions use local neighborhood and sparse connections instead of flattening the map.</p>
+            <p>Experiments include ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM.</p>
+            <p class="project-link"><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
+          </div>
+          <div class="project-media">
+            <figure class="shot poster">
+              <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
+                <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+              </button>
+              <figcaption>ECE 661 poster · click to enlarge</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
 
-      <div class="pane" id="pediatric">
-        <p class="note">Pediatric domain adaptation</p>
+      <div class="pane project" id="pediatric">
+        <div class="project-split">
+          <div class="project-copy">
+            <h2>Pediatric CXR classification</h2>
+            <p class="lede">CLIP-style domain adaptation from adult chest X-rays to pediatric pneumonia vs. normal.</p>
+            <p>An image–text model is pretrained with contrastive loss on adult NIH CXRs, then the image encoder is fine-tuned on the Kermany pediatric set. At test time the image is classified by nearest text prompt (Normal / Pneumonia). That pipeline is compared with a pediatric-only ResNet trained with cross-entropy, and with two other adaptation methods: domain-adversarial training (DANN) and optimal-transport Wasserstein (sliced Wasserstein distance).</p>
+            <p>Learning curves report AUC and F1 against the fraction of pediatric data; evaluation includes ROC, precision–recall, calibration, and Grad-CAM. ECE 685 final project.</p>
+            <p class="project-link"><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
+          </div>
+          <div class="project-media">
+            <figure class="shot">
+              <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+              <figcaption>Ground truth vs. prediction</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
 
-      <div class="pane" id="ttc">
-        <p class="note">Autonomous vehicle time-to-collision (TTC) prediction</p>
+      <div class="pane project" id="ttc">
+        <div class="project-split">
+          <div class="project-copy">
+            <h2>AV TTC prediction</h2>
+            <p class="lede">Time-to-collision as a risk score on nuScenes, using a frozen StreamPETR detector and a small MLP head.</p>
+            <p>Ground-truth TTC is built from a physics closure (distance over closing speed, capped at 10&nbsp;s). A physics baseline runs that same formula on StreamPETR boxes and velocities. A learned head regresses seconds-to-collision from object query features, with and without explicit velocity embeddings, so the same detections yield both an interpretable baseline and a learned estimate.</p>
+            <p>On the trainval split, the physics baseline is strongest overall (MAE 1.48&nbsp;s). Adding velocity to the MLP recovers most of the gap (MAE 1.71&nbsp;s vs 3.57&nbsp;s for query features alone). Short-horizon bins stay hard: nuScenes has almost no sub-second collisions, so the learned head has little supervision there. Built on StreamPETR (ICCV 2023).</p>
+            <p class="project-link">
+              <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo →</a>
+            </p>
+          </div>
+          <div class="project-media">
+            <figure class="shot">
+              <img src="{{ '/assets/img/projects/ttc/nuscenes.jpg' | relative_url }}" alt="Example nuScenes driving scene used for TTC labels" width="850" height="481">
+              <figcaption>nuScenes example scene</figcaption>
+            </figure>
+            <div class="project-clips">
+              <figure class="shot">
+                <img src="{{ '/assets/img/projects/ttc/intersection.jpg' | relative_url }}" alt="Intersection scene TTC summary" width="1400" height="1139">
+                <figcaption>Intersection</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="{{ '/assets/img/projects/ttc/straight-away.jpg' | relative_url }}" alt="Straight-away scene TTC summary" width="1400" height="1139">
+                <figcaption>Straight-away</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="{{ '/assets/img/projects/ttc/parking.jpg' | relative_url }}" alt="Parking scene TTC summary" width="1400" height="1139">
+                <figcaption>Parking / slow-moving</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="{{ '/assets/img/projects/ttc/barriers.jpg' | relative_url }}" alt="Barriers scene TTC summary" width="1400" height="1139">
+                <figcaption>Barriers and close objects</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
