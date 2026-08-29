@@ -813,12 +813,45 @@ body.lightbox-on { overflow: hidden; }
 
 .about-copy p:last-child { margin-bottom: 0; }
 
-.about-photo {
+.portrait-flip {
   display: block;
   flex: 0 0 16rem;
   width: 16rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  perspective: 70rem;
+}
+
+.portrait-inner {
+  position: relative;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.portrait-flip.is-flipped .portrait-inner {
+  transform: rotateY(180deg);
+}
+
+.about-photo {
+  display: block;
+  width: 16rem;
   height: auto;
   border: 1px solid var(--olive);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.portrait-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--paper);
+  transform: rotateY(180deg);
 }
 
 .site-guide p:last-child { margin-bottom: 0; }
@@ -1262,6 +1295,7 @@ body.lightbox-on { overflow: hidden; }
     gap: 1rem;
   }
 
+  .portrait-flip,
   .about-photo {
     flex: 0 0 auto;
     width: 11.5rem;

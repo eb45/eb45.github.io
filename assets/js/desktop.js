@@ -726,3 +726,12 @@
     if (event.key === "Escape") closeActivity();
   });
 })();
+
+(function () {
+  document.querySelectorAll(".portrait-flip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const on = btn.classList.toggle("is-flipped");
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+})();

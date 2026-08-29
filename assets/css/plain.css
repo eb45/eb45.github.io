@@ -121,6 +121,45 @@ body {
   box-shadow: 4px 4px 0 rgba(76, 85, 68, 0.16);
 }
 
+.portrait-flip {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  perspective: 70rem;
+}
+
+.portrait-inner {
+  position: relative;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.portrait-flip.is-flipped .portrait-inner {
+  transform: rotateY(180deg);
+}
+
+.portrait-front,
+.portrait-back {
+  display: block;
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.portrait-back {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: var(--paper);
+  transform: rotateY(180deg);
+}
+
 .plain h1 {
   margin: 0 0 0.2rem;
   font-family: var(--sans);
@@ -669,6 +708,8 @@ body.lightbox-on { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+
+  .portrait-inner { transition: none; }
 
   .reveal,
   .reveal.from-left,

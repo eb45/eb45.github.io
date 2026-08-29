@@ -19,7 +19,12 @@ permalink: /
       <h1>Emma Bennett</h1>
     </div>
     <figure class="plain-portrait">
-      <img class="about-photo" src="{{ '/assets/img/emma.jpg' | relative_url }}" alt="Emma Bennett" width="844" height="976">
+      <button type="button" class="portrait-flip" aria-pressed="false" aria-label="Flip photo">
+        <span class="portrait-inner">
+          <img class="about-photo portrait-front" src="{{ '/assets/img/emma.jpg' | relative_url }}" alt="Emma Bennett" width="844" height="976">
+          <img class="about-photo portrait-back" src="{{ '/assets/img/emma-notion.png' | relative_url }}" alt="" width="1024" height="1536">
+        </span>
+      </button>
     </figure>
     <div class="about-copy">
       <p>Hi! I’m Emma, an Electrical/Computer Engineering and CS double major at Duke.</p>
