@@ -23,7 +23,7 @@ body {
 }
 
 .plain {
-  max-width: 40rem;
+  max-width: 46rem;
   margin: 0 auto;
   padding: 2.4rem 1.4rem 4.5rem;
 }
@@ -43,15 +43,33 @@ body {
 
 .plain-top a:hover { color: var(--olive); }
 
-.plain-head {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin: 0 0 1.4rem;
+.plain-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15.5rem;
+  grid-template-areas:
+    "id photo"
+    "copy photo";
+  gap: 0.35rem 2rem;
+  align-items: start;
+  margin: 0 0 2.6rem;
 }
 
-.plain-head > div { min-width: 0; flex: 1; }
+.plain-intro-id { grid-area: id; min-width: 0; }
+
+.plain-intro .about-copy {
+  grid-area: copy;
+  margin: 0.7rem 0 0;
+  max-width: none;
+}
+
+.plain-portrait {
+  grid-area: photo;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0.7rem;
+  background: var(--pane);
+  border: 1px solid var(--olive);
+  box-shadow: 4px 4px 0 rgba(76, 85, 68, 0.16);
+}
 
 .plain h1 {
   margin: 0 0 0.2rem;
@@ -82,12 +100,9 @@ body {
 
 .about-photo {
   display: block;
-  flex: 0 0 9.5rem;
-  width: 9.5rem;
-  height: 12.5rem;
-  object-fit: cover;
-  object-position: 55% 18%;
-  border: 1px solid var(--olive);
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(76, 85, 68, 0.4);
 }
 
 .about-copy {
@@ -252,3 +267,21 @@ body {
 }
 
 .plain article p a + a { margin-left: 0.9rem; }
+
+@media (max-width: 640px) {
+  .plain-intro {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "id"
+      "photo"
+      "copy";
+    gap: 1rem;
+  }
+
+  .plain-portrait {
+    max-width: 16.5rem;
+    justify-self: start;
+  }
+
+  .plain-intro .about-copy { margin-top: 0; }
+}

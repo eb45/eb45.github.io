@@ -723,11 +723,9 @@ h1 {
 
 .about-photo {
   display: block;
-  flex: 0 0 11.5rem;
-  width: 11.5rem;
-  height: 15.2rem;
-  object-fit: cover;
-  object-position: 55% 18%;
+  flex: 0 0 14.5rem;
+  width: 14.5rem;
+  height: auto;
   border: 1px solid var(--olive);
 }
 
@@ -1167,8 +1165,8 @@ h1 {
 
   .about-photo {
     flex: 0 0 auto;
-    width: 8.5rem;
-    height: 11.2rem;
+    width: 11.5rem;
+    height: auto;
   }
 
   .welcome-banner {
