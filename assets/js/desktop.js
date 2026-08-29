@@ -11,7 +11,7 @@
     about: "C:\\EMMA\\about",
     me: "C:\\EMMA\\about\\me",
     "about-site": "C:\\EMMA\\about\\site",
-    plm: "C:\\EMMA\\plm-research",
+    plm: "C:\\EMMA\\pooling-plms",
     projects: "C:\\EMMA\\projects",
     sea: "C:\\EMMA\\projects\\sea-temp",
     pediatric: "C:\\EMMA\\projects\\pediatric",

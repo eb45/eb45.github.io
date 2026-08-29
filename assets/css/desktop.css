@@ -239,7 +239,8 @@ a:hover { color: var(--olive); }
 .work-face,
 .sea-face,
 .pediatric-face,
-.ttc-face {
+.ttc-face,
+.plm-face {
   display: grid;
   place-items: center;
   width: 2rem;
@@ -251,7 +252,8 @@ a:hover { color: var(--olive); }
 .work-face img,
 .sea-face img,
 .pediatric-face img,
-.ttc-face img {
+.ttc-face img,
+.plm-face img {
   display: block;
   width: 100%;
   height: 100%;
