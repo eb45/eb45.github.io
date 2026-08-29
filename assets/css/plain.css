@@ -115,9 +115,8 @@ body {
 .plain-portrait {
   grid-area: photo;
   margin: 0;
-  padding: 0.5rem 0.5rem 0.7rem;
-  background: var(--pane);
-  box-shadow: 4px 4px 0 rgba(76, 85, 68, 0.16);
+  padding: 0;
+  background: transparent;
 }
 
 .portrait-flip {
@@ -133,6 +132,7 @@ body {
 .portrait-inner {
   position: relative;
   display: block;
+  background: transparent;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
 }
@@ -196,6 +196,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  background: transparent;
 }
 
 .about-copy {
