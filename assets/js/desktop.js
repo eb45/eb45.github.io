@@ -16,6 +16,7 @@
     pediatric: "C:\\EMMA\\projects\\pediatric",
     ttc: "C:\\EMMA\\projects\\ttc",
     work: "C:\\EMMA\\experience",
+    skills: "C:\\EMMA\\skills",
   };
 
   function closeMenus() {
@@ -89,6 +90,7 @@
 
   const projects = [
     { label: "Work experience", open: "work" },
+    { label: "Skills", open: "skills" },
     { label: "PLM Research", open: "plm" },
     { label: "Subsurface sea temp prediction", open: "sea" },
     { label: "Pediatric CXR classification", open: "pediatric" },
@@ -187,9 +189,15 @@
   const HOME = "/Users/emma";
   const files = {
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
+    skills: [
+      "Languages   Python, Java, C, Go, SQL",
+      "AI/ML       LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy",
+      "Infra/Data  Kafka, Apache Pinot, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
+      "Platforms   GitHub, Linux, Windows",
+    ].join("\n"),
   };
   const listings = {
-    "": [".profile", "hobbies/", "projects/"],
+    "": [".profile", "hobbies/", "projects/", "skills"],
     hobbies: ["running", "reading", "baking", "playing piano", "playing guitar"],
     projects: [
       "PLM Research",
@@ -215,6 +223,8 @@
     experience: "work",
     job: "work",
     jobs: "work",
+    skills: "skills",
+    skill: "skills",
   };
   const cmdHistory = [];
   let historyAt = 0;
@@ -313,6 +323,7 @@
       "  pwd",
       "  about",
       "  experience",
+      "  skills",
       "  contact",
       "  github",
       "  clear",
@@ -353,7 +364,7 @@
 
   function runOpen(args) {
     const target = (args[0] || "").toLowerCase();
-    if (!target) return "usage: open projects|work";
+    if (!target) return "usage: open projects|work|skills";
     if (target === "github" || target === "gh") {
       window.open("https://github.com/eb45", "_blank", "noopener");
       return "https://github.com/eb45";
@@ -398,6 +409,10 @@
     if (cmd === "experience" || cmd === "work") {
       show("work");
       return { text: "opening experience…" };
+    }
+    if (cmd === "skills" || cmd === "skill") {
+      show("skills");
+      return { text: "opening skills…" };
     }
     if (cmd === "contact") {
       return {

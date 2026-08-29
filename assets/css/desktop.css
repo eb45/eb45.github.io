@@ -266,6 +266,35 @@ a:hover { color: var(--olive); }
   box-shadow: 0 6px 0 0 var(--pane), 0 6px 0 1px var(--ink), 0 12px 0 0 var(--pane), 0 12px 0 1px var(--ink);
 }
 
+.skills-face {
+  position: relative;
+  width: 1.55rem;
+  height: 2rem;
+  border: 1px solid var(--ink);
+  background: var(--pane);
+}
+
+.skills-face::before,
+.skills-face::after {
+  content: "";
+  position: absolute;
+  left: 0.28rem;
+  right: 0.28rem;
+  height: 2px;
+  background: var(--ink);
+}
+
+.skills-face::before {
+  top: 0.42rem;
+  box-shadow: 0 6px 0 var(--ink);
+}
+
+.skills-face::after {
+  top: 1.18rem;
+  background: var(--olive);
+  box-shadow: 0 6px 0 var(--olive);
+}
+
 .sea-face,
 .pediatric-face,
 .ttc-face {
@@ -710,6 +739,37 @@ h1 {
 
 .timeline ul li + li { margin-top: 0.35rem; }
 
+.skill-list {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+}
+
+.skill-list > div {
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-list > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.skill-list dt {
+  margin: 0 0 0.28rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.skill-list dd {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
 .icons-right .icon { width: 7.2rem; }
 
 .files {
@@ -959,6 +1019,8 @@ h1 {
     bottom: 0.55rem;
     left: auto;
     right: 0.35rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .plain-link {
