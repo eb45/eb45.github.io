@@ -235,35 +235,26 @@ a:hover { color: var(--olive); }
   object-fit: contain;
 }
 
-.work-face {
-  position: relative;
-  width: 1.55rem;
+.work-face,
+.sea-face,
+.pediatric-face,
+.ttc-face {
+  display: grid;
+  place-items: center;
+  width: 2rem;
   height: 2rem;
-  border: 1px solid var(--ink);
-  background: var(--pane);
+  overflow: hidden;
+  background: transparent;
 }
 
-.work-face::before {
-  content: "";
-  position: absolute;
-  top: 0.28rem;
-  bottom: 0.28rem;
-  left: 50%;
-  width: 1px;
-  background: var(--ink);
-}
-
-.work-face::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0.38rem;
-  width: 5px;
-  height: 5px;
-  margin-left: -2.5px;
-  border: 1px solid var(--ink);
-  background: var(--olive);
-  box-shadow: 0 6px 0 0 var(--pane), 0 6px 0 1px var(--ink), 0 12px 0 0 var(--pane), 0 12px 0 1px var(--ink);
+.work-face img,
+.sea-face img,
+.pediatric-face img,
+.ttc-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .skills-face {
@@ -293,26 +284,6 @@ a:hover { color: var(--olive); }
   top: 1.18rem;
   background: var(--olive);
   box-shadow: 0 6px 0 var(--olive);
-}
-
-.sea-face,
-.pediatric-face,
-.ttc-face {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  overflow: hidden;
-  background: transparent;
-}
-
-.sea-face img,
-.pediatric-face img,
-.ttc-face img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .folder-grid {
