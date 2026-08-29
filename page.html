@@ -179,17 +179,47 @@ permalink: /page/
     <article>
       <h3>Subsurface sea temp</h3>
       <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon), using ConvLSTM and CNN–LSTM models with optional land masking.</p>
+      <div class="project-gallery">
+        <figure class="shot">
+          <img src="{{ '/assets/img/projects/sea/sst.jpg' | relative_url }}" alt="Sea surface temperature field" width="672" height="461">
+          <figcaption>Sea surface temperature</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="{{ '/assets/img/projects/sea/ssh.jpg' | relative_url }}" alt="Sea surface height field" width="686" height="455">
+          <figcaption>Sea surface height</figcaption>
+        </figure>
+      </div>
+      <figure class="shot">
+        <video autoplay muted loop playsinline>
+          <source src="{{ '/assets/img/projects/sea/st-heatmap.mp4' | relative_url }}" type="video/mp4">
+        </video>
+        <figcaption>Subsurface temperature heatmap over time</figcaption>
+      </figure>
       <p><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a></p>
     </article>
     <article>
       <h3>Pediatric CXR classification</h3>
       <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+      <figure class="shot">
+        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+        <figcaption>Ground truth vs. prediction</figcaption>
+      </figure>
       <p><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a></p>
     </article>
     <article>
       <h3>AV TTC prediction</h3>
       <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
-      <p><a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <figure class="shot">
+        <video autoplay muted loop playsinline>
+          <source src="{{ '/assets/img/projects/ttc/intersection.mp4' | relative_url }}" type="video/mp4">
+        </video>
+        <figcaption>Intersection scene</figcaption>
+      </figure>
+      <p>
+        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo</a>
+        <a href="https://youtu.be/9uGHDp0meTM" target="_blank" rel="noopener noreferrer">Walkthrough</a>
+      </p>
     </article>
   </section>
 

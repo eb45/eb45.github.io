@@ -635,6 +635,9 @@ h1 {
 .project p:last-child { margin-bottom: 0; }
 
 .project-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.1rem;
   margin-top: 1rem;
 }
 
@@ -646,6 +649,42 @@ h1 {
 }
 
 .project-link a:hover { text-decoration: underline; }
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.65rem;
+  margin: 0.15rem 0 1rem;
+}
+
+.project-clips {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.15rem 0 1rem;
+}
+
+.shot {
+  margin: 0 0 0.95rem;
+}
+
+.shot img,
+.shot video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--olive);
+  background: var(--paper);
+}
+
+.shot figcaption {
+  margin: 0.28rem 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: var(--olive);
+}
+
+.project-gallery .shot,
+.project-clips .shot { margin: 0; }
 
 .pane > p + p { margin-top: 0.75rem; }
 
@@ -1115,6 +1154,10 @@ h1 {
 
   .welcome-pane.is-on {
     padding: 0.85rem 0.75rem 1rem;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
   }
 
   .about-me.is-on {

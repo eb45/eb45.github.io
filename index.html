@@ -304,7 +304,35 @@ emma@duke ~ % cat .profile
         <h2>Subsurface sea temperature</h2>
         <p class="lede">Deep learning reconstruction of sea subsurface temperature from surface climate fields.</p>
         <p>The model takes sea surface temperature, sea surface height, zonal and meridional surface wind, plus latitude and longitude, and predicts temperature at depth. Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure: convolutions use local neighborhood and sparse connections instead of flattening the map.</p>
+        <div class="project-gallery">
+          <figure class="shot">
+            <img src="{{ '/assets/img/projects/sea/sst.jpg' | relative_url }}" alt="Sea surface temperature field" width="672" height="461">
+            <figcaption>Sea surface temperature</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="{{ '/assets/img/projects/sea/ssh.jpg' | relative_url }}" alt="Sea surface height field" width="686" height="455">
+            <figcaption>Sea surface height</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="{{ '/assets/img/projects/sea/ussw.jpg' | relative_url }}" alt="Zonal surface wind field" width="675" height="452">
+            <figcaption>Zonal surface wind</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="{{ '/assets/img/projects/sea/vssw.jpg' | relative_url }}" alt="Meridional surface wind field" width="691" height="460">
+            <figcaption>Meridional surface wind</figcaption>
+          </figure>
+        </div>
         <p>Experiments include ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM. Training can be watched as a 2D map each epoch, since every sample is tied to latitude and longitude.</p>
+        <figure class="shot">
+          <img src="{{ '/assets/img/projects/sea/training.jpg' | relative_url }}" alt="Training accuracy visualized on a latitude-longitude map" width="612" height="996">
+          <figcaption>Training visualized as a 2D map</figcaption>
+        </figure>
+        <figure class="shot">
+          <video autoplay muted loop playsinline>
+            <source src="{{ '/assets/img/projects/sea/st-heatmap.mp4' | relative_url }}" type="video/mp4">
+          </video>
+          <figcaption>Subsurface temperature heatmap over time</figcaption>
+        </figure>
         <p class="project-link"><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
       </div>
 
@@ -312,6 +340,10 @@ emma@duke ~ % cat .profile
         <h2>Pediatric CXR classification</h2>
         <p class="lede">CLIP-style domain adaptation from adult chest X-rays to pediatric pneumonia vs. normal.</p>
         <p>An image–text model is pretrained with contrastive loss on adult NIH CXRs, then the image encoder is fine-tuned on the Kermany pediatric set. At test time the image is classified by nearest text prompt (Normal / Pneumonia). That pipeline is compared with a pediatric-only ResNet trained with cross-entropy, and with two other adaptation methods: domain-adversarial training (DANN) and optimal-transport Wasserstein (sliced Wasserstein distance).</p>
+        <figure class="shot">
+          <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+          <figcaption>Ground truth vs. prediction</figcaption>
+        </figure>
         <p>Learning curves report AUC and F1 against the fraction of pediatric data; evaluation includes ROC, precision–recall, calibration, and Grad-CAM. ECE 685 final project.</p>
         <p class="project-link"><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
       </div>
@@ -320,8 +352,42 @@ emma@duke ~ % cat .profile
         <h2>AV TTC prediction</h2>
         <p class="lede">Time-to-collision as a risk score on nuScenes, using a frozen StreamPETR detector and a small MLP head.</p>
         <p>Ground-truth TTC is built from a physics closure (distance over closing speed, capped at 10&nbsp;s). A physics baseline runs that same formula on StreamPETR boxes and velocities. A learned head regresses seconds-to-collision from object query features, with and without explicit velocity embeddings, so the same detections yield both an interpretable baseline and a learned estimate.</p>
+        <figure class="shot">
+          <img src="{{ '/assets/img/projects/ttc/nuscenes.jpg' | relative_url }}" alt="Example nuScenes driving scene used for TTC labels" width="850" height="481">
+          <figcaption>nuScenes example scene</figcaption>
+        </figure>
+        <div class="project-clips">
+          <figure class="shot">
+            <video autoplay muted loop playsinline>
+              <source src="{{ '/assets/img/projects/ttc/intersection.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <figcaption>Intersection</figcaption>
+          </figure>
+          <figure class="shot">
+            <video autoplay muted loop playsinline>
+              <source src="{{ '/assets/img/projects/ttc/straight-away.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <figcaption>Straight-away</figcaption>
+          </figure>
+          <figure class="shot">
+            <video autoplay muted loop playsinline>
+              <source src="{{ '/assets/img/projects/ttc/parking.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <figcaption>Parking / slow-moving</figcaption>
+          </figure>
+          <figure class="shot">
+            <video autoplay muted loop playsinline>
+              <source src="{{ '/assets/img/projects/ttc/barriers.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <figcaption>Barriers and close objects</figcaption>
+          </figure>
+        </div>
         <p>On the trainval split, the physics baseline is strongest overall (MAE 1.48&nbsp;s). Adding velocity to the MLP recovers most of the gap (MAE 1.71&nbsp;s vs 3.57&nbsp;s for query features alone). Short-horizon bins stay hard: nuScenes has almost no sub-second collisions, so the learned head has little supervision there. Built on StreamPETR (ICCV 2023).</p>
-        <p class="project-link"><a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
+        <p class="project-link">
+          <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo →</a>
+          <a href="https://youtu.be/9uGHDp0meTM" target="_blank" rel="noopener noreferrer">Walkthrough →</a>
+        </p>
       </div>
     </section>
   </main>
