@@ -36,8 +36,9 @@ permalink: /page/
     </article>
   </section>
 
-  <section>
+  <section class="work">
     <h2>Work experience</h2>
+    <div class="work-grid">
     <article>
       <h3>Software Engineer Intern</h3>
       <p class="where">LinkedIn · Sunnyvale, CA</p>
@@ -170,49 +171,76 @@ permalink: /page/
         </ul>
       </details>
     </article>
+    </div>
   </section>
 
-  <section>
+  <section class="projects">
     <h2>Projects</h2>
-    <article>
-      <h3>PLM Research</h3>
-      <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction.</p>
-    </article>
-    <article>
-      <h3>Subsurface sea temp</h3>
-      <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon), using ConvLSTM and CNN–LSTM models with optional land masking.</p>
-      <figure class="shot poster">
-        <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
-          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
-        </button>
-        <figcaption>ECE 661 poster · click to enlarge</figcaption>
-      </figure>
-      <p><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </article>
-    <article>
-      <h3>Pediatric CXR classification</h3>
-      <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
-        <figcaption>Ground truth vs. prediction</figcaption>
-      </figure>
-      <p><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </article>
-    <article>
-      <h3>AV TTC prediction</h3>
-      <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
-      <figure class="shot">
-        <video autoplay muted loop playsinline>
-          <source src="{{ '/assets/img/projects/ttc/intersection.mp4' | relative_url }}" type="video/mp4">
-        </video>
-        <figcaption>Intersection scene</figcaption>
-      </figure>
-      <p>
-        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo</a>
-        <a href="https://youtu.be/9uGHDp0meTM" target="_blank" rel="noopener noreferrer">Walkthrough</a>
-      </p>
-    </article>
+    <div class="project-grid">
+      <details class="project-box">
+        <summary>
+          <span class="project-box-hint"></span>
+          <h3>PLM Research</h3>
+          <p>Pooling strategies for protein fitness prediction</p>
+        </summary>
+        <div class="project-box-body">
+          <p>Protein-language model research: a reproducible deep learning benchmark for pooling strategies and protein fitness prediction, comparing mean, max, top-k, light attention, SWE, and BOM pooling across architectures and LoRA ranks.</p>
+        </div>
+      </details>
+      <details class="project-box">
+        <summary>
+          <span class="project-box-hint"></span>
+          <h3>Subsurface sea temp</h3>
+          <p>ConvLSTM reconstruction of subsurface ocean temperature</p>
+        </summary>
+        <div class="project-box-body">
+          <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
+          <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM. ECE 661.</p>
+          <figure class="shot poster">
+            <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
+              <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+            </button>
+            <figcaption>ECE 661 poster · click to enlarge</figcaption>
+          </figure>
+          <p><a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </div>
+      </details>
+      <details class="project-box">
+        <summary>
+          <span class="project-box-hint"></span>
+          <h3>Pediatric CXR classification</h3>
+          <p>Adult-to-pediatric chest X-ray domain adaptation</p>
+        </summary>
+        <div class="project-box-body">
+          <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+          <figure class="shot">
+            <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
+            <figcaption>Ground truth vs. prediction</figcaption>
+          </figure>
+          <p><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </div>
+      </details>
+      <details class="project-box">
+        <summary>
+          <span class="project-box-hint"></span>
+          <h3>AV TTC prediction</h3>
+          <p>Time-to-collision risk scores on nuScenes</p>
+        </summary>
+        <div class="project-box-body">
+          <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
+          <figure class="shot">
+            <video muted loop playsinline controls>
+              <source src="{{ '/assets/img/projects/ttc/intersection.mp4' | relative_url }}" type="video/mp4">
+            </video>
+            <figcaption>Intersection scene</figcaption>
+          </figure>
+          <p>
+            <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">Demo</a>
+          </p>
+        </div>
+      </details>
+    </div>
   </section>
 
   <section class="skills">
