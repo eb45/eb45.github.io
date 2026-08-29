@@ -214,7 +214,6 @@ permalink: /
         <p class="project-links">
           <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
           <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
-          <button type="button" class="text-link" data-open-project="sea">Detail</button>
         </p>
       </article>
       <article class="project-card">
@@ -228,7 +227,6 @@ permalink: /
         </div>
         <p class="project-links">
           <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <button type="button" class="text-link" data-open-project="pediatric">Detail</button>
         </p>
       </article>
       <article class="project-card">
@@ -243,7 +241,6 @@ permalink: /
         <p class="project-links">
           <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <button type="button" class="text-link" data-open-project="ttc">Detail</button>
         </p>
       </article>
     </div>
@@ -264,64 +261,6 @@ permalink: /
       <figure class="shot">
         <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="Experiment dashboard for protein language model pooling runs" width="1693" height="854">
       </figure>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-sea" aria-labelledby="project-sea-title">
-    <header class="project-pop-bar">
-      <h3 id="project-sea-title">Subsurface Sea Temperature Prediction</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
-      <p>Built a deep learning model that takes sea surface temperature, sea surface height, zonal and meridional surface wind, plus latitude and longitude, and predicts temperature at depth. Replaced fully connected LSTM layers with convolutional ones so the network keeps spatial structure: convolutions use local neighborhood and sparse connections instead of flattening the map.</p>
-      <p>Compared ConvLSTM variants with sigmoid/tanh and sigmoid/ELU activations, the same stacks with a land mask, and a hybrid CNN–LSTM.</p>
-      <figure class="shot poster">
-        <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
-          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
-        </button>
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
-      </p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-pediatric" aria-labelledby="project-pediatric-title">
-    <header class="project-pop-bar">
-      <h3 id="project-pediatric-title">Pediatric CXR Classification</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
-      <p>Developed a CLIP-style domain-adaptation pipeline from adult chest X-rays to pediatric pneumonia vs. normal. Pretrained an image–text model with contrastive loss on adult NIH CXRs, then fine-tuned the image encoder on the Kermany pediatric set so a test image is classified by nearest text prompt (Normal / Pneumonia).</p>
-      <p>Compared that pipeline with a pediatric-only ResNet trained with cross-entropy, plus two other adaptation methods: domain-adversarial training (DANN) and optimal-transport Wasserstein (sliced Wasserstein distance). Reported AUC and F1 against the fraction of pediatric data, with ROC, precision–recall, calibration, and Grad-CAM.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-ttc" aria-labelledby="project-ttc-title">
-    <header class="project-pop-bar">
-      <h3 id="project-ttc-title">Autonomous Vehicle TTC Prediction</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">Independent research project</p>
-      <p>Added a time-to-collision risk score on nuScenes using a frozen StreamPETR detector and a small MLP head. Built ground-truth TTC from a physics closure (distance over closing speed, capped at 10&nbsp;s) and ran that same formula on StreamPETR boxes and velocities as an interpretable baseline.</p>
-      <p>Regressed seconds-to-collision from object query features, with and without explicit velocity embeddings, so the same detections yield both the physics baseline and a learned estimate. On the trainval split, the physics baseline is strongest overall (MAE 1.48&nbsp;s); adding velocity to the MLP recovers most of the gap (MAE 1.71&nbsp;s vs 3.57&nbsp;s for query features alone). Short-horizon bins stay hard: nuScenes has almost no sub-second collisions, so the learned head has little supervision there. Built on StreamPETR (ICCV 2023).</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/ttc/intersection.gif' | relative_url }}" alt="Intersection scene with time-to-collision overlay" width="1400" height="1139">
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
-      </p>
     </div>
   </dialog>
 
