@@ -608,6 +608,50 @@ h1 {
 
 .pane > p + p { margin-top: 0.75rem; }
 
+.site-guide {
+  max-width: 38rem;
+}
+
+.site-guide .lede {
+  margin: 0 0 0.7rem;
+  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.site-guide p {
+  margin: 0 0 0.65rem;
+  color: var(--ink);
+}
+
+.site-guide h2 {
+  margin: 1.15rem 0 0.4rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.site-guide ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.site-guide li {
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+}
+
+.site-guide li:last-child { margin-bottom: 0; }
+
+.site-guide code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.86em;
+}
+
 .timeline {
   list-style: none;
   margin: 0;
