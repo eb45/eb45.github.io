@@ -1,5 +1,4 @@
 (function () {
-  const cards = Array.from(document.querySelectorAll(".project-card[data-project]"));
   const pops = Array.from(document.querySelectorAll(".project-pop"));
 
   function openPop(id) {
@@ -11,22 +10,10 @@
     if (pop.open) pop.close();
   }
 
-  function isControl(el) {
-    return Boolean(el.closest("a, button, [data-lightbox]"));
-  }
-
-  cards.forEach((card) => {
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
-    card.addEventListener("click", (event) => {
-      if (isControl(event.target)) return;
-      openPop(card.dataset.project);
-    });
-    card.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      if (isControl(event.target)) return;
-      event.preventDefault();
-      openPop(card.dataset.project);
+  document.querySelectorAll("[data-open-project]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-open-project");
+      if (id) openPop(id);
     });
   });
 
@@ -95,6 +82,17 @@
   );
 
   targets.forEach((el) => io.observe(el));
+
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", link.getAttribute("href"));
+      setOn(target.id);
+    });
+  });
 })();
 
 (function () {

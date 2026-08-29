@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
 }
 
 html, body {
@@ -36,12 +37,21 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: 4.6rem 1.6rem 4rem;
+  padding: 4.6rem 1.6rem 80vh;
 }
 
 .plain-intro,
 .plain section {
-  scroll-margin-top: 1.2rem;
+  scroll-margin-top: 1.5rem;
+}
+
+#skills,
+#activities {
+  scroll-margin-top: 1.5rem;
+}
+
+#activities {
+  min-height: 85vh;
 }
 
 .desk-switch {
@@ -252,7 +262,7 @@ body {
 .plain h2 {
   margin: 0 0 0.95rem;
   font-family: var(--sans);
-  font-size: 1.2rem;
+  font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--olive);
@@ -351,10 +361,7 @@ body {
   overflow: hidden;
   border: 1px solid var(--olive);
   background: var(--pane);
-  cursor: pointer;
 }
-
-.project-card:hover { background: var(--paper); }
 
 .project-thumb {
   margin: 0;
@@ -370,9 +377,6 @@ body {
   object-fit: cover;
   object-position: center;
 }
-
-.project-card[data-project="sea"] .project-thumb img,
-.project-card[data-project="plm"] .project-thumb img { object-position: top; }
 
 .project-card-body {
   display: flex;
@@ -390,16 +394,16 @@ body {
 .project-card .project-course,
 .project-pop-body .project-course {
   margin: 0;
-  color: var(--olive);
+  color: var(--olive-deep);
   font-family: var(--sans);
-  font-size: 0.7rem;
-  line-height: 1.4;
+  font-size: 1.02rem;
+  line-height: 1.45;
 }
 
 .project-card-body p {
   margin: 0.2rem 0 0;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 0.98rem;
 }
 
 .project-links {
@@ -479,9 +483,9 @@ body {
 .plain .when,
 .plain .where {
   margin: 0.1rem 0 0;
-  color: var(--mute);
+  color: var(--olive-deep);
   font-family: var(--sans);
-  font-size: 0.74rem;
+  font-size: 1.05rem;
 }
 
 .plain article a,
@@ -489,7 +493,7 @@ body {
 .text-link {
   color: var(--olive);
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 1rem;
 }
 
 .plain article a:hover,
@@ -527,7 +531,7 @@ body {
 .plain .skills span {
   color: var(--olive);
   font-family: var(--sans);
-  font-size: 0.86rem;
+  font-size: 1.05rem;
 }
 
 .tech {
@@ -540,7 +544,7 @@ body {
   gap: 0.35rem;
   cursor: pointer;
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--olive);
@@ -580,7 +584,7 @@ body {
   background: var(--olive);
   color: var(--paper);
   font-family: var(--sans);
-  font-size: 0.68rem;
+  font-size: 0.9rem;
 }
 
 .project-gallery {
@@ -697,7 +701,7 @@ body.lightbox-on { overflow: hidden; }
 
 @media (max-width: 640px) {
   .plain {
-    padding: 4.4rem 1.1rem 3.2rem;
+    padding: 4.4rem 1.1rem 80vh;
   }
 
   .plain-intro {
@@ -770,5 +774,5 @@ body.lightbox-on { overflow: hidden; }
     background: var(--pane);
   }
 
-  .plain { padding-bottom: 5.2rem; }
+  .plain { padding-bottom: 80vh; }
 }
