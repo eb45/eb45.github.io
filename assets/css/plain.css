@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
 }
 
 html, body {
@@ -36,12 +37,21 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: 4.6rem 1.6rem 4rem;
+  padding: 4.6rem 1.6rem 80vh;
 }
 
 .plain-intro,
 .plain section {
-  scroll-margin-top: 1.2rem;
+  scroll-margin-top: 1.5rem;
+}
+
+#skills,
+#activities {
+  scroll-margin-top: 1.5rem;
+}
+
+#activities {
+  min-height: 85vh;
 }
 
 .desk-switch {
@@ -125,12 +135,13 @@ body {
 
 .plain-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 16.5rem);
   grid-template-areas:
     "id photo"
     "copy photo";
-  gap: 0.35rem 2rem;
-  align-items: start;
+  column-gap: 1.5rem;
+  row-gap: 0.7rem;
+  align-items: stretch;
   margin: 0 0 2.6rem;
 }
 
@@ -138,12 +149,16 @@ body {
 
 .plain-intro .about-copy {
   grid-area: copy;
-  margin: 1.15rem 0 0;
+  margin: 0;
   max-width: 42rem;
+  align-self: start;
 }
 
 .plain-portrait {
   grid-area: photo;
+  align-self: stretch;
+  height: 100%;
+  min-height: 0;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -152,6 +167,7 @@ body {
 .portrait-flip {
   display: block;
   width: 100%;
+  height: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -162,6 +178,7 @@ body {
 .portrait-inner {
   position: relative;
   display: block;
+  height: 100%;
   background: transparent;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
@@ -229,6 +246,12 @@ body {
   background: transparent;
 }
 
+.portrait-front {
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 16%;
+}
+
 .about-copy {
   margin: 0 0 2.2rem;
   max-width: 36rem;
@@ -252,7 +275,7 @@ body {
 .plain h2 {
   margin: 0 0 0.95rem;
   font-family: var(--sans);
-  font-size: 1.2rem;
+  font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--olive);
@@ -342,23 +365,23 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  align-items: stretch;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 100%;
   overflow: hidden;
   border: 1px solid var(--olive);
   background: var(--pane);
-  cursor: pointer;
 }
 
-.project-card:hover { background: var(--paper); }
-
 .project-thumb {
+  flex: 0 0 10.75rem;
+  height: 10.75rem;
   margin: 0;
-  height: 10.5rem;
   background: var(--paper);
   border-bottom: 1px solid rgba(76, 85, 68, 0.22);
 }
@@ -371,43 +394,56 @@ body {
   object-position: center;
 }
 
-.project-card[data-project="sea"] .project-thumb img,
-.project-card[data-project="plm"] .project-thumb img { object-position: top; }
+.project-thumb-plm {
+  background: #fff;
+}
+
+.project-thumb-plm img {
+  object-fit: contain;
+}
 
 .project-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.28rem;
-  padding: 0.85rem 1rem 0.35rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.8rem 1rem 0.85rem;
+  row-gap: 0.28rem;
 }
 
-.project-card:not(:has(.project-links)) .project-card-body {
-  padding-bottom: 0.95rem;
+.project-card h3 {
+  margin: 0;
+  line-height: 1.25;
 }
-
-.project-card h3 { margin: 0; }
 
 .project-card .project-course,
 .project-pop-body .project-course {
   margin: 0;
-  color: var(--olive);
+  color: var(--olive-deep);
   font-family: var(--sans);
-  font-size: 0.7rem;
-  line-height: 1.4;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .project-card-body p {
-  margin: 0.2rem 0 0;
+  margin: 0;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 0.98rem;
+}
+
+.project-blurb {
+  min-height: 0;
+  line-height: 1.5;
 }
 
 .project-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.45rem 0.9rem;
-  margin: auto 0 0;
-  padding: 0.7rem 1rem 0.95rem;
+  margin: 0.2rem 0 0;
+  padding: 0.15rem 0 0;
+  min-height: 1.4rem;
 }
 
 .project-pop {
@@ -479,9 +515,13 @@ body {
 .plain .when,
 .plain .where {
   margin: 0.1rem 0 0;
-  color: var(--mute);
+  color: var(--olive-deep);
   font-family: var(--sans);
-  font-size: 0.74rem;
+  font-size: 1.05rem;
+}
+
+#education .when {
+  white-space: nowrap;
 }
 
 .plain article a,
@@ -489,7 +529,7 @@ body {
 .text-link {
   color: var(--olive);
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 1rem;
 }
 
 .plain article a:hover,
@@ -527,7 +567,7 @@ body {
 .plain .skills span {
   color: var(--olive);
   font-family: var(--sans);
-  font-size: 0.86rem;
+  font-size: 1.05rem;
 }
 
 .tech {
@@ -540,7 +580,7 @@ body {
   gap: 0.35rem;
   cursor: pointer;
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--olive);
@@ -580,7 +620,7 @@ body {
   background: var(--olive);
   color: var(--paper);
   font-family: var(--sans);
-  font-size: 0.68rem;
+  font-size: 0.9rem;
 }
 
 .project-gallery {
@@ -696,8 +736,12 @@ body.lightbox-on { overflow: hidden; }
 }
 
 @media (max-width: 640px) {
+  #education .when {
+    white-space: normal;
+  }
+
   .plain {
-    padding: 4.4rem 1.1rem 3.2rem;
+    padding: 4.4rem 1.1rem 80vh;
   }
 
   .plain-intro {
@@ -710,8 +754,15 @@ body.lightbox-on { overflow: hidden; }
   }
 
   .plain-portrait {
-    max-width: 16rem;
+    width: min(15.5rem, 100%);
+    max-width: 15.5rem;
+    height: auto;
+    aspect-ratio: 4 / 5;
     justify-self: center;
+  }
+
+  .portrait-front {
+    height: 100%;
   }
 
   .plain-intro .about-copy { margin-top: 0; }
@@ -770,5 +821,5 @@ body.lightbox-on { overflow: hidden; }
     background: var(--pane);
   }
 
-  .plain { padding-bottom: 5.2rem; }
+  .plain { padding-bottom: 80vh; }
 }
