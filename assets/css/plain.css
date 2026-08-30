@@ -409,7 +409,11 @@ body {
   padding: 0.85rem 1rem 0.35rem;
 }
 
-.project-card h3 { margin: 0; }
+.project-card h3 {
+  margin: 0;
+  line-height: 1.25;
+  min-height: calc(1.25em * 2);
+}
 
 .project-card .project-course,
 .project-pop-body .project-course {
@@ -418,6 +422,14 @@ body {
   font-family: var(--sans);
   font-size: 1.02rem;
   line-height: 1.45;
+}
+
+.project-card .project-course {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.45em * 2);
 }
 
 .project-card-body p {
