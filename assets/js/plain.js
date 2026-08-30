@@ -73,13 +73,21 @@
   }
 
   function markerY() {
+    const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     if (window.matchMedia("(max-width: 1100px)").matches && nav) {
-      return nav.getBoundingClientRect().bottom + 16;
+      return Math.max(nav.getBoundingClientRect().bottom, pad) + 12;
     }
-    return Math.min(180, window.innerHeight * 0.22);
+    return Math.max(pad, Math.min(180, window.innerHeight * 0.22));
   }
 
+  let pinned = null;
+  let pinTimer = 0;
+
   function sync() {
+    if (pinned) {
+      setOn(pinned);
+      return;
+    }
     const y = markerY();
     let current = targets[0];
     for (const el of targets) {
@@ -107,10 +115,16 @@
       const target = document.querySelector(link.getAttribute("href"));
       if (!target) return;
       event.preventDefault();
-      setOn(target.id);
+      pinned = target.id;
+      setOn(pinned);
       link.blur();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", link.getAttribute("href"));
+      window.clearTimeout(pinTimer);
+      pinTimer = window.setTimeout(() => {
+        pinned = null;
+        sync();
+      }, 700);
     });
   });
 })();
