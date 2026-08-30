@@ -27,9 +27,9 @@ permalink: /
       </button>
     </figure>
     <div class="about-copy">
-      <p>Hi! I’m Emma, an Electrical/Computer Engineering and CS double major at Duke.</p>
-      <p>This past summer I interned at LinkedIn as a software engineer intern on the Service Runtime infra team. Before that, I’ve worked and done research across AI/ML, Computer and Information Security, and bioinformatics.</p>
-      <p>Outside of school, I’m usually out on a run, playing piano or guitar, or exploring Durham with friends.</p>
+      <p>Hi! I’m Emma, a senior at Duke, double majoring in Electrical/Computer Engineering and CS with a concentration in AI and Machine Learning.</p>
+      <p>This past summer I interned at LinkedIn as a software engineer on the Service Runtime infra team. Before that, I’ve worked and done research across AI/ML, Computer and Information Security, and bioinformatics.</p>
+      <p>Outside of school, I’m usually out on a run, playing piano or guitar, or exploring Durham with friends!</p>
       <p class="links">
         <a href="https://github.com/eb45" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/emma-bennett4" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -42,13 +42,13 @@ permalink: /
     <article>
       <h3>Duke University</h3>
       <p class="where">Durham, NC</p>
-      <p class="when">B.S. Computer Science and Electrical &amp; Computer Engineering, concentration in AI/Machine Learning · May 2027</p>
+      <p class="when">B.S. ECE and CS, AI/ML concentration · May 2027</p>
       <p>Relevant Coursework: Deep Learning, Applied Machine Learning, Computer Vision, Robotics, Computer and Information Security, Linear Algebra, Probability, Data Structure and Algorithms, Design &amp; Analysis of Algorithms</p>
     </article>
   </section>
 
   <section class="work" id="experience">
-    <h2>Work experience</h2>
+    <h2>Work Experience</h2>
     <ol class="timeline">
     <li>
       <p class="when">May 2026 – August 2026</p>
@@ -97,7 +97,7 @@ permalink: /
       <p class="where">Duke University School of Medicine · Durham, NC</p>
       <ul>
         <li>Developing a reproducible deep learning benchmarking framework to evaluate pooling strategies across protein-language models for protein fitness prediction.</li>
-        <li>Implementing mean, max, top-k, light attention, SWE, and BOM pooling in a unified training pipeline, measured via Spearman correlation across PLM architectures, seeds, and LoRA ranks.</li>
+        <li>Implementing mean, max, top-k, light attention, SWE, and BOM pooling in a unified training pipeline, measured via Spearman correlation across protein language model architectures, seeds, and LoRA ranks.</li>
       </ul>
       <details class="tech" open>
         <summary>Technologies used</summary>
@@ -189,131 +189,78 @@ permalink: /
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
-      <article class="project-card" data-project="plm">
-        <figure class="project-thumb">
-          <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="Experiment dashboard for protein language model pooling runs" width="1693" height="854">
+      <article class="project-card">
+        <figure class="project-thumb project-thumb-plm">
+          <img src="{{ '/assets/img/projects/plm/wandb-thumb.png' | relative_url }}" alt="Evaluation charts comparing protein language model pooling runs" width="742" height="570">
         </figure>
         <div class="project-card-body">
-          <h3>Pooling benchmarking for PLMs</h3>
-          <p class="project-course">Independent research · Duke School of Medicine</p>
-          <p>A reproducible framework for comparing how protein language models pool sequence representations.</p>
+          <p class="project-course">Independent research · Duke University School of Medicine</p>
+          <h3>Benchmarking Pooling Methods for Protein Language Models</h3>
+          <p class="project-blurb">Built a benchmarking framework that swaps protein language model encoders, pooling methods (mean, max, top-k, light attention, SWE, BoM), and LoRA rank, then scores fitness prediction with Spearman correlation.</p>
+          <p class="project-links">
+            <button type="button" class="text-link" data-open-project="plm">Detail</button>
+          </p>
         </div>
       </article>
-      <article class="project-card" data-project="sea">
+      <article class="project-card">
         <figure class="project-thumb">
-          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
+          <img src="{{ '/assets/img/projects/sea/poster-thumb.jpg' | relative_url }}" alt="ConvLSTM section of the ECE 661 poster comparing predicted and true subsurface temperatures" width="800" height="470">
         </figure>
         <div class="project-card-body">
-          <h3>Subsurface sea temperature</h3>
-          <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
-          <p>ConvLSTM reconstruction of subsurface ocean temperature from surface climate fields.</p>
+          <p class="project-course">ECE 661 · Deep Neural Nets · graduate-level</p>
+          <h3>Subsurface Sea Temperature Prediction</h3>
+          <p class="project-blurb">Built a ConvLSTM to predict subsurface ocean temperature from surface fields (SST, SSH, winds, lat/lon). Replaced fully connected LSTM layers with convolutions and compared land-masked variants with a hybrid CNN–LSTM.</p>
+          <p class="project-links">
+            <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
+          </p>
         </div>
-        <p class="project-links">
-          <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
-        </p>
       </article>
-      <article class="project-card" data-project="pediatric">
+      <article class="project-card">
         <figure class="project-thumb">
           <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
         </figure>
         <div class="project-card-body">
-          <h3>Pediatric CXR classification</h3>
-          <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
-          <p>Adult-to-pediatric chest X-ray domain adaptation with CLIP-style pretraining.</p>
+          <p class="project-course">ECE 685D · Deep Learning · graduate-level</p>
+          <h3>Pediatric CXR Classification</h3>
+          <p class="project-blurb">Developed a CLIP-style pipeline that pretrains on adult NIH chest X-rays, then fine-tunes for pediatric pneumonia vs. normal. Compared it with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
+          <p class="project-links">
+            <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
         </div>
-        <p class="project-links">
-          <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
       </article>
-      <article class="project-card" data-project="ttc">
+      <article class="project-card">
         <figure class="project-thumb">
           <img src="{{ '/assets/img/projects/ttc/intersection.gif' | relative_url }}" alt="Intersection scene with time-to-collision overlay" width="1400" height="1139">
         </figure>
         <div class="project-card-body">
-          <h3>Autonomous Vehicle TTC prediction</h3>
-          <p class="project-course">Independent research project</p>
-          <p>Time-to-collision risk scores on nuScenes with a frozen StreamPETR detector.</p>
+          <p class="project-course">Independent research</p>
+          <h3>Autonomous Vehicle TTC Prediction</h3>
+          <p class="project-blurb">Added a time-to-collision head to a frozen StreamPETR detector on nuScenes. Compared the learned MLP with a physics baseline (distance over closing speed) on intersections, parking lots, and barrier scenes.</p>
+          <p class="project-links">
+            <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </p>
         </div>
-        <p class="project-links">
-          <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </p>
       </article>
     </div>
   </section>
 
   <dialog class="project-pop" id="project-plm" aria-labelledby="project-plm-title">
     <header class="project-pop-bar">
-      <h3 id="project-plm-title">Pooling benchmarking for PLMs</h3>
+      <h3 id="project-plm-title">Benchmarking Pooling Methods for Protein Language Models</h3>
       <button type="button" class="project-pop-close" aria-label="Close">Close</button>
     </header>
     <div class="project-pop-body">
       <p class="project-course">Independent research · Duke University School of Medicine</p>
-      <p>Protein language models encode a sequence as token embeddings, then a pooling step collapses those tokens into one vector for a prediction head. That pooling choice is usually a default, even though it decides which sequence information actually reaches the head.</p>
-      <p>This project is a benchmarking framework that treats pooling as an experimental variable. A single command-line entry point swaps the task, pretrained encoder, pooling method, LoRA rank, and seed while keeping training, evaluation, and logging the same.</p>
+      <p>Built a benchmarking framework for protein language models, which encode a sequence as token embeddings and then pool those tokens into one vector for a prediction head. That pooling choice is usually a default, even though it decides which sequence information actually reaches the head.</p>
+      <p>Treated pooling as an experimental variable: a single command-line entry point swaps the task, pretrained encoder, pooling method, LoRA rank, and seed while keeping training, evaluation, and logging the same.</p>
       <p>The current task is protein fitness prediction: a regression problem on the FLIP GB1 split. The readout after pooling is a linear head. Evaluation is Spearman rank correlation on the held-out test set, with the best validation checkpoint kept for that comparison.</p>
       <p>Backbones in the grid include ProtT5-XL, ESM2-650M, DPLM-650M, Ankh-base, ESM-plus-plus, and Profluent E1. Pooling families are mean, max, top-k (k = 5), light attention, sliced Wasserstein embeddings (SWE), and bag-of-mers (BoM; window 100, stride 20).</p>
       <p>Each backbone–pooling pair is run as a linear probe (frozen encoder) and with LoRA fine-tuning at ranks 2, 4, and 8, with scaling α = 4r on the attention projection matrices. Training uses AdamW (learning rate 3×10⁻⁴, 20 epochs, effective batch size 128) and is repeated across three seeds. Runs are logged with the full hyperparameter set so pooling can be compared under matched conditions.</p>
       <figure class="shot">
         <img src="{{ '/assets/img/projects/plm/wandb.png' | relative_url }}" alt="Experiment dashboard for protein language model pooling runs" width="1693" height="854">
       </figure>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-sea" aria-labelledby="project-sea-title">
-    <header class="project-pop-bar">
-      <h3 id="project-sea-title">Subsurface sea temperature</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">ECE 661 · Computer Engineering Machine Learning and Deep Neural Nets · graduate-level</p>
-      <p>Deep learning reconstruction of sea subsurface temperature from surface climate fields (SST, SSH, winds, lat/lon). Fully connected LSTM layers are replaced with convolutional ones so the network keeps spatial structure.</p>
-      <p>Experiments include ConvLSTM variants with a land mask and a hybrid CNN–LSTM.</p>
-      <figure class="shot poster">
-        <button type="button" class="zoom" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">
-          <img src="{{ '/assets/img/projects/sea/poster.jpg' | relative_url }}" alt="ECE 661 poster: Reconstructing Subsurface Ocean Temperatures Using Deep Convolutional Neural Networks" width="1400" height="1200">
-        </button>
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
-      </p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-pediatric" aria-labelledby="project-pediatric-title">
-    <header class="project-pop-bar">
-      <h3 id="project-pediatric-title">Pediatric CXR classification</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">ECE 685D · Introduction to Deep Learning · graduate-level</p>
-      <p>CLIP-style image–text pretraining on adult NIH chest X-rays, then fine-tuning for pediatric pneumonia vs. normal, compared with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/pediatric/gt-vs-pred.jpg' | relative_url }}" alt="Ground truth versus predicted pediatric chest X-ray labels" width="1200" height="944">
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
-    </div>
-  </dialog>
-
-  <dialog class="project-pop" id="project-ttc" aria-labelledby="project-ttc-title">
-    <header class="project-pop-bar">
-      <h3 id="project-ttc-title">Autonomous Vehicle TTC prediction</h3>
-      <button type="button" class="project-pop-close" aria-label="Close">Close</button>
-    </header>
-    <div class="project-pop-body">
-      <p class="project-course">Independent research project</p>
-      <p>Time-to-collision on nuScenes with a frozen StreamPETR detector and an MLP risk head, compared against a physics baseline built from the same detections.</p>
-      <figure class="shot">
-        <img src="{{ '/assets/img/projects/ttc/intersection.gif' | relative_url }}" alt="Intersection scene with time-to-collision overlay" width="1400" height="1139">
-      </figure>
-      <p class="project-links">
-        <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>
-      </p>
     </div>
   </dialog>
 
