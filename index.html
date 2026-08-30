@@ -353,7 +353,10 @@ emma@duke ~ % cat .profile
             <p>CLIP-style domain adaptation from adult chest X-rays to pediatric pneumonia vs. normal.</p>
             <p>An image–text model is pretrained with contrastive loss on adult NIH CXRs, then the image encoder is fine-tuned on the Kermany pediatric set. At test time the image is classified by nearest text prompt (Normal / Pneumonia). That pipeline is compared with a pediatric-only ResNet trained with cross-entropy, and with two other adaptation methods: domain-adversarial training (DANN) and optimal-transport Wasserstein (sliced Wasserstein distance).</p>
             <p>Learning curves report AUC and F1 against the fraction of pediatric data; evaluation includes ROC, precision–recall, calibration, and Grad-CAM.</p>
-            <p class="project-link"><a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub →</a></p>
+            <p class="project-link">
+              <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="{{ '/assets/docs/pediatric-cxr-paper.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Paper →</a>
+            </p>
           </div>
           <div class="project-media">
             <figure class="shot">
