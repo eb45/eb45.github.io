@@ -59,6 +59,7 @@
 })();
 
 (function () {
+  const nav = document.querySelector(".side-nav");
   const links = Array.from(document.querySelectorAll(".side-nav a[href^='#']"));
   if (!links.length) return;
 
@@ -71,26 +72,44 @@
     links.forEach((link) => link.classList.toggle("is-on", link.getAttribute("href") === "#" + id));
   }
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setOn(visible.target.id);
-    },
-    { threshold: [0.25, 0.5, 0.75], rootMargin: "-15% 0px -55% 0px" }
-  );
+  function markerY() {
+    if (window.matchMedia("(max-width: 1100px)").matches && nav) {
+      return nav.getBoundingClientRect().bottom + 16;
+    }
+    return Math.min(180, window.innerHeight * 0.22);
+  }
 
-  targets.forEach((el) => io.observe(el));
+  function sync() {
+    const y = markerY();
+    let current = targets[0];
+    for (const el of targets) {
+      if (el.getBoundingClientRect().top <= y) current = el;
+    }
+    setOn(current.id);
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      sync();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  sync();
 
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
       const target = document.querySelector(link.getAttribute("href"));
       if (!target) return;
       event.preventDefault();
+      setOn(target.id);
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", link.getAttribute("href"));
-      setOn(target.id);
     });
   });
 })();
