@@ -623,8 +623,8 @@ body {
   margin: 0;
   padding: 0.18rem 0.5rem;
   border: 1px solid var(--olive);
-  background: var(--olive);
-  color: var(--paper);
+  background: transparent;
+  color: var(--olive);
   font-family: var(--sans);
   font-size: 0.9rem;
 }
