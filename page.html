@@ -194,9 +194,9 @@ permalink: /
           <img src="{{ '/assets/img/projects/plm/wandb-thumb.png' | relative_url }}" alt="Evaluation charts comparing protein language model pooling runs" width="742" height="570">
         </figure>
         <div class="project-card-body">
-          <p class="project-course">Independent research · Duke SOM</p>
+          <p class="project-course">Independent research · Duke University School of Medicine</p>
           <h3>Benchmarking Pooling Methods for Protein Language Models</h3>
-          <p class="project-blurb">Built a reproducible benchmarking framework that treats pooling as the experimental variable across protein language models. A single pipeline swaps the pretrained encoder, pooling method (mean, max, top-k, light attention, SWE, BoM), and LoRA rank, then scores protein fitness prediction with Spearman correlation on the FLIP GB1 split.</p>
+          <p class="project-blurb">Built a benchmarking framework that swaps protein language model encoders, pooling methods (mean, max, top-k, light attention, SWE, BoM), and LoRA rank, then scores fitness prediction with Spearman correlation.</p>
           <p class="project-links">
             <button type="button" class="text-link" data-open-project="plm">Detail</button>
           </p>
@@ -209,7 +209,7 @@ permalink: /
         <div class="project-card-body">
           <p class="project-course">ECE 661 · Deep Neural Nets · graduate-level</p>
           <h3>Subsurface Sea Temperature Prediction</h3>
-          <p class="project-blurb">Built a ConvLSTM to predict subsurface ocean temperature from surface climate fields (SST, SSH, zonal and meridional winds, latitude, and longitude). Replaced fully connected LSTM layers with convolutions so the network keeps spatial structure, then compared land-masked ConvLSTM variants with a hybrid CNN–LSTM.</p>
+          <p class="project-blurb">Built a ConvLSTM to predict subsurface ocean temperature from surface fields (SST, SSH, winds, lat/lon). Replaced fully connected LSTM layers with convolutions and compared land-masked variants with a hybrid CNN–LSTM.</p>
           <p class="project-links">
             <a href="https://github.com/eb45/661-Final-Project" target="_blank" rel="noopener noreferrer">GitHub</a>
             <button type="button" class="text-link" data-lightbox="{{ '/assets/img/projects/sea/poster-full.jpg' | relative_url }}" aria-label="View ECE 661 poster full screen">Poster</button>
@@ -223,7 +223,7 @@ permalink: /
         <div class="project-card-body">
           <p class="project-course">ECE 685D · Deep Learning · graduate-level</p>
           <h3>Pediatric CXR Classification</h3>
-          <p class="project-blurb">Developed a CLIP-style domain-adaptation pipeline that pretrains an image–text model on adult NIH chest X-rays, then fine-tunes the image encoder for pediatric pneumonia vs. normal. Compared that approach with a pediatric-only ResNet baseline plus DANN and optimal-transport adaptation, and evaluated with AUC, F1, ROC, and Grad-CAM.</p>
+          <p class="project-blurb">Developed a CLIP-style pipeline that pretrains on adult NIH chest X-rays, then fine-tunes for pediatric pneumonia vs. normal. Compared it with a ResNet baseline plus DANN and optimal-transport adaptation.</p>
           <p class="project-links">
             <a href="https://github.com/eb45/Pediatric-CXR-Adapt" target="_blank" rel="noopener noreferrer">GitHub</a>
           </p>
@@ -236,7 +236,7 @@ permalink: /
         <div class="project-card-body">
           <p class="project-course">Independent research</p>
           <h3>Autonomous Vehicle TTC Prediction</h3>
-          <p class="project-blurb">Added a time-to-collision prediction head to a frozen StreamPETR 3D detector and evaluated risk scores on nuScenes. Built ground-truth TTC from a physics closure (distance over closing speed), then compared the learned MLP head with that same formula on the detector boxes across intersections, parking lots, and barrier scenes.</p>
+          <p class="project-blurb">Added a time-to-collision head to a frozen StreamPETR detector on nuScenes. Compared the learned MLP with a physics baseline (distance over closing speed) on intersections, parking lots, and barrier scenes.</p>
           <p class="project-links">
             <a href="https://github.com/eb45/StreamPETR_TTC_Head" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://youtu.be/GsEots-qYzw" target="_blank" rel="noopener noreferrer">YouTube</a>

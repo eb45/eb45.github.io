@@ -404,7 +404,7 @@ body {
 
 .project-card-body {
   display: grid;
-  grid-template-rows: 1.35rem 2.7rem 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   flex: 1 1 auto;
   min-width: 0;
   padding: 0.8rem 1rem 0.85rem;
@@ -414,10 +414,6 @@ body {
 .project-card h3 {
   margin: 0;
   line-height: 1.25;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
 }
 
 .project-card .project-course,
@@ -426,13 +422,7 @@ body {
   color: var(--olive-deep);
   font-family: var(--sans);
   font-size: 0.82rem;
-  line-height: 1.35rem;
-}
-
-.project-card .project-course {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  line-height: 1.35;
 }
 
 .project-card-body p {
@@ -443,10 +433,6 @@ body {
 
 .project-blurb {
   min-height: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
   line-height: 1.5;
 }
 
