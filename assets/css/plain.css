@@ -127,10 +127,16 @@ body {
   text-decoration: none;
 }
 
-.side-nav a:hover,
 .side-nav a.is-on {
   color: var(--paper);
   background: var(--olive);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .side-nav a:hover {
+    color: var(--paper);
+    background: var(--olive);
+  }
 }
 
 .plain-intro {

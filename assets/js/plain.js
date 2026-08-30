@@ -108,6 +108,7 @@
       if (!target) return;
       event.preventDefault();
       setOn(target.id);
+      link.blur();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", link.getAttribute("href"));
     });
