@@ -135,12 +135,13 @@ body {
 
 .plain-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 16.5rem);
   grid-template-areas:
     "id photo"
     "copy photo";
-  gap: 0.35rem 2rem;
-  align-items: start;
+  column-gap: 1.5rem;
+  row-gap: 0.7rem;
+  align-items: stretch;
   margin: 0 0 2.6rem;
 }
 
@@ -148,12 +149,16 @@ body {
 
 .plain-intro .about-copy {
   grid-area: copy;
-  margin: 1.15rem 0 0;
+  margin: 0;
   max-width: 42rem;
+  align-self: start;
 }
 
 .plain-portrait {
   grid-area: photo;
+  align-self: stretch;
+  height: 100%;
+  min-height: 0;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -162,6 +167,7 @@ body {
 .portrait-flip {
   display: block;
   width: 100%;
+  height: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -172,6 +178,7 @@ body {
 .portrait-inner {
   position: relative;
   display: block;
+  height: 100%;
   background: transparent;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
@@ -237,6 +244,12 @@ body {
   width: 100%;
   height: auto;
   background: transparent;
+}
+
+.portrait-front {
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 16%;
 }
 
 .about-copy {
@@ -731,8 +744,15 @@ body.lightbox-on { overflow: hidden; }
   }
 
   .plain-portrait {
-    max-width: 16rem;
+    width: min(15.5rem, 100%);
+    max-width: 15.5rem;
+    height: auto;
+    aspect-ratio: 4 / 5;
     justify-self: center;
+  }
+
+  .portrait-front {
+    height: 100%;
   }
 
   .plain-intro .about-copy { margin-top: 0; }
