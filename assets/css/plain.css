@@ -741,7 +741,7 @@ body.lightbox-on { overflow: hidden; }
   }
 
   .plain {
-    padding: 4.4rem 1.1rem 80vh;
+    padding: 5.8rem 1.1rem 80vh;
   }
 
   .plain-intro {
@@ -806,20 +806,47 @@ body.lightbox-on { overflow: hidden; }
 }
 
 @media (max-width: 1100px) {
+  html {
+    scroll-padding-top: 5.4rem;
+  }
+
   .side-nav {
-    top: auto;
-    bottom: 0.85rem;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    transform: none;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.35rem 0.75rem;
-    max-width: calc(100vw - 1.6rem);
-    padding: 0.4rem 0.7rem;
-    border: 1px solid var(--olive);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem 0.35rem;
+    max-width: none;
+    padding: 0.45rem 7.4rem 0.45rem 0.7rem;
+    border: 0;
+    border-bottom: 1px solid var(--olive);
     background: var(--pane);
   }
 
-  .plain { padding-bottom: 80vh; }
+  .side-nav a {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.45rem;
+  }
+
+  .desk-switch {
+    top: 0.42rem;
+    right: 0.55rem;
+  }
+
+  .plain {
+    padding-top: 5.6rem;
+    padding-bottom: 80vh;
+  }
+
+  .plain-intro,
+  .plain section,
+  #skills,
+  #activities {
+    scroll-margin-top: 5.4rem;
+  }
 }
