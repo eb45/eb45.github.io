@@ -793,6 +793,11 @@ body.lightbox-on { overflow: hidden; }
   transform: none;
 }
 
+.timeline > li:first-child {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 

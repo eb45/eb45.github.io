@@ -37,7 +37,7 @@
     document.querySelectorAll(
       ".plain-intro, .plain section:not(#experience):not(#projects), .timeline > li, .project-card"
     )
-  );
+  ).filter((el) => !el.matches(".timeline > li:first-child"));
   if (!items.length || reduce) return;
 
   items.forEach((el) => {
