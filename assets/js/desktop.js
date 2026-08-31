@@ -211,7 +211,7 @@
     skills: [
       "Languages   Python, Java, C, Go, SQL",
       "AI/ML       LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy",
-      "Infra/Data  Kafka, Apache Pinot, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
+      "Infra/Data  Kafka, Apache Pinot, Grafana, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
       "Platforms   GitHub, Linux, Windows",
     ].join("\n"),
   };
