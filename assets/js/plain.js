@@ -33,31 +33,40 @@
 
 (function () {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const jobs = Array.from(document.querySelectorAll(".timeline > li:not(:first-child)"));
   const items = Array.from(
     document.querySelectorAll(
-      ".plain-intro, .plain section:not(#experience):not(#projects), .timeline > li, .project-card"
+      ".plain-intro, .plain section:not(#experience):not(#projects), .project-card"
     )
-  ).filter((el) => !el.matches(".timeline > li:first-child"));
-  if (!items.length || reduce) return;
+  );
+  if ((!items.length && !jobs.length) || reduce) return;
 
-  items.forEach((el) => {
+  items.forEach((el) => el.classList.add("reveal"));
+  jobs.forEach((el) => {
     el.classList.add("reveal");
     if (el.matches(".timeline > li:nth-child(odd)")) el.classList.add("from-left");
     if (el.matches(".timeline > li:nth-child(even)")) el.classList.add("from-right");
   });
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-in");
-        io.unobserve(entry.target);
-      });
-    },
-    { threshold: 0, rootMargin: "0px 0px 32% 0px" }
-  );
+  function revealOn(entries, observer) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-in");
+      observer.unobserve(entry.target);
+    });
+  }
 
-  items.forEach((el) => io.observe(el));
+  const early = new IntersectionObserver(revealOn, {
+    threshold: 0,
+    rootMargin: "0px 0px 20% 0px",
+  });
+  items.forEach((el) => early.observe(el));
+
+  const later = new IntersectionObserver(revealOn, {
+    threshold: 0.18,
+    rootMargin: "-12% 0px -22% 0px",
+  });
+  jobs.forEach((el) => later.observe(el));
 })();
 
 (function () {

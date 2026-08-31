@@ -788,6 +788,14 @@ body.lightbox-on { overflow: hidden; }
 
 .reveal.from-right { transform: translateX(0.7rem); }
 
+.timeline > li.reveal.from-left { transform: translateX(-1.6rem); }
+
+.timeline > li.reveal.from-right { transform: translateX(1.6rem); }
+
+.timeline > li.reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 .reveal.is-in {
   opacity: 1;
   transform: none;
