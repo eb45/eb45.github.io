@@ -34,7 +34,9 @@
 (function () {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items = Array.from(
-    document.querySelectorAll(".plain-intro, .plain section, .timeline > li, .project-card")
+    document.querySelectorAll(
+      ".plain-intro, .plain section:not(#experience):not(#projects), .timeline > li, .project-card"
+    )
   );
   if (!items.length || reduce) return;
 
@@ -52,7 +54,7 @@
         io.unobserve(entry.target);
       });
     },
-    { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
+    { threshold: 0, rootMargin: "0px 0px 32% 0px" }
   );
 
   items.forEach((el) => io.observe(el));

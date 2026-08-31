@@ -780,13 +780,13 @@ body.lightbox-on { overflow: hidden; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(1.15rem);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(0.7rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.reveal.from-left { transform: translateX(-1.4rem); }
+.reveal.from-left { transform: translateX(-0.7rem); }
 
-.reveal.from-right { transform: translateX(1.4rem); }
+.reveal.from-right { transform: translateX(0.7rem); }
 
 .reveal.is-in {
   opacity: 1;
