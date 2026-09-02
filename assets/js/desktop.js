@@ -210,9 +210,10 @@
     ".profile": "Duke University\nElectrical/Computer Engineering and Computer Science",
     skills: [
       "Languages   Python, Java, C, Go, SQL",
-      "AI/ML       LLMs, LangChain, PyTorch, TensorFlow, scikit-learn, NumPy",
-      "Infra/Data  Kafka, Apache Pinot, Grafana, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
-      "Platforms   GitHub, Linux, Windows",
+      "AI/ML       LLMs, LangChain, LangGraph, PyTorch, TensorFlow, Transformers, scikit-learn, NumPy, Claude Code, GitHub Copilot",
+      "Infra/Data  Apache Kafka, Apache Pinot, Grafana, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
+      "Hardware    PCB Design, CAD, Motec, Altium Designer",
+      "Platforms   GitHub, Jupyter, Linux, Windows",
     ].join("\n"),
   };
   const listings = {
