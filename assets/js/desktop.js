@@ -212,7 +212,7 @@
       "Languages   Python, Java, C, Go, SQL",
       "AI/ML       LLMs, LangChain, LangGraph, PyTorch, TensorFlow, Transformers, scikit-learn, NumPy, Claude Code, GitHub Copilot",
       "Infra/Data  Apache Kafka, Apache Pinot, Grafana, Databricks, Apache Spark, Azure, Docker, OpenTelemetry",
-      "Hardware    PCB Design, CAD, Motec, Altium Designer",
+      "Hardware    PCB Design, CAD, SolidWorks, Altium Designer, MoTeC M1 Tune, MoTeC Display Creator, MoTeC i2 Pro",
       "Platforms   GitHub, Jupyter, Linux, Windows",
     ].join("\n"),
   };
